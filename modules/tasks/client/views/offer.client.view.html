@@ -1,0 +1,86 @@
+<!-- ng-controller="TasksController" -->
+<div class="col-sm-12" ng-controller="ModalOfferCtrl">
+  <div class="alert alert-success" role="alert"><i aria-hidden="true" class=
+    "fa fa-check-circle-o"></i> Tip: The more information you give in your offer the higher chance you have of being successful. i.e relevant experience, availability, etc</div>    
+    
+<!--
+  <div class="alert alert-success" role="alert" ng-show="vm.authentication.user.profileImageURL === !null || 'modules/users/client/img/profile/default.png'">
+    Congratulations, your profile picture is looking good!
+    <h3 class="pullright"><i aria-hidden="true" class=
+    "fa fa-check-circle-o"></i></h3>
+  </div>
+-->
+  <div class="alert alert-danger" role="alert" ng-hide="vm.authentication.user.profileImageURL === null || 'modules/users/client/img/profile/default.png'">
+    Please add a profile picture to increase your offer chances
+    <h3 class="pullright"><i aria-hidden="true" class=
+    "fa fa-plus-circle"></i></h3>
+  </div>
+  <form class="form-horizontal" id="vm.form.offerForm" name="vm.form.offerForm"
+  ng-submit="vm.newOffer(vm.form.offerForm.$valid)" novalidate="">
+    <fieldset>
+      <div class="row LocationCont noPadding">
+          <div class="col-xs-4 noPadding">
+            <div class="form-group" show-errors>
+            <h3 class="taskDesc offerTaskHeader"><span class="glyphicon glyphicon-question-sign" tooltip-placement="top" tooltip="Enter the price you would like to offer to complete this task"></span> Offer price</h3>
+            <div class="input-group">
+                    <span class="input-group-addon">&euro;</span>
+            <input class="form-control offerPrice" id="offerPrice" name="offerPrice"
+            ng-model="vm.offer.offerPrice" placeholder="{{ vm.task.price }}" type="number" required>
+          </div><!-- input group -->
+            <div ng-messages="vm.form.offerForm.offerPrice.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Offer name
+              is required.</p>
+            </div>
+          </div>
+          </div>
+          <div class="col-xs-4 noPadding">
+            <div class="form-group">
+            <h3 class="taskDesc offerTaskHeader">You get Paid</h3>
+            <div class="input-group">
+                    <span class="input-group-addon">&euro;</span>    
+            <input disabled class="form-control yourPrice" id="getPaid" name="getPaid" placeholder="{{((vm.task.price/100)*85) | number:2}}" value="{{((vm.offer.offerPrice/100)*85) | number:2}}" ng-disabled="true"/>
+            <!-- placeholder="{{((vm.offer.offerPrice/100)*85) | number:0}}" -->
+            </div>    
+          </div>
+          </div>
+          <div class="col-xs-4 noPadding">
+            <div class="form-group">
+              <h3 class="taskDesc offerTaskHeader">Service Fee</h3>
+                <div class="input-group">
+                    <span class="input-group-addon">&euro;</span>
+                    <input disabled class="form-control yourPrice" id="serviceCharge" name="serviceCharge" placeholder="{{((vm.task.price/100)*15) | number:2}}" value="{{((vm.offer.offerPrice/100)*15) | number:2}}" ng-disabled="true"/>
+                    <!-- placeholder="{{((vm.offer.offerPrice/100)*15) | number:0}}" -->
+                </div>
+          </div>
+          </div>
+        </div>
+<!--
+      <div class="form-group">
+        <input class=
+                "form-control taskDateInputModal" close-text="Close"
+                date-disabled="disabled(date, mode)" datepicker-options=
+                "dateOptions" datepicker-popup="" id="taskDateInputModal"
+                is-open="status.opened" max-date="maxDate" min-date="minDate"
+                ng-model="vm.offer.offerDate" type="date">    
+      </div>    
+-->
+      <div class="form-group" show-errors>
+        <h3 class="taskDesc offerTaskHeader">Offer Details</h3>
+        <textarea class="form-control" cols="45" id="description" name="description"
+        ng-model="vm.offer.offerDesc" placeholder="Explain why you are the right person for the job" required
+        rows="3"></textarea>
+        <div ng-messages="vm.form.offerForm.description.$error" role="alert">
+          <p class="help-block error-text" ng-message="required">Offer description is
+          required.</p>
+        </div>
+      </div>
+      <div>
+        <button class="submitanOffer btn-block myEteceReuseButton hvr-underline-reveal" style="" type="submit">Make an
+        offer</button>
+      </div>
+      <div class="text-danger" ng-show="vm.error">
+        <strong ng-bind="vm.error"></strong>
+      </div>
+    </fieldset>
+  </form>
+</div>

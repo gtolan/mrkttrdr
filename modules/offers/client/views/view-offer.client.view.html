@@ -1,0 +1,124 @@
+<!-- <section>
+  <div class="page-header">
+    <h1 data-ng-bind="vm.offer.name"></h1>
+  </div>
+  <div class="pull-right"
+       data-ng-show="vm.offer.isCurrentUserOwner">
+    <a class="btn btn-primary"
+       data-ui-sref="offers.edit({ offerId: vm.offer._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" data-ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span data-ng-bind="vm.offer.created | date:'mediumDate'"></span>
+      by
+      <span data-ng-if="vm.offer.user"
+            data-ng-bind="vm.offer.user.displayName"></span>
+      <span data-ng-if="!vm.offer.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" data-ng-bind="vm.offer.content"></p>
+</section>
+ -->
+
+  <section class="row profileWrapper">
+    <div class="profile-wrapper">
+    <div class="EditPrfTitle">
+      <h3 ng-if="vm.authentication.user._id === vm.offer.taskOwnerUser" class="blueHeader text-center">Offer from <a class="offera" data-ui-sref="profile({ userId : vm.offer.taskOwnerUser })">{{ vm.offer.displayName }}</a> on your task <a class="offera" data-ui-sref="tasks.view({ taskId: vm.offer.taskId })"> '{{ vm.offer.taskName }}' </a></h3>
+    </div>
+    <md-tabs md-center-tabs>
+      <md-tab label="Offer Details">
+      <div class="container">
+        <div class="col-sm-10 col-sm-offset-1">
+                <div class="list-group">
+                    <div class="list-group-item headerItem text-center">
+                        <h3 class="offer-h3">Offer details</h3>
+                    </div>
+                <div class="list-group-item">
+                    <small>Offer description</small>
+                    <h4 tooltip-placement="right" tooltip="A short description of what this offer includes.">{{ vm.offer.offerDesc }}</h4>
+                </div>
+                <div class="list-group-item">
+                    <small>Offer created</small>
+                    <h4 tooltip-placement="right" tooltip="The date on which the offer was made.">{{ vm.offer.created | date:medium }}</h4>
+                </div>
+                <div class="list-group-item">
+                    <small>Offer price</small>
+                    <h4 tooltip-placement="right" tooltip="This is total price you will pay if you accept the offer." >{{ vm.offer.offerPrice | currency: "&euro;" }}</h4>
+                </div>
+<!--                 <div class="list-group-item">
+                    <small>Offer completion date</small>
+                    <h4 tooltip-placement="right" tooltip="Your task will be completed on or before this date, at the latest.">{{ vm.offer.offerDate | date:medium }}</h4>
+                </div>    --> 
+                <div class="list-group-item text-center">
+                  <form ng-submit="vm.assignTaskToThisUser()">
+                    <input type="hidden" ng-model="offer.offerAccepted" ng-value="true">
+                    <button ng-hide="vm.offer.offerAccepted === true" class="submit-comment btn-block">Accept this offer</button>
+                  </form>
+                  <button ng-show="vm.offer.offerAccepted === true && !vm.offer.offerPaid" class="make-payment btn-block" ng-click="checkout();">Make payment for this task</button>
+
+                </div><!-- end of accept this offer list-group-item -->
+            </div>
+        </div>
+      </div>
+      </md-tab>
+      <md-tab label="Taskrunner Info">
+        <div class="container">
+        <div class="col-sm-10 col-sm-offset-1">
+                <div class="list-group">
+                    <div class="list-group-item headerItem text-center">
+                    <h3 class="offer-h3 text-center">{{ vm.offer.displayName }}'s details</h3>
+                </div>
+                <div class="list-group-item">
+                    <img class="offerImage center-block" src="{{ vm.offer.profileImageURL }}" onerror="if (this.src != 'default.png') this.src = '../modules/users/client/img/profile/default.png';" data-ui-sref="profile({ userId : vm.offer.user._id })">
+                    <div class="text-center">
+                        <rating readonly="isReadonly" ng-model="userAverage" max="5" state-on="'glyphicon-star'" state-off="'glyphicon-star-empty'"></rating>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <small>About {{ vm.offer.displayName }}</small>
+                    <h4>{{ vm.offer.about }}</h4>
+                </div>
+                <div class="list-group-item">
+                    <small>{{ vm.offer.displayName }}'s verifications</small>
+                    <div class="text-center">
+                        <li ng-show="vm.offer.additionalProvidersData.facebook || vm.offer.provider === "facebook"" class="facebook" tooltip-placement="left" tooltip="{{ vm.offer.displayName }} has verified with Facebook"></li>
+                    <li ng-if="vm.offer.additionalProvidersData.facebook || vm.offer.provider === "facebook"" class="facebook-no-verified"></li>
+                    <li ng-show="vm.offer.additionalProvidersData.linkedin" class="linkedin" tooltip-placement="left" tooltip="{{ vm.offer.displayName }} has verified with Linkedin"></li>
+                    <li ng-hide="vm.offer.additionalProvidersData.linkedin" class="linkedin-no-verified"></li>
+                    <li ng-show="vm.offer.additionalProvidersData.twitter" class="twitter" tooltip-placement="right" tooltip="{{ vm.offer.displayName }} has verified with Twitter"></li>
+                    <li ng-hide="vm.offer.additionalProvidersData.twitter" class="twitter-no-verified"></li>
+                    <li ng-show="vm.offer.additionalProvidersData.google" class="google" tooltip-placement="right" tooltip="{{ vm.offer.displayName }} has verified with Google"></li>
+                    <li ng-hide="vm.offer.additionalProvidersData.google" class="google-no-verified"></li>
+                    <li ng-show="vm.offer.additionalProvidersData.instagram" class="instagram" tooltip-placement="right" tooltip="{{ vm.offer.displayName }} has verified with Github"></li>
+                    <li ng-hide="vm.offer.additionalProvidersData.instagram" class="instagram-no-verified"></li>     
+                    </div> 
+                </div>
+                <div class="list-group-item text-center">
+                  <form ng-submit="vm.assignTaskToThisUser()">
+                    <input type="hidden" ng-model="offer.offerAccepted" ng-value="true">
+                    <button ng-hide="vm.offer.offerAccepted === true" class="submit-comment btn-block">Accept this offer</button>
+                  </form>
+                  <button ng-show="vm.offer.offerAccepted === true && !vm.offer.offerPaid" class="make-payment btn-block" ng-click="checkout();">Make payment for this task</button>
+                  <button ng-show="vm.offer.offerPaid" class="make-payment btn-block" ui-sref="">Check out your tasks status</button>
+
+                </div><!-- end of accept this offer list-group-item -->
+            </div>
+        </div>
+      </div>
+      </md-tab>
+    </md-tabs>
+<!--         <form ng-submit="vm.assignTaskToThisUser()">
+            <input type="hidden" ng-model="offer.offerAccepted" ng-value="true">
+            <button ng-hide="vm.offer.offerAccepted === true" class="submit-comment btn-block">Accept this offer</button>
+        </form> -->
+<!--            <button ng-show="vm.offer.offerAccepted === true" class="submit-comment btn-block" ui-sref="offers.payment({ offerId: vm.offer._id })">Make payment for this task</button>-->
+<!--         <button ng-show="vm.offer.offerAccepted === true && !vm.offer.offerPaid" class="submit-comment btn-block" ng-click="checkout();">Make payment for this task</button>
+        </div> -->
+  </div>    
+</section>

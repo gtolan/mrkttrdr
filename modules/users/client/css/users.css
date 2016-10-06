@@ -1,0 +1,294 @@
+@media (min-width: 992px) {
+  .nav-users {
+    position: fixed;
+  }
+}
+.social-account-container {
+  display: inline-block;
+  position: relative;
+}
+.btn-remove-account {
+  top: 10px;
+  right: 10px;
+  position: absolute;
+}
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+.user-profile-picture {
+  min-height: 150px;
+  max-height: 150px;
+}
+
+/*
+.skill-ul {
+    white-space: nowrap;
+    display: inline;
+}
+*/
+
+.edit {
+    margin-top: 5px;
+    padding: 5px 9px;
+}
+.verifySocial {
+    height: 99px;
+}
+
+.verifyInstagram {
+    height: 89px;
+}
+.skills-repeat {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    word-break: break-word;
+    border: 1px solid #9c9c9c;
+    margin: 0.2em;
+    padding: 0.5em;
+    border-radius: 23px;
+    background: #f1f1f6;
+}
+.skills-repeat {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    word-break: break-word;
+    border: 1px solid #9c9c9c;
+    margin: 0.1em;
+    padding: 0.3em;
+    border-radius: 3px;
+    background: #f1f1f6;
+    width: 100%;
+    text-align: left;
+}
+
+.skills-repeat-white {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    word-break: break-word;
+    border: 1px solid #9c9c9c;
+    margin: 0.2em;
+    padding: 0.5em;
+    border-radius: 23px;
+    background: white;
+    outline: none;
+    font-size: 12px !important;
+}
+
+.skills-repeat.active {
+    background-color: #0080f8;
+    border-color: #0085fe;
+    color: white;
+    outline: none;
+}
+
+.skills-repeat-white.active, .skills-repeat-white.focus {
+    background-color: #dcf3ff;
+    border-color: #0085fe;
+    outline: none;
+}
+
+li.skills-non-repeat.task-view{
+  background-color: #dcf3ff;
+  border: 0;
+}
+
+.skills-non-repeat {
+    font-size: 12px;
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    word-break: break-word;
+    border: 1px solid #9c9c9c;
+    padding: 0.5em;
+    margin: 0.1em;
+    border-radius: 23px;    
+    background: #f1f1f6;
+}
+.reviews-list {
+    list-style: none;
+}
+
+/*@media screen and (max-width: 500px) {
+    
+    .skills-repeat {
+        list-style: none;
+        position: relative;
+        display: block;
+    }
+    
+}*/
+
+.linkedin {
+    background-image: url("/modules/users/client/img/profile/1460676022_linkedin_circle_color.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;
+}
+
+.linkedin-no-verified {
+    background-image: url("/modules/users/client/img/profile/1460677220_linkedin_circle_gray.png");
+    background-repeat: no-repeat;
+    height: 48px;
+    width: 48px;
+    list-style: none;
+    display: inline-block;
+}
+.phoneNumber {
+    background-image: url("/modules/users/client/img/profile/1463469860_phone.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;
+}
+
+.phoneNumber-no-verified {
+    background-image: url("/modules/users/client/img/profile/1463469833_phone.png");
+    background-repeat: no-repeat;
+    height: 48px;
+    width: 48px;
+    list-style: none;
+    display: inline-block;
+}
+
+.facebook {
+    background-image: url("/modules/users/client/img/profile/1440811813_facebook_circle_color.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;    
+}
+
+.facebook-no-verified {
+    background-image: url("/modules/users/client/img/profile/1460677257_facebook_circle_gray.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;
+}
+
+.twitter {
+    background-image: url("/modules/users/client/img/profile/1440811719_twitter_circle_color.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;    
+}
+
+.twitter-no-verified {
+    background-image: url("/modules/users/client/img/profile/1460677290_twitter_circle_gray.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;    
+}
+
+.google {
+    background-image: url("/modules/users/client/img/profile/1460677049_google_circle_color.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;      
+}
+
+.google-no-verified {
+    background-image: url("/modules/users/client/img/profile/1460677347_google_circle_gray.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;
+}
+
+.instagram {
+    background-image: url("/modules/users/client/img/profile/1466211271_social-instagram-new-circle.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;
+}
+
+.instagram-no-verified {
+    background-image: url("/modules/users/client/img/profile/instaGrey.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;
+}
+
+.paymentDetails {
+    background-image: url("/modules/users/client/img/profile/verified_credit-card.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;
+}
+
+.paymentDetails-no-verified {
+    background-image: url("/modules/users/client/img/profile/non-verified_credit-card.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;
+}
+
+/*
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    padding: 0;
+    margin: 5px;
+    margin-bottom: 15px;
+}
+*/
+
+.list-group-item {
+    background-color: #f1f1f6;
+    color: #7f878a;
+}
+/*
+.list-group-item p {
+    font-size: 16px;
+}*/
+
+.bottomNav {
+  margin-bottom: 2em;
+  background: #f3f3f9;
+}
+
+.editProfileSpan {
+  color: #006DD3;
+}
+

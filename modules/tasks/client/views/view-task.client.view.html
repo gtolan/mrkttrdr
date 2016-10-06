@@ -1,0 +1,332 @@
+<section>
+  <div class="well taskView showmeMapView" ng-hide="showmeMapView">
+    <div class="col-sm-12 noPadding">
+        <div class="container-fluid noPadding postedByContainer">
+          <img alt="" data-ui-sref="profile({ userId : vm.task.user._id })" class="taskProfileImg" src="{{ vm.task.profileImageURL }}" onerror="if (this.src != 'default.png') this.src = '../modules/users/client/img/profile/default.png';">
+             
+      
+            <small>
+              <em class="text-muted signIn viewTaskProfileUserName" data-ui-sref="profile({ userId : vm.task.user._id })">
+      Publicado por
+      
+                
+      
+      
+                <span data-ng-if="vm.task.user"
+            data-ng-bind="vm.task.user.displayName"
+            data-ui-sref="profile({ userId : vm.task.user._id })"></span>
+                <span data-ng-if="!vm.task.user">Deleted User</span>
+              </em>
+                <span data-ng-bind="vm.created"></span>
+                <!--       | date:'mediumDate' -->
+            </small>
+            <i class="fa fa-info-circle" aria-hidden="true" tooltip=
+                "para ver el profile hace un clic" tooltip-placement=
+                "bottom"></i>
+          </div>
+        <h1 class="pull-right">
+        <button type="button" class="close TaskViewClose" aria-label="Close" ng-click="showmeMapView=true">&times;</button>
+      </h1>
+    </div>
+    <!-- close col-sm-12 -->
+    <div class="col-sm-12 noPadding">
+      <hr>
+        <h1 class="taskTitle" data-ng-bind="vm.task.title"></h1>
+        <hr>
+        </div>
+        <!-- close col-sm-9 noPadding -->
+      
+          <!-- close container-fluid -->
+          <hr>
+            <div class="col-sm-8 col-sm-12 noPadding">
+              <!--        <img src="{{vm.task.profileImageURL}}">-->
+              <div class="progress progressTaskView">
+                <div tooltip-placement="left" tooltip="This task is open to receive offers." class="progress-bar progress-bar-success" role="progressbar" style="width:33.3%" ng-show="vm.task.statusOpen"></div>
+                <div class="progress-bar progress-bar-warning" role="progressbar" tooltip-placement="right" tooltip="This task has been assigned to a user." style="width:33.3%" ng-show="vm.task.statusAssigned"></div>
+                <div class="progress-bar progress-bar-danger" role="progressbar" tooltip-placement="right" tooltip="This task has been assigned and completed already!" style="width:33.3%" ng-show="vm.task.statusClosed"></div>
+              </div>
+              <div class="col-xs-12 progressState">
+                <div class="col-xs-4 text-center">Abierta</div>
+                <div class="col-xs-4 text-center">Asignada</div>
+                <div class="col-xs-4 text-center">Completada</div>
+              </div>
+      
+              <h3 class="viewTaskHeader">Descripción de la tarea</h3>
+            <p class="viewTaskPara">    
+              <span ng-bind="vm.task.description"></span></p><br>
+                  <small>Categorías:</small>
+                <!-- cleaning -->
+                <li ng-show="vm.task.cleaning" class="skills-non-repeat task-view"><i class="fa fa-home" aria-hidden="true"></i> Cleaning task</li>
+                <!-- onlineIT -->
+                <li ng-show="vm.task.onlineIT" class="skills-non-repeat task-view"><i class="fa fa-laptop" aria-hidden="true"></i> Digital/IT task</li>
+                <!-- photoEvents -->
+                <li ng-show="vm.task.photoEvents" class="skills-non-repeat task-view"><i class="fa fa-camera-retro" aria-hidden="true"></i> Photography &amp; events task</li>
+                <!-- funQuirky -->
+                <li ng-show="vm.task.funQuirky" class="skills-non-repeat task-view"><i class="fa fa-hand-peace-o" aria-hidden="true"></i> Fun &amp; quirky task</li>
+                <!-- DIY -->
+                <li ng-show="vm.task.DIY" class="skills-non-repeat task-view"><i class="fa fa-wrench" aria-hidden="true"></i> Handyman &amp; trades task</li>
+                <!-- marketing -->
+                <li ng-show="vm.task.marketing" class="skills-non-repeat task-view"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Marketing &amp; design task</li>
+                <!-- office -->
+                <li ng-show="vm.task.office" class="skills-non-repeat task-view"><i class="fa fa-bar-chart" aria-hidden="true"></i> Business &amp; Admin</li>
+                <!-- moving -->
+                <li ng-show="vm.task.moving" class="skills-non-repeat task-view"><i class="fa fa-truck" aria-hidden="true"></i> Delivery &amp; moving task</li>
+                <!-- misc -->
+                <li ng-show="vm.task.misc" class="skills-non-repeat task-view"><i class="fa fa-cogs" aria-hidden="true"></i>  Misc. task</li>
+                <br>  
+                <hr>
+                <div class="LocationCont">
+                  <h3 class="viewTaskHeaderLoc">Ubicación de la tarea</h3>
+                <p class="viewTaskPara"> 
+                    <span ng-bind="vm.task.taskLocation"></span></p>
+                    <small>Completado por:</small>
+                <!-- inPersonTask -->
+                <li ng-show="vm.task.inPersonTask" class="skills-non-repeat task-view"><i class="fa fa-user" aria-hidden="true"></i> Tarea presencial</li>
+                <!-- onlineTask -->
+                <li ng-show="vm.task.onlineTask" class="skills-non-repeat task-view"><i class="fa fa-laptop" aria-hidden="true"></i> Tarea Online</li>
+                     <small>Vencimiento:</small>
+                  <li class="skills-non-repeat task-view"><i class="fa fa-clock-o" aria-hidden="true"></i>  {{ vm.task.dueDate | date:'fullDate' }}</li>
+                </div>
+                <hr>
+                
+
+              
+               
+                </div>
+                <div class="col-sm-4 col-sm-12">
+                  <div class="panel panel-default task-price">
+                    <div class="paidWithTask text-center">Pagado con Etece Pay 
+                      <span class="glyphicon glyphicon-question-sign" tooltip-placement="left" tooltip="When an offer is accepted the job posters funds for the task are securely held within a Etece trust account until the task is completed"></span>
+                    </div>
+                    <div class="panel-body noPadding">
+                      <h1 class="text-center PriceTask">
+                &euro;{{ vm.task.price }}
+            </h1>
+                      <!--             <h6 class="list-group-item text-center">Expenses: &euro;{{ vm.task.expenses }}</h6>   -->
+                      <!-- offer modal -->
+                      <div ng-controller="ModalOfferCtrl">
+                        <script id="myOfferModalContent.html" type="text/ng-template">
+                          <div class="modal-header">
+                          <div class="row">  <h3 class="modal-title text-center" style="text-align:center;color:#265a88;display:inline-block;padding-left:35%;">Hacer una oferta </h3>
+                         <button aria-hidden="true" class="close pull-right" ng-click="cancel()" type=
+    "button" style="font-size:33px;">&times;</button> 
+                              </div>
+                              
+                          </div>
+                          <div ng-include="'/modules/tasks/client/views/offer.client.view.html'" class="offerInclude"></div>
+                          <div class="modal-footer offerFooter">
+                            <button class="btn btn-default btn-sm" ng-click="cancel()">Cerrar</button>
+                          </div>
+                        </script>
+                        <!--=== offer modal ====-->
+                        <div ng-if="!vm.task.isCurrentUserOwner">
+                          <button class="makeAnOffer btn-block eteceButton hvr-underline-reveal" ng-click="open()" ng-hide="vm.task.statusAssigned">Hacer una oferta</button>
+                          <button class="taskAssigned btn-block" ng-disabled="disabled" ng-show="vm.task.statusAssigned" tooltip-placement="left" tooltip="You can no longer place an offer on this task">Esta tarea ha sido asignada</button>
+                        </div>
+                      </div>
+                      <!-- end of modalofferctrl -->
+                    </div>
+                  </div>
+                  <div ng-if="!vm.task.isCurrentUserOwner">
+                    <div class="row noPadding">
+<div class="col-xs-12 noPadding">
+                        
+                        
+                        
+                           <div class="btn-group pull-right"  dropdown>
+      <button id="split-button" type="button" class="btn btn-primary eteceButton hvr-underline-reveal butCollapseMap" tooltip-placement="left" tooltip="Click this button to toggle view of the task map." 
+                    ng-hide="vm.task.isCurrentUserOwner" 
+                    ng-click="vm.locationCollapsed = !vm.locationCollapsed">
+                    <i class="glyphicon glyphicon-map-marker"></i></button>
+                               
+                        
+                    
+                               
+                               
+      <button type="button"  tooltip-placement="top" tooltip="Click to view more options related to this task." class="btn btn-primary eteceButton hvr-underline-reveal " dropdown-toggle ng-disabled="disabled" dropdown-toggle>
+        Más opciones
+          <span class="caret"></span>
+      </button>
+       <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
+                        <li role="menuitem">
+                          <a ng-click="app.open()">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Crear una tarea similar
+                          </a>
+                        </li>
+                        <li role="menuitem">
+                          <!--                    <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i> Share on Twitter</a>-->
+                          <a href="https://twitter.com/share" class="twitter-share-button" data-text="check out this task on Etece.es" data-via="amyloulala" data-related="Task_Match" data-hashtags="Etece">
+                            <i class="fa fa-twitter-square" aria-hidden="true"></i> Compartir en Twitter
+                          </a>
+                          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                        </li>
+                        <li role="menuitem">
+                          <a ng-click="fbshareCurrentPage()" target="_blank" alt="Share on Facebook">
+                            <i class="fa fa-facebook-square" aria-hidden="true"></i> Compartir en Facebook
+                          </a>
+                        </li>
+                        <li class="divider"></li>
+                      </ul>
+    </div>
+                        </div>                    
+                        
+                     
+            
+                    </div>
+<!--                   <small class="pull-left" ng-show="vm.task.user.additionalProvidersData.facebook && friendsofFriends || vm.task.user.provider === "facebook" && friendsofFriends">
+                    <img style="height:20px;width:20px;" src="modules/users/client/img/profile/1468796969_all_friends.png"/>
+            You and {{ vm.task.user.displayName }} have {{ friendsofFriendsLength }} mutual friend(s)
+            
+                    <p ng-repeat="name in taskMutualFriendsArray">{{name}}</p>
+                  </small> -->
+                </div>
+                <br>
+                  <br>
+                    <br>
+                    </div>
+                    <div class="container-fluid EndTask">
+                      <!-- vm.task.isCurrentUserOwner ||  -->
+                             <!-- data-ng-show="vm.authentication.user.roles === "["user","admin"]"" -->
+                      <div class="pull-right EndTask">
+                        <a class="btn editProfileBtns"
+       data-ui-sref="tasks.edit({ taskId: vm.task._id })">
+                          <i class="glyphicon glyphicon-edit"></i>
+                        </a>
+                        <a class="btn editProfileBtns" data-ng-click="vm.remove()">
+                          <i class="glyphicon glyphicon-trash"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <!--    vm.task.offers.taskId === vm.task._id -->
+                    <!--     Offers on this task viewed by task owner-->
+                    <div class="col-sm-12 LocationCont noPadding" ng-show="vm.task.isCurrentUserOwner">
+                      <div class="col-sm-12 noPadding" ng-show="vm.task.statusAssigned">
+                        <span class="label label-default">View your accepted offer</span>
+                        <ul class="list-group" ng-repeat="offer in vm.task.offers | filter: { taskId : vm.task._id } : true | filter: { offerAccepted : true } : true">
+                          <li class="list-group-item offer">
+                            <img class="comments-user-img" alt="Taskrunner profile pic" src="{{ offer.profileImageURL }}" onerror="if (this.src != 'default.png') this.src = '../modules/users/client/img/profile/default.png';">
+                              <small data-ui-sref="profile({ userId : offer.user._id })">{{ offer.displayName }}</small>
+                              <div class="pull-right">
+                                <small>{{ offer.created | date:'medium' }}</small>
+                                <h4>&euro;{{ offer.offerPrice }}</h4>
+                              </div>
+                              <p>{{ offer.offerDesc }}</p>
+                              <button class="submit-comment btn-block" data-ui-sref="offers.accepted({ offerId: offer._id })">View offer</button>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-12 noPadding" ng-show="vm.task.isCurrentUserOwner" ng-hide="vm.task.statusAssigned">
+                          <!-- show if user is owner of task -->
+                          <h3 class="viewTaskDescH ">
+                            <span class="badge">{{filtered.length}}</span> Ofertas recibidas
+                          </h3>
+                          <div class="alert alert-warning">Ver ofertas a continuación y luego asignar la tarea de empezar. Una vez asignado, se puede acceder a mensajes privados e intercambiar datos personales.</div>
+                          <ul class="list-group" ng-repeat="offer in vm.task.offers | filter: { taskId : vm.task._id } : true | filter:query as filtered">
+                            <li class="list-group-item offer">
+                              <img data-ui-sref="profile({ userId : offer.user._id })" class="comments-user-img" alt="comments-user-profile-img" src="{{ offer.profileImageURL }}" onerror="if (this.src != 'default.png') this.src = '../modules/users/client/img/profile/default.png';">
+                                <small data-ui-sref="profile({ userId : offer.user._id })">{{ offer.displayName }}</small>
+                                <div class="pull-right">
+                                  <small>{{ offer.created | date:'medium' }}</small>
+                                  <h4>{{ offer.offerPrice }}</h4>
+                                </div>
+                                <p>{{ offer.offerDesc }}</p>
+                                <button class="submit-comment btn-block" data-ui-sref="offers.view({ offerId: offer._id })">View offer</button>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <!--     Offers on this task viewed by task owner-->
+                        <!-- hide the section if there are no offers, hide if person who posted task is the owner -->
+                        <!--    ng-hide="vm.task.offers.taskId !=== vm.task._id"-->
+                        <!--    ng-hide="vm.task.offers.length === 0"-->
+                        <div class="col-sm-12 noPadding">
+                          <div collapse="vm.locationCollapsed" ng-hide="vm.task.isCurrentUserOwner">
+                            <ng-map default-style="false" style="height:200px;" center="{{vm.task.taskLocation}}" zoom="13">
+                              <marker position="{{vm.task.taskLocation}}" icon="{url:'modules/core/client/img/EtecePin.png',
+                scaledSize:[25,43],
+                origin: [0,0],
+                anchor: [10,10]}" title="Task location!"></marker>
+                            </ng-map>
+                          </div>
+                        </div>
+                        <div class="col-sm-12 noPadding">
+                          <div ng-hide="vm.task.statusAssigned">
+                            <div class="col-sm-12 noPadding" ng-hide="vm.task.isCurrentUserOwner">
+                              <h3 class="viewTaskDescH">Ofertas recibidas</h3>
+                              <div class="alert alert-warning" role="alert" ng-show="offersMade.length === 0">
+          No hay ninguna oferta en esta tarea.
+                                <a ng-click="open()" class="alert-link">¿Por qué no hacer una?</a>
+                              </div>
+                              <ul class="list-group" ng-repeat="offer in vm.task.offers | filter: { taskId : vm.task._id } : true | filter:query as offersMade">
+                                <li class="list-group-item offer">
+                                  <img data-ui-sref="profile({ userId : offer.user._id })" class="comments-user-img" alt="comments-user-profile-img" src="{{ offer.profileImageURL }}" onerror="if (this.src != 'default.png') this.src = '../modules/users/client/img/profile/default.png';">
+                                    <small data-ui-sref="profile({ userId : offer.user._id })">{{ offer.displayName }}</small>
+                                    <rating tooltip-placement="left" tooltip="{{ offer.offerUserAverage.length }} reviews" readonly="isReadonly" ng-model="vm.userAverageRating" max="5" state-on="'glyphicon-star'" state-off="'glyphicon-star-empty'" class="pull-right"></rating>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div ng-show="vm.task.statusAssigned">
+                              <div class="col-sm-12" ng-hide="vm.task.isCurrentUserOwner">
+                                <div class="col-sm-12 noPadding">
+                                  <h3 class="viewTaskDescH" ng-show="results > 1">Assignees</h3>
+                                  <h3 class="viewTaskDescH" ng-hide="results > 1">Assignee</h3>
+                                  <ul class="list-group" ng-repeat="offer in vm.task.offers | filter: { offerAccepted : true } : true | filter:x as results">
+                                    <div class="col-sm-12 noPadding">
+                                      <li class="list-group-item offer">
+                                        <img data-ui-sref="profile({ userId : offer.user._id })" class="comments-user-img" alt="comments-user-profile-img" src="{{ offer.profileImageURL }}" onerror="if (this.src != 'default.png') this.src = '../modules/users/client/img/profile/default.png';">
+                                          <small data-ui-sref="profile({ userId : offer.user._id })">{{ offer.displayName }}</small>
+                                          <rating tooltip-placement="left" tooltip="{{ offer.offerUserAverage.length }} reviews" readonly="isReadonly" ng-model="vm.userAverageRating" max="5" state-on="'glyphicon-star'" state-off="'glyphicon-star-empty'" class="pull-right"></rating>
+                                        </li>
+                                      </div>
+                                      <!--         <li class="list-group-item animate-repeat" data-ng-repeat="accepted in offer | filter: { vm.offer.offerAccepted : true } : true"><img src="{{ comment.profileImageURL }}" alt="" class="recentActivityIMG pull-left"><p>{{ accepted.displayName }}</p></li> -->
+                                    </ul>
+                                  </div>
+                                  <!-- end of div class col-sm-12 line 226 -->
+                                </div>
+                                <!-- end of no padding div-col-sm-12 line 225 -->
+                              </div>
+                            </div>
+                            <!-- end of no padding div-col-sm-12 line 208 -->
+                            <!-- class="col-sm-12" -->
+                            <div>
+                              <h3 class="viewTaskDescH" ng-hide="vm.task.comments.length > 1 || vm.task.comments.length === 0">
+                                <span class="badge">{{ vm.task.comments.length }}</span> comentario sobre esta tarea
+                              </h3>
+                              <h3 class="viewTaskDescH" ng-show="vm.task.comments.length > 1 || vm.task.comments.length === 0">
+                                <span class="badge">{{ vm.task.comments.length }}</span> comentarios sobre esta tarea
+                              </h3>
+                              <ul class="list-group" ng-repeat="comment in vm.task.comments | filter: { visible: true } : true">
+                                <input hidden ng-value="{{comment._id}}" ng-model="vm.commentID"/>
+                                <li class="list-group-item taskCommentList">
+                                  <div class="pull-right" data-ng-show="vm.authentication.user.roles === "'user','admin'"">
+                                    <a class="btn" ng-click="vm.removeComment(item)">
+                                      <i class="glyphicon glyphicon-trash"></i>
+                                    </a>
+                                  </div>
+                                  <img class="comments-user-img" data-ui-sref="profile({ userId : comment.user })" alt="comments-user-profile-img" src="{{ comment.profileImageURL }}" onerror="if (this.src != 'default.png') this.src = '../modules/users/client/img/profile/default.png';">
+                                    <small data-ui-sref="profile({ userId : comment.user })">{{ comment.displayName }}</small>
+                                    <div class="pull-right">
+                                      <small>{{ comment.created | date:'medium' }}</small>
+                                    </div>
+                                    <hr>
+                                      <p>{{ comment.comment }}</p>
+                                    </li>
+                                  </ul>
+                                  <div ng-show="vm.task.statusAssigned" class="text-center">
+                                    <li class="skills-non-repeat task-view">Comentarios están cerrados</li>
+                                  </div>
+                                  <div ng-hide="vm.task.statusAssigned">
+                                    <form name="vm.form.taskForm" class="form-horizontal" ng-submit="vm.newCo()" novalidate>
+                                      <input type="text" ng-model="vm.task.newComment" name="comments" id="comments" class="form-control" placeholder="hacer una pregunta sobre esta tarea" maxlength="500">
+                                        <small>{{ 500 - vm.task.newComment.length}} chars pendientes</small>
+                                        <br>
+                                          <button type="submit" ng-disabled="vm.form.taskForm.$invalid" class="submit-comment myEteceReuseButton hvr-underline-reveal pull-right">Añadir un comentario</button>
+                                        </form>
+                                      </div>
+                                      <!-- end of div ng-hide="vm.task.statusAssigned" -->
+                                    </div>
+                                    <!-- end of div class="col-sm-12" -->
+                                  </div>
+                                </div>
+                              </section>

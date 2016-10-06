@@ -1,0 +1,159 @@
+<section class="footer-section" >
+  <!--===Start of Footer===-->
+
+  <div class="footer-links" ng-controller="HomeController">
+      
+ 
+  
+
+      
+<!--  mobile footer < 730px   -->
+    <div class="mobileFooter">
+<button type="button" class="btn btn-default btn-block btn-Footer" ng-click="footerCollapsedRowOne = !footerCollapsedRowOne">
+    <h3 >Empresa <i class="fa fa-plus pull-right" aria-hidden="true"></i></h3></button>
+  <div collapse="footerCollapsedRowOne">
+<div class="well well-lg footerWellButton" style="background:#3a3d3e;">
+    <ul class="footItemMobile">
+      <li style="list-style: none; display: inline text-align:left;">
+      </li>
+      <li class="" ui-sref="home2">Inicio</li>
+      <li class="linkNotBuilt" ui-sref="howsWorkingNO">Como se funciona</li>
+      <li class="linkNotBuilt" ui-sref="earnWithUsNO">Trabaja con nosotros</li>
+      <li class="linkNotBuilt" ui-sref="termsNO">Información legal</li>
+      <li class="linkNotBuilt" ui-sref="privacyNO">Política de privacidad</li>
+      <li class="linkNotBuilt" ui-sref="marketplaceNO">Reglas del mercado</li>
+    </ul></div>
+  </div>
+<button type="button" class="btn btn-default btn-block btn-Footer" ng-click="footerCollapsedRowTwo = !footerCollapsedRowTwo"><h3 class="">Miembros <i class="fa fa-plus pull-right" aria-hidden="true"></i></h3></button>
+  <div collapse="footerCollapsedRowTwo">
+    <div class="well well-lg footerWellButton" style="background:#3a3d3e;">
+    <ul class="text-center">
+      <li class="" style="list-style: none; display: inline">
+      </li>
+      <li class="" ui-sref="tasks.create">Encargar Tarea</li>
+      <li  class="" ui-sref="tasks.list">Buscar Tareas</li>
+      <li class="" ui-sref="contact">Contáctanos</li>
+      <li class="linkNotBuilt" ui-sref="articles.listNO">Blog</li>
+    </ul></div>
+  </div>
+<button type="button" class="btn btn-default btn-block btn-Footer" ng-click="footerCollapsedRowThree = !footerCollapsedRowThree"><h3 class="">Aprende <i class="fa fa-plus pull-right" aria-hidden="true"></i></h3></button>
+  <div collapse="footerCollapsedRowThree">
+    <div class="well well-lg footerWellButton" style="background:#3a3d3e;">
+    <ul >
+      <li class="" style="list-style: none; display: inline">
+      </li>
+          </li>
+      <li class="linkNotBuilt" ui-sref="newUserNO">Nuevo usuario FAQ</li>
+      <li class="linkNotBuilt" ui-sref="priceGuideNO">Guía de precios</li>
+      <li class="linkNotBuilt" ui-sref="faqsNO">FAQs</li>
+      <li class="linkNotBuilt" ui-sref="postNO">¿Cómo publicar una tarea?</li>
+      <li class="linkNotBuilt" ui-sref="earnWithUsNO">Invita y gana</li>
+      <li class="linkNotBuilt">Prensa</li>
+    </ul></div>
+  </div>
+  
+      <button type="button" class="btn btn-default btn-block btn-Footer" ng-click="footerCollapsedRowFour = !footerCollapsedRowFour"><h3 class="">Categorías <i class="fa fa-plus pull-right" aria-hidden="true"></i></h3></button>
+  <div collapse="footerCollapsedRowFour">
+    <div class="well well-lg footerWellButton" style="background:#3a3d3e;">
+    <ul>
+      <li class="" style="list-style: none; display: inline">
+      </li>
+         </li>
+      <li class="" ui-sref="tasks.list({ myFilter : { cleaning: true } })">Empleadas del Hogar</li>
+      <li class="" ui-sref="tasks.list({ myFilter : { moving: true } })">Mundanzas &amp; Portes</li>
+      <li class="" ui-sref="tasks.list({ myFilter : { DIY: true } })">Reparaciones del Hogar</li>
+      <li class="" ui-sref="tasks.list({ myFilter : { marketing: true } })">Ikea</li>
+      <li class="" ui-sref="tasks.list({ myFilter : { photoEvents: true } })">Eventos</li>
+      <li class="" ui-sref="tasks.list({ myFilter : { onlineIT: true } })">Ayuda en Oficina</li>
+      <li class="" ui-sref="tasks.list({ myFilter : { office: true } })">Expertos</li>
+<!--      <li class="" ui-sref="tasks.list({ myFilter : { funQuirky: true } })">Quirky</li>-->
+      <li class=""ui-sref="tasks.list({ myFilter : { misc: true } })">Otros &amp; favoritos</li>
+    </ul></div>
+  </div>
+        
+      </div>        
+        
+ <div class="desktopFooter">     
+    <ul>
+      <li style="list-style: none; display: inline">
+        <h3 class="footer-headers">Empresa</h3>
+      </li>
+      <li class="workingLink" ui-sref="home2">Inicio</li>
+      <li class="linkNotBuilt" ui-sref="howsWorkingNO">Como se funciona</li>
+      <li class="linkNotBuilt" ui-sref="earnWithUsNO">Trabaja con nosotros</li>
+      <li class="linkNotBuilt" ui-sref="termsNO">Información legal</li>
+      <li class="linkNotBuilt" ui-sref="privacyNO">Política de privacidad</li>
+      <li class="linkNotBuilt" ui-sref="marketplaceNO">Reglas del mercado</li>
+    </ul>
+    <ul>
+      <li class="footerItem" style="list-style: none; display: inline">
+        <h3 class="footer-headers">Miembros</h3>
+      </li>
+      <li class="workingLink" ui-sref="tasks.create">Encargar Tarea</li>
+      <li  class="workingLink" ui-sref="tasks.list">Buscar Tareas</li>
+      <li class="workingLink" ui-sref="contact">Contáctanos</li>
+      <li class="linkNotBuilt" ui-sref="articles.listNO">Blog</li>
+    </ul>
+    <ul class="footer2">
+      <li class="footerItem" style="list-style: none; display: inline">
+        <h3 class="footer-headers">Aprende</h3>
+      </li>
+      <li class="linkNotBuilt" ui-sref="newUserNO">Nuevo usuario FAQ</li>
+      <li class="linkNotBuilt" ui-sref="priceGuideNO">Guía de precios</li>
+      <li class="linkNotBuilt" ui-sref="faqsNO">FAQs</li>
+      <li class="linkNotBuilt" ui-sref="postNO">¿Cómo publicar una tarea?</li>
+      <li class="linkNotBuilt" ui-sref="earnWithUsNO">Invita y gana</li>
+      <li class="linkNotBuilt">Prensa</li>
+    </ul>
+    <ul class="footer2">
+      <li class="footerItem">
+        <h3 class="footer-headers">Categorías</h3>
+      </li>
+      <li class="footerItem" ui-sref="tasks.list({ myFilter : { cleaning: true } })">Empleadas del Hogar</li>
+      <li class="footerItem" ui-sref="tasks.list({ myFilter : { moving: true } })">Mundanzas &amp; Portes</li>
+      <li class="footerItem" ui-sref="tasks.list({ myFilter : { DIY: true } })">Reparaciones del Hogar</li>
+      <li class="footerItem" ui-sref="tasks.list({ myFilter : { marketing: true } })">Ikea</li>
+   
+      <li class="footerItem" ui-sref="tasks.list({ myFilter : { photoEvents: true } })">Eventos</li>
+      <li class="footerItem" ui-sref="tasks.list({ myFilter : { onlineIT: true } })">Ayuda en Oficina</li>
+      <li class="footerItem" ui-sref="tasks.list({ myFilter : { office: true } })">Expertos</li>
+<!--      <li class="footerItem" ui-sref="tasks.list({ myFilter : { funQuirky: true } })">Quirky</li>-->
+      <li class="footerItem" ui-sref="tasks.list({ myFilter : { misc: true } })">Otros &amp; favoritos</li>
+    </ul>
+      <hr class="footer-hr">
+</div>     
+     
+    <div class="container-fluid">
+        <div class="row SocialLinks">   
+            <p>Síguenos en</p>
+</div>
+          <div class="row">
+        <div class="col-xs-offset-4 col-xs-1 ">
+         <a class="SocialLinks fbookIcon" href="https://www.facebook.com/etece.es/">
+             <i class="fa fa-circle-thin fa-stack-2x" aria-hidden="true"></i>
+             <i class="fa fa-facebook fa-stack-1x icons"></i></a>
+        </div>
+        <div class="col-xs-1 text-center">     
+            <a class="SocialLinks youtIcon" href="http://www.youtube.com/etecees"> 
+             <i class="fa fa-circle-thin fa-stack-2x" aria-hidden="true"></i>
+            <i class="fa fa-youtube fa-stack-1x icons" aria-hidden="true"></i></a>
+        </div>
+        <div class="col-xs-1 text-center">
+         <a class="SocialLinks twitIcon" href="https://twitter.com/etece_es"> 
+             <i class="fa fa-circle-thin fa-stack-2x" aria-hidden="true"></i>
+             <i class="fa fa-twitter icons fa-stack-1x"></i></a>
+            </div>
+        <div class="col-xs-1 offset-xs-4">
+         <a class="SocialLinks linkedIcon" href="https://www.linkedin.com/company/etece-com">
+            <i class="fa fa-circle-thin fa-stack-2x" aria-hidden="true"></i>
+             <i class="fa fa-linkedin icons fa-stack-1x"></i></a>
+            </div> 
+
+
+        </div>
+      </div>
+
+  <div class="container-fluid footEnd">
+    <p class="text-center Ltdco">Etece.es Ltd 2016 &copy;</p>
+  </div>
+</section>

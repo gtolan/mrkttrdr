@@ -1,0 +1,168 @@
+
+<div ng-controller="ModalLoginCtrl">
+<script id="myModalContent.html" type="text/ng-template">
+        <div class="modal-header">
+            
+            <div class="col-xs-offset-2 col-xs-8 noPadding">
+           <h3 class="modal-title text-center">Acceso Usuario</h3></div>
+            <div class="col-xs-2 noPadding">
+            <button aria-hidden="true" class="close pull-right" ng-click="cancel()" type=
+    "button" style="font-size:33px;">&times;</button>
+            </div>
+        </div>                    
+  <div ng-controller="AuthenticationController">
+  <h4 class="col-md-12 text-center">Click to use social media</h4>
+
+    
+    <!-- socia media login -->
+    <div class="row">
+      <div class="col-md-12 text-center socialAcc">
+             <img class="socialMediaSignIn animated flipInY" ng-click="callOauthProvider('/api/auth/twitter')" ng-src="/modules/users/client/img/buttons/twitter.png">
+    <img class="socialMediaSignIn animated flipInY" ng-click="callOauthProvider('/api/auth/google')" ng-src="/modules/users/client/img/buttons/google.png">
+    <img class="socialMediaSignIn animated flipInY" ng-click="callOauthProvider('/api/auth/facebook')" ng-src="/modules/users/client/img/buttons/facebook.png">
+    <img class="socialMediaSignIn animated flipInY" ng-click="callOauthProvider('/api/auth/linkedin')" ng-src="/modules/users/client/img/buttons/linkedin.png">
+
+  </div>
+    </div>
+    <!-- socia media login END -->
+    
+  <!-- start of Login Collapse -->
+        <div class="col-xs-1"></div>
+  <div class="col-xs-10 text-center">
+    <form name="userForm" ng-submit="signin(userForm.$valid)" novalidate autocomplete="off">
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" class="form-control" ng-model="credentials.username" placeholder="Username" lowercase required>
+          <div ng-messages="userForm.username.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Username is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" class="form-control" ng-model="credentials.password" placeholder="Password" required>
+          <div ng-messages="userForm.password.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Password is required.</p>
+          </div>
+        </div>
+        <div class="text-center form-group">
+          <button type="submit" class="btn btn-primary" ng-click="cancel()">Sign in</button>
+          &nbsp; or&nbsp;
+          <a ui-sref="authentication.signup" ng-click="cancel()">Sign up</a>
+        </div>
+        <div class="text-center forgot-password">
+          <a ui-sref="password.forgot" ng-click="cancel()">Forgot your password?</a>
+        </div>
+        <alert type="danger" ng-show="error" class="text-center text-danger">
+          <span ng-bind="error"></span>
+        </alert>
+      </fieldset>
+    </form>
+  </div>
+  </div>
+ <!--end of Login -->
+        <div class="modal-footer">
+          
+<!--  <button class="btn btn-default btn-sm" ng-click="cancel()">Close</button>-->
+        </div>
+  </script>
+
+
+
+
+
+<div class="container" ng-controller="HeaderController">
+  <div class="navbar-header">
+    <button class="navbar-toggle" type="button" ng-click="toggleCollapsibleMenu()">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a ui-sref="home" class="navbar-brand">
+        <div class="col-xs-2 logoCol">
+        <img src="../modules/core/client/img/logoSpinner.png" class="logoSpinner" ui-sref="home">
+        <img src="../modules/core/client/img/logoEtLoginDash3.png" class="logoEtLoginDash" ui-sref="home"></div>
+      </a>
+      <button class="postBtnLoginDash hvr-sweep-to-right" ng-hide="!vm.authentication.user" ng-click="app.open()" ng-controller="ModalTaskCtrl as app">Encargar tarea</button> 
+      <button class="postBtnLoginDash hvr-sweep-to-right" ng-show="!vm.authentication.user" ng-click="open()">Encargar tarea</button> 
+  </div>
+  <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
+    <ul class="nav navbar-nav navLoggedIn"  ng-if="menu.shouldRender(authentication.user);">
+      <li ng-repeat="item in menu.items | orderBy: 'position'" ng-if="item.shouldRender(authentication.user);" ng-switch="item.type" ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }" class="{{item.class}}" dropdown="item.type === 'dropdown'">
+        <a ng-switch-when="dropdown" class="dropdown-toggle" dropdown-toggle role="button">{{::item.title}}&nbsp;<span class="caret"></span></a>
+        <ul ng-switch-when="dropdown" class="dropdown-menu">
+          <li ng-repeat="subitem in item.items | orderBy: 'position'" ng-if="subitem.shouldRender(authentication.user);" ui-sref-active="active">
+            <a ui-sref="{{subitem.state}}" ng-bind="subitem.title"></a>
+          </li>
+        </ul>
+        <a ng-switch-default ui-sref="{{item.state}}" ng-bind="item.title"></a>
+      </li>
+    </ul>
+      
+    <ul class="nav navbar-nav navbar-right" ng-hide="authentication.user">
+        <div class="contactNum">
+      <p class="contactNumber" ani-scroll="700"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> 902 09 18 36</p>
+      </div>
+      <li ui-sref-active="active">
+        <a ui-sref="authentication.signup">Registrame</a>
+      </li>
+    <li ui-sref-active="active" class="signIn" ng-controller="AuthenticationController"
+        ui-sref-active="active">
+          <a ng-click="open()">Acceso Usuario</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right" ng-show="authentication.user">
+      <li class="dropdown" dropdown>
+        <a class="dropdown-toggle user-header-dropdown-toggle" dropdown-toggle role="button">
+          <img ng-src="{{authentication.user.profileImageURL}}" onerror="if (this.src != 'default.png') this.src = '../modules/users/client/img/profile/default.png';" alt="{{authentication.user.displayName}}" class="header-profile-image" />
+          <span ng-bind="authentication.user.displayName"></span> <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li ui-sref-active="active">
+              <a ui-sref="settings.dashboard">Dashboard</a>
+            </li>
+            <li ui-sref-active="active">
+              <a ui-sref="settings.tasks">My tasks</a>
+            </li>
+            <li ui-sref-active="active">
+              <a ui-sref="settings.messages">Messages</a>
+            </li>
+            <li ui-sref-active="active">
+              <a ui-sref="settings.notifications">Notifications</a>
+            </li>
+            <li ui-sref-active="active">
+              <a ui-sref="settings.reviews">Reviews</a>
+            </li>  
+            <li ui-sref-active="active">
+              <a data-ui-sref=
+              "profile({ userId : authentication.user._id })">Public
+              Profile</a>
+            </li>
+            <li class="divider"></li>
+            <li ui-sref-active="active">
+              <a ui-sref="settings.profile">Edit Profile</a>
+            </li>
+            <li ui-sref-active="active">
+              <a ui-sref="settings.payments">Payment Methods</a>
+            </li>
+            <li ui-sref-active="active">
+              <a ui-sref="settings.picture">Change Profile Picture</a>
+            </li>
+            <li ng-show="authentication.user.provider === 'local'"
+            ui-sref-active="active">
+              <a ui-sref="settings.password">Change Password</a>
+            </li>
+            <li ui-sref-active="active">
+              <a ui-sref="settings.accounts">Verify Social Accounts</a>
+            </li>
+          <li class="divider"></li>
+          <li>
+            <a href="/api/auth/signout" target="_self">Signout</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+</div>

@@ -1,0 +1,371 @@
+<section ng-controller="HomeController">
+  <div class="container mainBackG noPadding">
+    <!-- blurry image -->
+    <img class="preRenderBKG"/>
+    <!-- real image -->
+    <loaded-img src="source"></loaded-img>
+    <!-- end of real image -->
+    <img style="display:none;" src="../modules/core/client/img/mobileBK.jpg" alt="prerenderBKG"/>
+    <div ng-controller="ModalTaskCtrl as app">
+      <h1 class="titleInfo animated fadeInDown">What do you<br>
+      need done?</h1>
+      <h4 class="titleInfo2 animated slideInLeft">Trusted workers are waiting to help you complete
+      your tasks</h4><button class="btn-default getStarted newbtn" ng-click=
+      "app.open()">Get Started</button>
+<!--       <div ng-if="app.summary">
+        <hr>
+      </div> -->
+    </div>
+  </div><!-- mainBackG -->
+  <!--===Browse tasks container===-->
+  <div class="container-fluid browseTasks">
+    <div class="row" style="background: #fafafa;">
+      <button class="btn arrowBut" ng-click="gotoTasks()"><span aria-hidden="true" class=
+      "glyphicon glyphicon-menu-down"></span></button>
+    </div>
+    <div class="row" style="background: #fafafa;">
+      <div class="col-xs-12">
+        <div id="tasksAnchor"></div>   
+        <h3 class="mainDivTitles">Browse Tasks</h3> 
+      </div>
+      <div class="container-fluid">
+        <div class="col-md-12" ng-controller="TasksListController">
+          <div class="col-xs-6 col-sm-3 noPadding">
+<!--              <a ui-sref="tasks.list({ myFilter = { onlineTask : 'true' } })">-->
+            <img class="catImg" src=
+            "../modules/core/client/img/category/Cleaning.png"> <a ui-sref="tasks.list({ myFilter : { cleaning: true } })" class=
+            "centerText">Home &amp;<br>
+            Cleaning</a>
+          </div>
+          <div class="col-xs-6 col-sm-3 noPadding">
+            <img class="catImg" src=
+            "../modules/core/client/img/category/MovingDelivery.png"> <a ui-sref="tasks.list({ myFilter : { moving: true } })" class=
+            "centerText">Delivery &amp;<br>
+            Removals</a>
+          </div>
+          <div class="col-xs-6 col-sm-3 noPadding">
+            <img class="catImg" src=
+            "../modules/core/client/img/category/handyman.png"> <a ui-sref="tasks.list({ myFilter : { DIY: true } })" class=
+            "centerText">Handyman<br>
+            &amp; Trades</a>
+          </div>
+          <div class="col-xs-6 col-sm-3 noPadding">
+            <img class="catImg" src=
+            "../modules/core/client/img/category/Marketing.png"> <a ui-sref="tasks.list({ myFilter : { marketing: true } })" class=
+            "centerText">Marketing<br>
+            &amp; Design</a>
+          </div>
+        </div>
+      </div>
+    </div><!--=== second row of pictures===-->
+    <div class="container-fluid">
+      <div class="col-md-12 noPadding">
+        <div class="col-xs-6 col-sm-3 noPadding">
+
+          <img class="catImg" src=
+          "../modules/core/client/img/category/EventsPhotography.png">
+<!-- ng-click="myFilter = { onlineTask: true }"  -->
+          <a ui-sref="tasks.list({ myFilter : { photoEvents: true } })" class="centerText">Events &amp;<br>
+          Photography</a>
+        </div>
+        <div class="col-xs-6 col-sm-3 noPadding">
+          <img class="catImg" src=
+          "../modules/core/client/img/category/computerIT.png"> <a ui-sref="tasks.list({ myFilter : { onlineIT: true } })" class=
+          "centerText">Computer<br>
+          &amp; IT</a>
+        </div>
+        <div class="col-xs-6 col-sm-3 noPadding">
+          <img class="catImg" src=
+          "../modules/core/client/img/category/Office.png"> <a ui-sref="tasks.list({ myFilter : { office: true } })" class=
+          "centerText">Business<br>
+          &amp; Admin</a>
+        </div>
+        <div class="col-xs-6 col-sm-3 noPadding">
+          <img class="catImg" src=
+          "../modules/core/client/img/category/FunQuirky.png"> <a ui-sref="tasks.list({ myFilter : { funQuirky: true } })" class=
+          "centerText">Fun<br>
+          &amp; Quirky</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <button class="btn btn-default findOut" ui-sref="findOutMore">Find out
+      more</button>
+    </div>
+  </div><!--=== End of second row of pictures===-->
+  <!--===Blue phone container===-->
+  <div class="row appInfo">
+    <div class="col-xs-7 infoExplained">
+      <div class="row infoRow">
+        <div class="col-xs-2 col-md-1">
+          <h1 class="infoTitles"><i class="fa fa-plus-circle"></i></h1>
+        </div>
+        <div class="col-xs-10 col-md-5">
+          <h1 class="infoTitles">Free to Post</h1>
+          <p>It’s completely free to post a task, you’ll start receiving offers
+          from Taskers. There are no hidden fees</p>
+        </div>
+        <div class="col-xs-2 col-md-1">
+          <h1 class="infoTitles"><i class="fa fa-credit-card"></i></h1>
+        </div>
+        <div class="col-xs-10 col-md-5">
+          <h1 class="infoTitles">Secure Payment</h1>
+          <p>Tasker Pay makes it seamless to pay for your task, funds are held
+          until you’re happy the task is complete</p>
+        </div>
+      </div>
+      <div class="row infoRow2">
+        <div class="col-xs-2 col-md-1">
+          <h1 class="infoTitles"><i class="fa fa-clipboard"></i></h1>
+        </div>
+        <div class="col-xs-10 col-md-5">
+          <h1 class="infoTitles">You're in Control</h1>
+          <p>Receive multiple offers, and then you decide which Tasker you’d
+          like to complete your task</p>
+        </div>
+        <div class="col-xs-2 col-md-1">
+          <h1 class="infoTitles"><img class="cert" src=
+          "../modules/core/client/img/category/certifc.png"></h1>
+        </div>
+        <div class="col-xs-10 col-md-5">
+          <h1 class="infoTitles">Trusted Workers</h1>
+          <p>Read verified reviews to make sure you hire the best person for
+          the job</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-3" id="phoneSec">
+<!--       <img class="iphoneApp" src=
+    "../modules/core/client/img/category/iPhoneTransBgE.png">
+    <img class="iphoneApp2" src=
+    "../modules/core/client/img/iphoneNEWInter-min.png"> -->
+    <img class="iphoneApp" src="../modules/core/client/img/iphoneNEW-min.png" alt="Taskmatch">
+  </div>
+  </div>
+  <div>
+    <!--===End Blue phone container===-->
+    <!--===White info container===-->
+    <div class="row WhatIsTask">
+      <div class="col-xs-12">
+        <h3 class="mainDivTitles">How does it work?</h3>
+      </div>
+      <div class="col-md-12">
+        <div class="col-sm-4 text-center">
+          <img class="iconWorks" src=
+          "../modules/core/client/img/category/icon22.png"><br>
+          <br>
+          <p class="iconInfo">1. Tell us what you need done</p>
+        </div>
+        <div class="col-sm-4 text-center">
+          <img class="iconWorks" src=
+          "../modules/core/client/img/category/icon11.png"><br>
+          <br>
+          <p class="iconInfo">2. Receive offers in minutes</p>
+        </div>
+        <div class="col-sm-4 text-center">
+          <img class="iconWorks" src=
+          "../modules/core/client/img/category/icon31.png"><br>
+          <br>
+          <p class="iconInfo">3. Choose the best person for the job</p>
+        </div><br>
+      </div>
+      <div class="container-fluid text-center">
+        <p class="moreInfo">TaskMatch is Irelands first ‘community marketplace’
+        for people and businesses to outsource tasks, find local services or
+        hire flexible staff in minutes</p>
+      </div><br>
+    </div><!--===End White info container===-->
+    <!--===Recently completed container===-->
+    <div class="row completedInfo">
+      <div class="container-fluid">
+        <h3 class="mainDivTitles2">Recently Completed Tasks</h3>
+        <div class="container-fluid completedTasks">
+          <div class="col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                Saorview installation needed
+              </div>
+              <div class="panel-body">
+                <div class="chip">
+                  <img alt="Person" class="prof" src=
+                  "../modules/core/client/img/category/cont4.png"> Ciaran P
+                </div>Need Saorview installed in two rooms, downstairs living room and upstairs bedroom
+              </div>
+            </div>
+            <p class="commenter">Ciaran P:</p>
+            <p class="comment">Hassle free and happy viewing. Thanks a million!</p>
+            <p class="commenter"><span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span></p>
+          </div>
+          <div class="col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                Reliable painter needed
+              </div>
+              <div class="panel-body">
+                <div class="chip">
+                  <img alt="Person" class="prof" src=
+                  "../modules/core/client/img/category/mary-img-min.png"> Mary R
+                </div>4 Bedroom, 2 Bathroom house in need of a good white paint job ASAP! Expenses included
+              </div>
+            </div>
+            <p class="commenter">Mary R:</p>
+            <p class="comment">Super quick response and the house has never looked so good! Thanks again</p>
+            <p class="commenter"><span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span></p>
+          </div>
+          <div class="col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                Small coffee shop needs Facebook help
+              </div>
+              <div class="panel-body">
+                <div class="chip">
+                  <img alt="Person" class="prof" src=
+                  "../modules/core/client/img/category/cont3.png"> Sarah K
+                </div>Looking for someone to write and publish Facebook posts & ads for a busy Cafe in South Dublin
+              </div>
+            </div>
+            <p class="commenter">Sarah K:</p>
+            <p class="comment">Perfect, never had so many likes. Really helped me manage my online advertising.</p>
+            <p class="commenter"><span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span></p>
+          </div>
+          <div class="col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                Moving apartment - van needed
+              </div>
+              <div class="panel-body">
+                <div class="chip">
+                  <img alt="Person" class="prof" src=
+                  "../modules/core/client/img/category/profilecon2.png"> Tony
+                  B
+                </div>I'm moving apartments at the end of the month and need someone to give me a hand. Van is essential.
+              </div>
+            </div>
+            <p class="commenter">Tony B:</p>
+            <p class="comment">John was great and even helped me set up my TV unit!</p>
+            <p class="commenter"><span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span></p>
+          </div>
+        </div>
+      </div>
+    </div><!--===End Completed Task info container===-->
+      
+    <div class="row signup">
+  <div class="col-md-4 panelSign2">
+    <div class="panel panel-default signUpPanel2">
+      <div class="panel-body signUpPanelBody">
+        <div ng-controller="AuthenticationController">
+          <h3 class="col-md-12 text-center signUpTitle">Sign up using your
+          email</h3>
+          <div class="col-xs-offset-1 col-md-10 text-center">
+            <form autocomplete="off" id="userForm" name=
+            "userForm" ng-submit="signup(userForm.$valid)" novalidate>
+              <fieldset>
+                <div class="form-group home" show-errors="">
+                  <label for="firstName">First Name</label> <input class=
+                  "form-control home" id="firstName" name="firstName" ng-model=
+                  "credentials.firstName" placeholder="" required=""
+                  type="text">
+                  <div ng-messages="userForm.firstName.$error" role="alert">
+                    <p class="help-block error-text" ng-message="required">
+                    First name is required.</p>
+                  </div>
+                </div>
+                <div class="form-group home" show-errors="">
+                  <label for="lastName">Last Name</label> <input class=
+                  "form-control home" id="lastName" name="lastName" ng-model=
+                  "credentials.lastName" placeholder="" required=""
+                  type="text">
+                  <div ng-messages="userForm.lastName.$error" role="alert">
+                    <p class="help-block error-text" ng-message="required">Last
+                    name is required.</p>
+                  </div>
+                </div>
+                <div class="form-group home" show-errors="">
+                  <label for="email">Email</label> <input class="form-control home"
+                  id="email" lowercase="" name="email" ng-model=
+                  "credentials.email" placeholder="" required="" type=
+                  "email">
+                  <div ng-messages="userForm.email.$error" role="alert">
+                    <p class="help-block error-text" ng-message="required">
+                    Email address is required.</p>
+                    <p class="help-block error-text" ng-message="email">Email
+                    address is invalid.</p>
+                  </div>
+                </div>
+                <div class="form-group home" show-errors="">
+                  <label for="username">Username</label> <input class=
+                  "form-control home" id="username" lowercase="" name="username"
+                  ng-model="credentials.username" placeholder=""
+                  required="" type="text">
+                  <div ng-messages="userForm.username.$error" role="alert">
+                    <p class="help-block error-text" ng-message="required">
+                    Username is required.</p>
+                  </div>
+                </div>
+                <div class="form-group home" show-errors="">
+                  <label for="password">Password</label> <input class=
+                  "form-control home" id="password" name="password" ng-minlength="6"
+                  ng-model="credentials.password" placeholder=""
+                  required="" type="password">
+                  <div ng-messages="userForm.password.$error" role="alert">
+                    <p class="help-block error-text" ng-message="required">
+                    Password is required.</p>
+                    <p class="help-block error-text" ng-message="minlength">
+                    Password is too short.</p>
+                  </div>
+                </div>
+                <div class="text-center form-group">
+                  <button class="btn btn-large btn-primary btn-block" type="submit">Sign
+                  up</button> &nbsp; or&nbsp; 
+                  <br><a class="show-signup" ui-sref=
+                  "authentication.signin">Sign in</a>
+                </div>
+                <div class="text-center text-danger" ng-show="error">
+                  <strong ng-bind="error"></strong>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class=" col-md-5 SocialButtons2"  ng-controller="AuthenticationController">
+    <h3 class="earnUpToh3">Earn up to &euro;1,000 a week</h3>
+    <button ng-click="callOauthProvider('/api/auth/facebook')" class="btn btn-primary FacebookBut SocBut"><i aria-hidden="true"
+    class="fa fa-facebook-official"></i> Sign up with Facebook</button>
+    <button ng-click="callOauthProvider('/api/auth/linkedin')" class="btn btn-danger LinkedInBut SocBut"><i aria-hidden="true"
+    class="fa fa-linkedin-square"></i> Sign up with LinkedIn</button>
+  </div>
+</div>  
+<!--===End Work as Task Runner info container===-->
+      <div id="slider">
+        <figure>
+            <img src="modules/core/client/img/carousel/courier3.png" alt="">
+            <img src="modules/core/client/img/carousel/market3.png" alt="">
+            <img src="modules/core/client/img/carousel/jobsearch3.png" alt="">
+        </figure>
+      </div>
+    <!--===Start of Footer===-->
+  </div>
+</section>

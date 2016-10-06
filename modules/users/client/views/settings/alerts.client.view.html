@@ -1,0 +1,36 @@
+<section class="row Dash">
+  <div class="Dash">
+    <h3 class="text-center EditPrfTitle">Alerts</h3>
+  </div>
+  <div class="col-md-12 text-center bottomNav" ng-show="results.length === 0">
+    <div class="list-group-item">
+      <p>Once you have assigned or been assigned a task on TaskMatch, you will
+      see a summary of your messages here.</p>
+    </div>
+  </div>
+  <div class="col-sm-12">
+    <form autocomplete="off" class="signin" id="userForm" name="userForm"
+    ng-submit="updateUserProfile(userForm.$valid)" novalidate="">
+      <fieldset>
+        {{user.alerts}} {{tags}}
+        <tags-input ng-model="user.alerts"></tags-input>
+        <button class="submit-comment" type="submit">Save Profile</button>
+      </fieldset>
+    </form><input class="form-control" ng-model="search.$" placeholder=
+    "Search for tasks..." type="text">
+    <ul class="list-group" ng-repeat="task in vm.tasks | filter:search | filterByTags:tags">
+      <li class="list-group-item offer" data-ui-sref="tasks.view({ taskId: task._id })">
+        <img class="taskProfileImg pull-left" src="{{task.profileImageURL}}"
+        style="margin-left: 1em;margin-top: 1.25em;margin-right: 1em;">
+        <blockquote style="margin-top:10px;margin-bottom:10px;">
+          <h4>{{task.title}}</h4>
+          <h4>{{task.description}}</h4>
+          <footer>
+            {{task.user.displayName}}<br>
+            {{task.created | date:'medium'}}
+          </footer>
+        </blockquote>
+      </li>
+    </ul>
+  </div>
+</section>

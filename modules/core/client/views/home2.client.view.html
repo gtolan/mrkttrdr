@@ -1,0 +1,789 @@
+<section ng-controller="HomeController">
+
+    
+    
+   
+    
+    
+<!--========MAIN-SECTION-1========-->
+    
+    <div class="row">
+            <div class="row noPadding overlayVideo">
+                <video src="../modules/core/client/img/video/eteceBG.mp4" autoplay="true" poster="../modules/core/client/img/posterEteceVideo.png" autostart="" autobuffer="" preload="auto" loop="true" class="videoMainBG" muted="true" ></video>
+               
+           <video src="../modules/core/client/img/video/eteceBGmobile.mp4" autoplay="true" poster="../modules/core/client/img/posterEteceVideo.png" autostart="" autobuffer="" preload="auto" loop="true" class="videoMainBGMobile" muted="true" ></video>     
+            </div>
+                    <div class="row">
+                        <h1 class="mainTitleHeaderTextH">Tiempo para los que no <br> tienen tiempo</h1>
+                        <p class="mainTitleSubHeaderTextPara">Más de 40.000 usuarios<br> satisfechos</p>
+                    </div>
+           
+                    <button class="btn getStartedMainSectionButton" ng-click="app.open()" ng-controller="ModalTaskCtrl as app" id="popupContainer">Empezar ahora</button>
+        </div>
+
+<!--========SECTION-END========-->
+
+
+
+    
+
+<script type="text/ng-template" id="tabDialog.tmpl.html">
+<md-dialog aria-label="Encargar tarea - Tu tarea">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Encargar tarea - Tu tarea</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content style="max-width:800px;max-height:810px; ">
+      <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="Detalles">
+                    <!--==      <fieldset> ==-->
+            <div class="form-group divTaskModalTitle">
+              <label class="control-label ModalTitleTask" for="taskTitle">Task
+              title 
+                <span aria-hidden="true" class=
+              "glyphicon glyphicon-question-sign" tooltip=
+              "The Task Title is a short heading for your task, Eg, Cleaner needed for my home."
+              tooltip-placement="right"></span>
+              </label>
+              <div ng-hide="vm.form.taskForm.taskTitle.$valid" style="color:lightgray;font-size:20px;display:inline;">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                  </div>
+                  <div ng-show="vm.form.taskForm.taskTitle.$valid" style="color:#16B550;font-size:20px;display:inline;">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                  </div>
+              <input name="taskTitle" id="taskTitle" class=
+              "form-control TaskTitleInput" id="TaskTitle" ng-model=
+              "vm.task.title" placeholder="ex. Hang a Flat Screen TV" type="text" ng-minlength="10" ng-maxlength="50" required>
+                <span ng-show="vm.form.taskForm.taskTitle.$touched && vm.form.taskForm.taskTitle.$invalid">
+                  <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Task title is required.
+                </span>
+                <div ng-messages="vm.form.taskForm.taskTitle.$error || vm.form.taskForm.taskTitle.$touched" role="alert">
+                  <p class="help-block error-text" ng-message="required"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Task
+                title is required.</p>
+                  <div ng-message="minlength">
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Your task title too short
+                  </div>
+                  <div ng-message="maxlength">
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Your task title is too long
+                  </div>
+                </div>
+                <small ng-if="vm.task.title.length > 10">{{ 50 - vm.task.title.length}} characters remaining</small>
+              </div>
+              <div class="form-group divTaskModalDesc">
+                <label class="control-label ModalTitleTask" for="taskDescription">Task Description
+              
+                  <span aria-hidden="true" class=
+              "glyphicon glyphicon-question-sign" tooltip=
+              "Please enter a Task Description, give as much detail as you can about your task. Eg, Clean my four bedroom apartment for two hours"
+              tooltip-placement="right"></span>
+                </label><br>
+                <!--              <div>-->
+                <textarea name="taskDescription" id="taskDescription" class="input-xlarge descriptionTaskModal" cols="45"
+                ng-model="vm.task.description" placeholder="Task description" rows="3" ng-minlength="25" required></textarea>
+                <div ng-hide="vm.form.taskForm.taskDescription.$valid" style="color:lightgray;font-size:20px;display:inline;">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                  </div>
+                  <div ng-show="vm.form.taskForm.taskDescription.$valid" style="color:#16B550;font-size:20px;display:inline;">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                  </div>
+                <div ng-messages="vm.form.taskForm.taskDescription.$error" role=
+                "alert">
+                  <span ng-show="vm.form.taskForm.taskDescription.$touched && vm.form.taskForm.taskTitle.$invalid">
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Task description is required.
+                  </span>
+                  <p class="help-block error-text" ng-message="required">Task
+                  description is required.</p>
+                  <div ng-message="minlength">
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Your task description is too short
+                  </div>
+                </div>
+                <small ng-if="vm.task.description.length > 23">{{ 50 - vm.task.description.length}} characters remaining</small>
+                <!--              </div>-->
+              </div>
+              <div class="form-group">
+                <div>
+                  <a ui-sref="faqs">
+                    <p class="help">Need more help 
+                      <span aria-hidden="true" class=
+                "glyphicon glyphicon-question-sign" tooltip=
+                "Click the link to visit our FAQs" tooltip-placement=
+                "right"></span>
+                    </p>
+                  </a>
+                </div>
+              </div>
+              <!--==      <fieldset> ==-->
+        </md-tab>
+        <md-tab label="Localidad">
+          <md-content class="md-padding">
+        <div layout-gt-sm="row">
+                <div class="col-xs-6 taskDialogRow">
+        <md-input-container class="md-block" flex-gt-xs="">
+            <label>Category</label>
+            <md-select ng-model="user.state">
+              <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                {{state.abbrev}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+              </div>
+           
+            <div class="col-xs-6 taskDialogRow">
+               <md-input-container class="md-block" flex-gt-xs="">
+            <label>Ciudad</label>
+            <md-select ng-model="user.state">
+              <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                {{state.abbrev}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+                </div>
+            </div>
+    <div layout-gt-sm="row ">
+    <div class="col-xs-5 taskDialogRow">
+            <md-input-container>
+            <label>Enter date</label>
+            <md-datepicker ng-model="user.submissionDate"></md-datepicker>
+          </md-input-container>
+               </div>
+        <div class="col-xs-4 taskDialogRow">
+         <md-input-container style="margin-right: 10px;">
+        <label>Workers</label>
+        <md-select ng-model="size">
+          <md-option ng-repeat="size in sizes" value="{{size}}">{{size}}</md-option>
+        </md-select>
+      </md-input-container>
+        </div>
+         <div class="col-xs-3 taskDialogRow">
+         <md-input-container style="margin-right: 10px;">
+        <label>In Person</label>
+        <md-select ng-model="size">
+          <md-option ng-repeat="size in sizes" value="{{size}}">{{size}}</md-option>
+        </md-select>
+      </md-input-container>
+        </div>
+       </div>
+          </md-content>
+        </md-tab>
+        <md-tab label="pago">
+          <md-content class="md-padding">
+           <div class="row">  
+               <div class="col-xs-12"><md-radio-group ng-model="data.group1">
+
+      <md-radio-button value="Presupuesto" class="md-primary">Presupuesto</md-radio-button>
+      <md-radio-button value="Precio"> Precio </md-radio-button>
+                   <div class="col-xs-12 taskDialogRow">
+                      <md-input-container class="md-icon-float md-icon-right md-block">
+      <label>Price Amount</label>
+      <input ng-model="user.donation" type="number" step="0.01">
+      <md-icon md-svg-src="img/icons/ic_euro_24px.svg"></md-icon>
+    </md-input-container>
+      </div>
+
+    </md-radio-group></div>
+                
+            
+        </md-tab>
+      </md-tabs>
+    </md-dialog-content>
+        
+                </div>
+        
+    <md-dialog-actions layout="row">
+     
+      <span flex></span>
+      <md-button ng-click="answer('not useful')" >
+        Not Useful
+      </md-button>
+      <md-button ng-click="answer('useful')" style="margin-right:20px;" >
+        Next
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+</script></div>
+
+<!--
+end of dialog material- task
+-->
+    
+    
+     <div class="row pressSliderSection">
+                <div class="row sliderProf">
+                  <carousel interval="myInterval" no-wrap="noWrapSlides">
+                    <slide ng-repeat="slide in slides" active="slide.active">
+                            <div class="image1Slider col-xs-3 ">    
+                                    <img class="sliderProfImgPress" ng-src="{{slide.image1}}" style="width:100%;" ui-sref="{{slide.url1}}">
+                            </div>
+                            <div class="image1Slider col-xs-3 ">
+                                    <img class="sliderProfImgPress" ng-src="{{slide.image2}}" style="width:100%;" ui-sref="{{slide.url2}}">
+                            </div>
+                            <div class="image1Slider col-xs-3 ">  
+                                    <img class="sliderProfImgPress" ng-src="{{slide.image3}}" style="width:100%;" ui-sref="{{slide.url3}}">
+                            </div>
+                            <div class="image1Slider col-xs-3 ">  
+                                    <img class="sliderProfImgPress" ng-src="{{slide.image4}}" style="width:100%;" ui-sref="{{slide.url3}}">
+                            </div>
+                        </slide>
+                  </carousel>
+                </div>
+         <hr class="hrSlider">
+            </div>
+    
+    
+    
+<!--========SECTION-END========-->
+    
+    
+
+ <!--===Browse tasks container===-->
+  <div class="row categoriesRow">
+            <div class="row">
+              <button class="btn arrowBut"><a href="browseTasks"><span aria-hidden="true" class="glyphicon glyphicon-menu-down"></span></a>                 </button>
+            </div>
+            <div class="row noPadding">
+                      <div class="row">
+                        <h3 class="mainSectionTitlesReuse">Buscar Tareas</h3>
+                      </div>
+                        <div class="row browseTasks">
+                        <div class=" col-xs-3 catwindow">
+                                  <div class="frame"><!-- frame-->
+                                     <a class="categoryCenterText">
+                                        <span class="caption">
+                                         <h3>Empleadas <br>del Hogar</h3>
+                                           <p class="categoryCenterTextHidden">
+                                            <ul>
+                                               <li class="categListSubs">Limpiadora</li>
+                                               <li class="categListSubs">Planchadora</li>
+                                               <li class="categListSubs">Cocinera</li>
+                                               <li class="categListSubs">Costurera</li>
+                                               <li class="categoryListButton">mas informacion</li>
+                                               </ul>
+                                           </p>
+                                         </span>
+                                    <img class="catImg" src="../modules/core/client/img/category/HogarEtece.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class=" col-xs-3 catwindow">
+                                  <div class="frame"><!-- frame-->
+                                     <a class="categoryCenterText">
+                                        <span class="caption">
+                                         <h3>Ikea <br>
+                                    </h3>
+                                           <p class="categoryCenterTextHidden">
+                                            <ul>
+                                               <li class="categListSubs">Montaje de meubles</li>
+                                               <li class="categListSubs">Comprar de meubles</li>
+                                               <li class="categListSubs">Fontenero</li>
+                                               <li class="categListSubs">Electrista</li>
+                                               <li class="categoryListButton">mas informacion</li>
+                                               </ul>
+                                           </p>
+                                         </span>
+                                    <img class="catImg" src="../modules/core/client/img/category/ikeaEtece2.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class=" col-xs-3 catwindow">
+                                  <div class="frame"><!-- frame-->
+                                     <a class="categoryCenterText">
+                                        <span class="caption">
+                                         <h3>Expertos</h3>
+                                           <p class="categoryCenterTextHidden">
+                                            <ul>
+                                               <li class="categListSubs">Traductor</li>
+                                               <li class="categListSubs">Certificado de energetico</li>
+                                                <li class="categListSubs">Informatico</li>
+                                               <li class="categoryListButton">mas informacion</li>
+                                               </ul>
+                                           </p>
+                                         </span>
+                                    <img class="catImg" src="../modules/core/client/img/category/profesEtece.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class=" col-xs-3 catwindow">
+                                  <div class="frame"><!-- frame-->
+                                     <a class="categoryCenterText">
+                                        <span class="caption">
+                                         <h3>Reparaciones<br>
+                                    del Hogar</h3>
+                                           <p class="categoryCenterTextHidden">
+                                            <ul>
+                                               <li class="categListSubs">Limpiador</li>
+                                               <li class="categListSubs">Manitas</li>
+                                               <li class="categListSubs">Fontenero</li>
+                                               <li class="categListSubs">Electrista</li>
+                                               <li class="categoryListButton">mas informacion</li>
+                                               </ul>
+                                           </p>
+                                         </span>
+                                   <img class="catImg" src="../modules/core/client/img/category/diyEtece.png">
+                                </a>
+                            </div>
+                        </div>                              
+                   </div>
+
+                        <!--=== second row of pictures===-->
+
+                    <div class="row browseTasks">
+                        <div class="col-xs-3 catwindow">
+                                  <div class="frame"><!-- frame-->
+                                     <a class="categoryCenterText">
+                                        <span class="caption">
+                                         <h3>Ayuda en <br>Oficina</h3>
+                                           <p class="categoryCenterTextHidden">
+                                            <ul>
+                                               <li class="categListSubs">Limpieza de oficina</li>
+                                               <li class="categListSubs">Secretaria</li>
+                                               <li class="categListSubs">Contable</li>
+                                               <li class="categListSubs">Introducir datos</li>
+                                               <li class="categoryListButton">mas informacion</li>
+                                               </ul>
+                                           </p>
+                                         </span>
+                                   <img class="catImg" src="../modules/core/client/img/category/officeEtece3.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-3 catwindow">
+                                  <div class="frame"><!-- frame-->
+                                     <a class="categoryCenterText">
+                                        <span class="caption">
+                                         <h3>Eventos<br> </h3>
+                                           <p class="categoryCenterTextHidden">
+                                            <ul>
+                                               <li class="categListSubs">Hacer colas y/o comprar entradas</li>
+                                               <li class="categListSubs">Azafatas</li>
+                                               <li class="categListSubs">Catering</li>
+                                               <li class="categListSubs">Organizador de viajes y fiestas</li>
+                                               <li class="categoryListButton">mas informacion</li>
+                                               </ul>
+                                           </p>
+                                         </span>
+                                   <img class="catImg" src="../modules/core/client/img/category/Events2Etece.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-3 catwindow">
+                                  <div class="frame"><!-- frame-->
+                                     <a class="categoryCenterText">
+                                        <span class="caption">
+                                         <h3>Mundanzas<br>&amp; Portes</h3>
+                                           <p class="categoryCenterTextHidden">
+                                            <ul>
+                                               <li class="categListSubs">Mundanzas</li>
+                                               <li class="categListSubs">Portes</li>
+                                               <li class="categListSubs">Recogida de meubles</li>
+                                               <li class="categoryListButton">mas informacion</li>
+                                               </ul>
+                                           </p>
+                                         </span>
+                                   <img class="catImg" src="../modules/core/client/img/category/Office.jpg">
+                                </a>
+                            </div>
+                        </div> 
+                        <div class="col-xs-3 catwindow">
+                                  <div class="frame"><!-- frame-->
+                                     <a class="categoryCenterText">
+                                        <span class="caption">
+                                         <h3>Otros &amp;<br> favoritos</h3>
+                                           <p class="categoryCenterTextHidden">
+                                            <ul>
+                                               <li class="categListSubs">Limpiador</li>
+                                               <li class="categListSubs">Manitas</li>
+                                               <li class="categListSubs">Fontenero</li>
+                                               <li class="categListSubs">Electrista</li>
+                                               <li class="categoryListButton">mas informacion</li>
+                                               </ul>
+                                           </p>
+                                         </span>
+                                    <img class="catImg" src="../modules/core/client/img/lego.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                 <div class="row">
+                <md-button class="md-raised findOut">Más información</md-button>
+                </div>
+     
+        </div>
+    
+<!--========SECTION-END========-->  
+    
+    
+<div class="row experts">
+   
+    <div class="col-md-6">
+     <h3 class="expertHeader" ani-scroll="1050">Profesionales en reparaciones del hogar, limpieazas y mudanzas </h3>
+    <img class="professionalSolution" src="../modules/core/client/img/profSolClean.png">
+    </div>
+
+</div>
+    
+<!--========SECTION-END========-->      
+    
+    
+ <div class="row WhatIsTask">
+      <div class="row">
+        <h3 class="mainSectionTitlesReuse">¿Cómo funciona?</h3>
+      </div>
+          <div class=“row”>
+                <div class="col-sm-4 text-center">
+                  <img class="iconWorks" src=
+                  "../modules/core/client/img/icon1a.png"><br>
+                  <br>
+                  <p class="iconInfo">1. Dinos qué necesitas, cuándo y dónde. Decide si quieres fijar tú el precio o recibir presupuestos. </p>
+                </div>
+                <div class="col-sm-4 text-center">
+                  <img class="iconWorks" src=
+                  "../modules/core/client/img/icon2b.png"><br>
+                  <br>
+                  <p class="iconInfo">2. Tienes a tu disposición miles de opiniones de otros clientes para ayudarte a elegir solucionador.</p>
+                </div>
+                <div class="col-sm-4 text-center">
+                  <img class="iconWorks" src=
+                  "../modules/core/client/img/icon3c.png"><br>
+                  <br>
+                  <p class="iconInfo">3. Sólo te cobraremos una vez que hayas confirmado en la página web que has quedado satisfecho con el solucionador</p>
+                </div><br>
+          </div>
+      <div class="row text-center">
+        <p class="moreInfo">Etece.es es una plataforma que pone en contacto personas/empresas que no tienen tiempo/conocimientos para realizar algunas tareas, y profesionales de confianza que si lo tienen y quieren cambiarlo por dinero.</p>
+      </div><br>
+            <div class="row">
+                <md-button class="md-raised findOut">Más información</md-button>
+                </div>
+</div>
+    
+    
+<!--========SECTION-END========-->     
+
+<div class="row">
+    <div class="row appInfo">
+           <div class="col-xs-3" id="phoneSec"><img class="iphoneApp" src="../modules/core/client/img/iPhoneEtece2.png">
+            </div>
+                       <div class="col-xs-9 infoExplained">
+                      <div class="row infoRow">
+                            <div class="col-xs-12">
+                          <div class="col-xs-6 infoSect">
+                        <h2 class="clockAnim" ani-scroll="1850"><i class="fa fa-clock-o" aria-hidden="true"></i></h2 > <p> Ahorra tiempo y dinero (hasta el 35%) </p>     
+                        </div>
+                        <div class="col-xs-6 infoSect">
+                        <h2 class="euroAnim" ani-scroll="1850"><i class="fa fa-eur" aria-hidden="true"></i></h2> <p>Decide cuánto pagar o pide presupuestos</p>     
+                        </div>
+                          </div>
+                               <div class="col-xs-12">
+                          <div class="col-xs-6 infoSect">
+                        <h2 class="checkAnim" ani-scroll="1850"><i class="fa fa-check-square-o" aria-hidden="true"></i></h2> <p> Profesionales identificados y valorados por clientes </p>     
+                        </div>
+                        <div class="col-xs-6 infoSect">
+                        <h2 class="thumbAnim" ani-scroll="1850"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></h2> <p>Hasta que no confirmes que quedas contento, no pagas</p>     
+                        </div>
+                          </div>
+
+                      </div>
+                  </div>
+     </div>
+
+<!--========SECTION-END========-->  
+
+    <div class="row counterSection">
+    <div class="col-xs-12">  
+<!--
+     <ul>
+<li>
+        <legend>Auto-start</legend>
+        <p  counter
+            value="autoStartVar"
+            to="100"
+           duration="5000"
+            effect="'easeOutQuint'">
+          {{ autoStartVar | number:0 }}
+        </p>
+      </li>
+      
+      <li ng-init="manualStartTarget=0">
+        <legend>
+          <a  href="#"
+              class="pull-right small"
+              ng-click="manualStartTarget=100">
+            Start now!
+          </a>
+          Manual start
+        </legend>
+        <p  counter
+            value="manualStartVar"
+            to="manualStartTarget">
+          {{ manualStartVar | number:0 }}
+        </p>
+      </li>
+</ul>   
+
+-->
+        
+        <div class="col-sm-4 text-center">
+<div class="progressSprite">          
+<span class="circular-progress" title="0">
+</span>
+<span class="circular-progress" title="0">
+</span>
+<span class="circular-progress" title="0">
+</span>
+<span class="circular-progress" title="0">
+</span>
+<span class="circular-progress hide" title="0">
+</span>
+    </div>
+        <div class="titleCounter text-center">Mas que</div>
+          
+        <div class="number counterAnimate" ani-scroll="2150">
+            <i class="fa fa-user-plus" aria-hidden="true"></i><br>
+            <span class="count" counter value="autoStartVar" to="40000"  duration="9000" effect="'easeOutQuint'" > {{ autoStartVar | number:0 }}</span> 
+             </div>
+          <div class="counterFooter1 text-center">Usuarios satisfechos</div> 
+     
+        </div>
+        
+        
+      <div class="col-sm-4 text-center">
+          <div class="progressSprite">          
+<span class="circular-progress" title="0">
+</span>
+<span class="circular-progress" title="0">
+</span>
+<span class="circular-progress" title="0">
+</span>
+<span class="circular-progress" title="0">
+</span>
+<span class="circular-progress hide" title="0">
+</span>
+    </div>
+          <div class="titleCounter text-center">Mas que</div>
+        
+           <div class="number counterAnimate" ani-scroll="2150">
+           <i class="fa fa-bar-chart" aria-hidden="true"></i><br>
+            <span class="count" counter value="autoStartVar" to="2405007"  duration="12000" effect="'easeOutQuint'" > &euro; {{ autoStartVar | number:0 }}</span> 
+             </div>
+          <div class="counterFooter3 text-center">Valor de puestos de trabajo creados</div>
+      </div>
+        
+        
+        
+      <div class="col-sm-4 text-center">
+          <div class="progressSprite">          
+<span class="circular-progress" title="0">
+</span>
+<span class="circular-progress" title="0">
+</span>
+<span class="circular-progress" title="0">
+</span>
+<span class="circular-progress" title="0">
+</span>
+<span class="circular-progress hide" title="0">
+</span>
+    </div>
+         <div class="titleCounter text-center">Mas que</div>
+         <div class="number counterAnimate" ani-scroll="2150">
+           <i class="fa fa-pie-chart" aria-hidden="true"></i><br>
+            <span class="count text-center" counter value="autoStartVar" to="390782"  duration="14000" effect="'easeOutQuint'" > &euro; {{ autoStartVar | number:0 }}</span> 
+             </div>
+          <div class="counterFooter text-center">Valor de trabajo disponibles por mes</div>
+      </div>
+    </div>
+    </div>
+</div>
+ 
+<!--========SECTION-END========--> 
+
+
+
+   <!--===Recently completed container===-->
+    <div class="row completedInfo">
+      <div class="container-fluid">
+        <h3 class="mainSectionTitlesReuse2">Opinan de nosotros nuestros clientes</h3>
+        <div class="container-fluid completedTasks">
+          <div class="col-md-4">
+               <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch="">
+                <md-card-title>
+                  <md-card-title-text>
+                    <p class="comment">"Mi vecina y yo teníamos que cambiar el tendedero. ¡menos mal que llamamos a etece!"</p>
+                      <span class="md-subhead"><p class="commenterName">-Enrique "Quique" San Francisco </p></span>
+                  </md-card-title-text>
+                  <md-card-title-media>
+                    <div class="md-media-sm card-media">
+                     <img src="../modules/core/client/img/carousel/enrique.png">
+                    </div>
+                  </md-card-title-media>
+                </md-card-title>
+              </md-card>
+         <div class="reviewCom"> 
+             <p class="commenter"><span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span></p>
+          </div>
+        </div>
+                   <div class="col-md-4">
+               <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch="">
+                <md-card-title>
+                  <md-card-title-text>
+                    <p class="comment">"Me colgaron en media hora todos los cuadros que tenía por el suelo desde hacía meses. ¡Qué gozada!"</p>
+                      <span class="md-subhead"><p class="commenterName">-Paula Satrústegui </p></span>
+                  </md-card-title-text>
+                  <md-card-title-media>
+                    <div class="md-media-sm card-media">
+                     <img src="../modules/core/client/img/carousel/paula.png">
+                    </div>
+                  </md-card-title-media>
+                </md-card-title>
+              </md-card>
+         <div class="reviewCom"> 
+             <p class="commenter"><span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span></p>
+          </div>
+        </div>
+          <div class="col-md-4">
+               <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch="">
+                <md-card-title>
+                  <md-card-title-text>
+                    <p class="comment">"El servicio de etece fue impecable, un 10. Mi oficina quedó mejor de lo que esperaba."</p>
+                      <span class="md-subhead"><p class="commenterName">-Inés Llerena </p></span>
+                  </md-card-title-text>
+                  <md-card-title-media>
+                    <div class="md-media-sm card-media">
+                     <img src="../modules/core/client/img/carousel/ines.png">
+                    </div>
+                  </md-card-title-media>
+                </md-card-title>
+              </md-card>
+         <div class="reviewCom"> 
+             <p class="commenter"><span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span> <span aria-hidden="true" class=
+            "glyphicon glyphicon-star"></span></p>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div><!--===End Completed Task info container===-->
+
+
+
+<div class="row" ng-controller="AuthenticationController" >
+    
+
+    <div class="row noPadding signUpRepeairCo">
+            <div class="col-md-3 socialSignButtonsRepair ">
+                <div class="col-xs-12">    
+                <md-button class="md-raised md-primary socialSingBut"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</md-button>
+                 <md-button class="md-raised md-warn socialSingBut"><i class="fa fa-google-plus" aria-hidden="true"></i> Google</md-button>
+                </div>    
+                <div class="col-xs-12">    
+                <md-button class="md-raised md-primary socialSingBut"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</md-button>
+                <md-button class="md-raised md-warn socialSingBut"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</md-button>
+                    </div> 
+            </div>
+        
+        
+        
+    <div class="col-md-9 panelSubmitAppl">
+        <h4 class="text-center registerTitle">Registrar con Email</h4>
+        <form name="userForm" ng-submit="signup(userForm.$valid)" class="" novalidate autocomplete="off">
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="formRegLabelHome" for="firstName formRegHome">First Name</label>
+          <input type="text" id="firstName" name="firstName" class="form-control formRegInputHome" ng-model="credentials.firstName" placeholder="First Name" required>
+          <div ng-messages="userForm.firstName.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">First name is required.</p>
+          </div>
+        </div>
+        <div class="form-group formRegHome" show-errors>
+          <label class="formRegLabelHome" for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" class="form-control formRegInputHome" ng-model="credentials.lastName" placeholder="Last Name" required>
+          <div ng-messages="userForm.lastName.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Last name is required.</p>
+          </div>
+        </div>
+        <div class="form-group formRegHome" show-errors>
+          <label class="formRegLabelHome" for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control formRegInputHome" ng-model="credentials.email" placeholder="Email" lowercase required>
+          <div ng-messages="userForm.email.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Email address is required.</p>
+            <p class="help-block error-text" ng-message="email">Email address is invalid.</p>
+          </div>
+        </div>
+        <div class="form-group formRegHome" show-errors>
+          <label class="formRegLabelHome" for="username">Username</label>
+          <input type="text" id="username" name="username" class="form-control formRegInputHome" ng-model="credentials.username" placeholder="Username" lowercase required>
+          <div ng-messages="userForm.username.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Username is required.</p>
+          </div>
+        </div>
+        <div class="form-group formRegHome" show-errors>
+          <label class="formRegLabelHome" for="password">Password</label>
+            <input type="password" id="password" name="password" class="form-control formRegInputHome" ng-model="credentials.password" placeholder="Password" popover="{{popoverMsg}}" popover-trigger="focus" password-validator required>
+          <div ng-messages="userForm.password.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Password is required.</p>
+            <div ng-repeat="passwordError in passwordErrors">
+              <p class="help-block error-text" ng-show="userForm.password.$error.requirements">{{passwordError}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group formRegHome" ng-show="!userForm.password.$error.required">
+          <label class="formRegLabelHome">Password Requirements</label>
+          <progressbar value="requirementsProgress" type="{{requirementsColor}}"><span style="color:white; white-space:nowrap;">{{requirementsProgress}}%</span></progressbar>
+        </div>
+        <div class="text-center form-group formRegHome">
+          <button type="submit" class="btn btn-primary">Sign up</button>
+          &nbsp; or&nbsp;
+          <a ui-sref="authentication.signin" class="show-signup">Sign in</a>
+        </div>
+        <div ng-show="error" class="text-center text-danger">
+          <strong ng-bind="error"></strong>
+        </div>
+      </fieldset>
+    </form>  
+  </div>
+ </div>
+</div>
+       <div id="slider">
+        <figure>
+            <img src="modules/core/client/img/toolsEtece.png" alt="An Etece sign up Image Background">
+            <img src="modules/core/client/img/cleaningNewEtece.png" alt="Etece registrar con Etece">
+            <img src="modules/core/client/img/fontaneroEtece.png" alt="Etece fontanero Plumber">
+        </figure>
+     </div>
+
+<!--========SECTION-END========-->  
+
+<div class="row hiddenHeader" ani-scroll="1550">
+<ul class="hiddenHeaderUnordered text-center">
+<li class="hiddenHeaderItem"><a>REPARACIONES DEL HOGAR</a></li>
+<li class="hiddenHeaderItem"><a>MUDANZAS DE PORTES</a></li>
+<li class="hiddenHeaderItem"><a>EMPLEADAS DEL HOGAR</a></li>
+<li class="hiddenHeaderItem"><a>IKEA</a></li>
+<li class="hiddenHeaderItem"><a>AYUDA EN OFICINA</a></li>
+<li class="hiddenHeaderItem"><a>EVENTOS</a></li>
+<li class="hiddenHeaderItem"><a>EXPERTOS</a></li>
+</ul>
+</div>
+    
+</section>

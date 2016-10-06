@@ -1,0 +1,1123 @@
+@media only screen and (max-width: 1250px) {
+
+.container-fluid.tareaCont {
+    padding-left: 4.5em;
+    padding-right: 4.5em;
+
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+    small.noOfComments, small.PostedOn {
+    font-size:11px !important;
+    }
+}
+
+@media only screen and (max-width: 1160px) {
+
+.container-fluid.tareaCont {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    .browseTasks {
+    padding-left: 5em;
+    padding-right: 5em;
+}
+    .appInfo {
+  height: auto;
+}
+    .btnFilters {
+  font-size: 11px;
+}
+.applyBut2 {
+    
+    line-height: 29px;
+    font-size: 9px;
+}
+
+@media only screen and (max-width: 1100px) {
+
+.container-fluid.tareaCont {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    }
+     .well.taskGraphCompleted h4 {
+        font-size:16px;   
+    }
+}
+@media only screen and (max-width: 1080px) {
+
+.container-fluid.tareaCont {
+    padding-left: .5em;
+    padding-right: .5em;
+
+    }
+    
+}
+
+@media only screen and (max-width: 1055px) {
+    .footer-section {
+        top:0px;
+    }
+    .taskSummaryProfDash {
+        padding: 5px !important;
+    }
+.navLoggedIn {
+    margin-left: 15%;
+}
+.postBtnLoginDash {
+    margin-left: 3%;
+}
+    
+.container-fluid.tareaCont {
+    padding-left: 0;
+    padding-right: 0;
+
+    }
+        .signUpRepair {
+
+  height: auto;
+  width: 100%;  
+    top:0px;
+    position: relative;
+    padding-bottom: 0px;
+}
+ .titleSignUpSubmit {
+    top: 20px;
+    font-size: 26px;
+    color: white;
+    text-align: center;
+    margin-top: -6px;
+    margin-bottom: 15px;
+    }
+/*
+.panelSubmitApplication {
+    margin-top: 0px;
+    padding-top: 10px;
+    background-color: rgba(0,0,0,.35);
+    width: 40%;
+    margin-left: 55%;
+    top: -337px;
+}
+*/
+    .signUpBut {
+    margin: 0px auto 5px auto;
+    width: 100%;
+}
+    .socialSignButtonsRepairCont {
+    margin-top: 1%;
+    margin-left: 8%;
+}
+
+    .socialMediaSignUpTitle {
+    background-color: rgba(0,0,0,.45);
+    color: white;
+    font-size: 28px;
+   width: 45%;
+        padding: 5px;
+}
+
+@media only screen and (max-width: 1000px) {
+       .logoHeaderEt {
+   
+    margin-left: 2px;
+}
+    span.count {
+   
+   font-size: 42px;
+}
+
+    .postbtn {
+    
+    margin-left: 2em;
+    }
+    .contactNum {
+        display: none;
+    } 
+     .infoRow {
+    padding-right: 20px;
+    }
+    .browseTasks {
+    padding-left: 6em;
+    padding-right: 6em;
+}
+    .iphoneApp {
+   margin-left: -50px;
+}
+       .footer-section {
+        margin-top: 0px;
+    }
+
+    .hiddenHeader {
+
+    background-color: white;
+    font-size: 10px;
+ 
+}
+    .hiddenHeaderItem {
+    color: dimgray;
+    padding-left: 14px;
+    padding-right: 14px;
+    display: inline-block;
+}
+
+
+}
+@media only screen and (max-width: 991px) {   
+    .titleSignUpSubmit {
+    top: 20px;
+    font-size: 20px;
+    }
+    .mapInputCenter.Row {
+    pointer:cursor;
+    margin-top:1em;
+    background-color: white;
+    font-size: 14px;
+    font-weight: 500;
+    color:dimgray;
+    text-transform: uppercase;
+    opacity: 1;
+        -webkit-box-shadow: 10px -4px 140px 28px rgba(0,0,0,0.53);
+-moz-box-shadow: 10px -4px 140px 28px rgba(0,0,0,0.53);
+box-shadow: 10px -4px 140px 28px rgba(0,0,0,0.53);
+    }
+    .taskView {
+    position: absolute;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    top: -89em;
+    margin-top: 56em;
+    z-index: 1; 
+    -webkit-box-shadow: -2px -23px 48px 75px rgba(153,144,153,0.64);
+-moz-box-shadow: -2px -23px 48px 75px rgba(153,144,153,0.64);
+box-shadow: -2px -23px 48px 75px rgba(0,0,0,0.54);
+}
+}
+    
+@media only screen and (max-width: 991px) {
+   
+    .taskRepeat {
+    background: white;
+      height:auto;
+        overflow-y: scroll;
+    }
+       .loginCol {
+    width: 60%;
+    margin-left: 20%;
+}
+        .sidenavButtonBG {
+        display:block;
+    }
+    .sideNavToggleButMobile {
+    display: block;
+    }
+    .taskRepeat, .listTasksMap {
+     padding-left: 7em;
+     margin-right: 7em;
+     background: #f3f3f9;
+    }
+    .taskListRepeatCont {
+        background-color: white;
+    }
+    .postBtnLoginDash {
+    margin-left: 0%;
+    }
+    .catwindow {
+        padding-left: 7em;
+        padding-right: 5em;
+        width: 50%;
+    }
+        .expertHeader {
+    
+    margin-left: 15%;
+    margin-right: 15%;
+}
+       p.iconInfo {
+    padding: 0px 25px 5px 25px;
+}
+
+    .adminPage {
+    margin:4em;margin-top:12em;
+}
+    .panelSubmitApplication {
+    margin-top: 78px;
+    padding-top: 20px;
+    background-color: rgba(0,0,0,.35);
+    width: 35%;
+    top: -76px;
+    margin-left: 60%;
+}
+}
+@media only screen and (max-width: 950px) {    
+    .progressSprite {
+    z-index: -10;
+    margin-top: 26%;
+    margin-left: 22%;
+    }
+}
+
+
+@media only screen and (max-width: 900px) {
+        span.count {
+   font-size: 36px;
+}
+    .progressSprite {
+    z-index: -10;
+    margin-top: 30%;
+    margin-left: 21%;
+    }
+    .browseTasks {
+    padding-left: 9em;
+    padding-right: 9em;
+}  
+    .catwindow {
+    padding-left: 5em;
+    padding-right: 1em;
+    }
+        .iphoneApp {
+   margin-left: 225%;
+
+}
+    
+.infoRow {
+    margin-left: -60%;
+    padding-top: 16%;
+    padding-bottom: 20px;
+    padding-left: 6%;
+    padding-right: 31%;
+ 
+}
+    .infoSect {
+    padding:0px 50px 70px;
+        margin-left: -40px;
+}
+}
+@media only screen and (max-width: 880px) {
+    .socialSignButtonsRepairCont {
+    margin-top: 1%;
+    margin-left: 0%;
+}
+.socialMediaSignUpTitle {
+    background-color: rgba(0,0,0,.45);
+    color: white;
+    font-size: 20px;
+    width: 45%;
+    padding: 10px;
+    text-align: center;
+}
+ }
+
+@media only screen and (max-width: 850px) {
+    .socialSignButtonsRepair {
+    position: absolute;
+    margin-left: 5%;
+    margin-top: 100px;
+}
+    .progressSprite {
+    z-index: -10;
+    margin-top: 34%;
+    margin-left: 16%;
+    }
+    .well.taskGraphCompleted h4 {
+        font-size:14px;
+        
+    }
+    .bottomNav {
+        display: none;
+    }
+    .settingsView {
+      width: 100%;  
+    }
+
+    .browseTasks {
+    padding-left: 7em;
+    padding-right: 7em;
+}  
+    .catwindow {
+    padding-left: 5em;
+    padding-right: 1em;
+    }
+    .professionalSolution {
+    position: absolute;
+    top: 145px;
+    width: 60%;
+    margin-left: 10%;
+    height: 250px;
+}
+    .hiddenHeader {
+    background-color: white;
+    font-size: 9px;
+ 
+}
+    .hiddenHeaderItem {
+    color: dimgray;
+    padding-left: 9px;
+    padding-right: 9px;
+    display: inline-block;
+}
+       .adminPage {
+    margin:1em;margin-top:12em;
+}
+ 
+}
+@media only screen and (max-width: 810px) {    
+.postBtnLoginDash {
+    margin-left: 2%;    
+    }
+    .socialSignButtonsRepairCont {
+    margin-top: 1%;
+    margin-left: 1%;
+}
+.signUpRepair {
+    height: auto;
+    width: 100%;
+    top: 99px;
+}
+.panelSubmitApplication {
+    margin-top: 80px;
+    padding-top: 20px;
+    background-color: rgba(0,0,0,.35);
+    width: 39%;
+    top: -135px;
+    margin-left: 55%;
+    /* height: 350px; */
+}
+    }
+@media only screen and (max-width: 800px) {
+    .mainTitleHeaderTextH {
+    font-size: 50px;
+     margin-top: -417px;
+}
+    .mainTitleSubHeaderTextPara {
+    font-size: 21px;
+}   
+   .browseTasks {
+    padding-left: 5em;
+    padding-right: 5em;
+}  
+    .catwindow {
+    padding-left: 4em;
+    padding-right: 1em;
+    }
+    .expertHeader {
+    margin-right: 10%;
+    padding-left: 10%;
+    margin-left: -10%;
+    margin-top: 40px;
+   width: 80%;
+    font-size: 17px;
+}
+    .moreInfo {
+  text-align: center;
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 70px;
+  margin-bottom: 38px;
+}
+        .findOut {
+        width: 30%;
+  margin: 25px 35% 35px 35%;
+
+}
+    .socialSignButtonsRepairCont {
+    margin-top: 1%;
+        margin-left: 0%;
+    }
+
+}
+ @media only screen and (max-width: 780px) { 
+
+    pac-container {
+    background-color: #fff;
+    position: absolute!important;
+    z-index: 1000;
+    border-radius: 2px;
+    border-top: 1px solid #d9d9d9;
+    font-family: Arial,sans-serif;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    top: 180px !important;
+     }
+    }
+    
+@media only screen and (max-width: 767px) { 
+  .progressSprite {
+    z-index: -10;
+    margin-top: 3%;
+    margin-left: 39%
+    }
+        .panel-subtle {
+    width: 90% !important;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+    .well.taskGraphCompleted {
+    border-radius: 23.5em;
+    height: 10em;
+    width: 7em;
+    margin-left: 13%;
+    }
+    
+        nav.navbar-collapse.in {
+    text-align: left !important;
+    background-color: #4267b2 !important;
+    background-image: #4267b2 !important;
+    color:dimgray !important;
+}
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a {
+    color: #333;
+        background-color: #4267b2 !important;
+        background-image: #4267b2 !important;
+        left:0;
+        width: 100%;
+        display: inline-block;
+    }
+    .dropdown-menu li a{
+    background-color: white !important;
+        background-image: -webkit-linear-gradient(top, white 0%, ghostwhite 100%) !important;
+    background-image: -o-linear-gradient(top, white 0%, ghostwhite 100%) !important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(ghostwhite)) !important;
+    background-image: linear-gradient(to bottom, white 0%, ghostwhite 100%)!important;
+        border-radius: 5px;
+        min-width: 260px;
+}
+    li.dropdown {
+        
+    }
+.postBtnLoginDash {
+    margin-left: 9%;    
+    }
+    .taskRepeat, .listTasksMap {
+     padding-left: 3em;
+     margin-right: 3em;
+     background: #f3f3f9;
+    }
+}    
+
+@media only screen and (max-width: 700px) {
+    .progressSprite {
+    z-index: -10;
+    margin-top: 3%;
+    margin-left: 37%
+    }
+   .browseTasks {
+    padding-left: 5em;
+    padding-right: 5em;
+}  
+    .catwindow {
+    padding-left: 2em;
+    padding-right: 2em;
+    } 
+    .hiddenHeader {
+        display: none;
+    }
+    .infoRow {
+    padding-right: 23%;
+}
+    .footer-section {
+        margin-top: 0px;
+    }
+    .well.taskGraphCompleted {
+    height: 10em;
+    width: 7em;
+    margin-left: 4%;
+    border-radius: 23.5em
+}
+    }
+ @media only screen and (max-width: 691px) {
+.socialSignButtonsRepairCont {
+    margin-top: 1%;
+    margin-left: -4%;
+}   
+  }
+    
+@media only screen and (max-width: 665px) {
+.titleSignUpSubmit {
+    display: none;
+
+} 
+.socialSignButtonsRepairCont {
+    margin-top: 1%;
+    margin-left: -5%;
+}
+
+
+    .pac-container {
+   display: none !important;
+}
+ 
+    .progressSprite {
+    z-index: -10;
+    margin-top: 3%;
+    margin-left: 36%
+    }
+    .myEteceReuseButton.modalCreate{
+        width: 50%;
+    }
+    a.myBackButton.modalCreate {
+    width: 50% !important;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    }
+        .mobileFooter {
+    display: block;
+}
+    .desktopFooter {
+        display: none;
+    }
+    .panelSubmitApplication {
+    margin-top: 80px;
+    padding-top: 20px;
+    background-color: rgba(0,0,0,.35);
+    width: 69%;
+    top: -135px;
+    margin-left: 45%;
+    /* height: 350px; */
+}
+}
+ 
+ @media only screen and (max-width: 625px) { 
+     .panelSubmitAppl {
+    position: absolute;
+    width: 60%;
+    margin-left: 20%;
+     background-color: rgba(0,0,0,.43);
+     }
+     .registerTitle {
+    color: white;
+    font-size: 18px
+     }
+   .socialSignButtonsRepair {
+    position: absolute;
+    margin-left: 9%;
+    margin-right: 9%;
+    margin-top: 400px;
+    display: inline;
+    width: 82%;
+    text-align: center;
+     }
+.socialSingBut {
+    width: 139px;
+    margin-left: 4%;
+    display: inline-block;
+}
+/*
+.panelSubmitApplication {
+    margin-top: 246px;
+    padding-top: 0px;
+    background-color: rgba(0,0,0,.35);
+    width: 60%;
+    margin-left: 35%;
+    top: -231px;
+}
+*/
+.socialMediaSignUpTitle {
+display:none;
+}
+    }
+
+
+    
+@media only screen and (max-width: 615px) {
+    p.moreInfo {
+        margin-top: 35px;
+    }
+/*
+    .panelSubmitApplication {
+    margin-top: 250px;
+    padding-top: 0px;
+    background-color: rgba(0,0,0,.35);
+    width: 80%;
+    margin-left: 10%;
+    top:41px;
+        }
+*/
+    .socialMediaSignUpTitle {
+            margin-left: -50%;
+    }
+  .socialMediaSignUpTitle {
+    margin-left: -21%;
+    margin-right: 20%;
+    font-size: 22px;
+}
+}
+ @media only screen and (max-width: 580px) {   
+.socialSignButtonsRepairCont {
+    margin-top: 1%;
+    margin-left: -13%;
+}
+
+/*
+.panelSubmitApplication {
+    margin-top: 246px;
+    padding-top: 0px;
+    background-color: rgba(0,0,0,.35);
+    width: 79%;
+    margin-left: 39%;
+    top: -231px;
+}
+*/
+
+    }
+@media only screen and (max-width: 600px) {
+        .progressSprite {
+    z-index: -10;
+    margin-top: 3%;
+    margin-left: 34%
+    }
+    .mapInputCenter.Row {
+    background-color: white;
+    margin-bottom: 2em;
+        margin-top: 1em;
+    font-size: 12px;
+    height: 2.7em;
+    font-weight: 500;
+    color:dimgray;
+    text-transform: uppercase;
+    opacity: 1;
+        -webkit-box-shadow: 10px -4px 140px 28px rgba(0,0,0,0.53);
+-moz-box-shadow: 10px -4px 140px 28px rgba(0,0,0,0.53);
+box-shadow: 10px -4px 140px 28px rgba(0,0,0,0.53);
+    }
+    .mapInputCenter {
+      height: 2.7em;  
+    }
+    .loginCol {
+    width: 80%;
+    margin-left: 10%;
+}
+   . videoMainBGMobile {
+       display: block;
+        background: dimgray;
+    background-image: url(modules/core/client/img/posterEteceVideo.png);
+         -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    margin-top: -160px;
+    z-index: 10;
+    opacity:.5;
+    min-height: 500px;
+    height: 700px;
+    width: 100%;
+    min-width: 1200px;
+    overflow-x: hidden;
+    overflow: hidden;
+    }
+    . videoMainBG {
+        display: none;
+    }
+    .settings-view {
+    padding-top: 2em !important;
+    }
+    .sliderProfDash {
+        padding:0px;
+    }
+    .sliderProfImg {
+            width: 27%;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+    .sliderProfImgPress {
+    width: 23%;
+    padding-left:2px;
+    padding-right: 2px;
+
+}   .browseTasks {
+    padding-left: 3em;
+    padding-right: 5em;
+}  
+    .catwindow {
+    padding-left: 2em;
+    padding-right: 2em;
+    } 
+    .findOut {
+
+  width: 56%;
+  margin: 25px 22% 35px 22%;
+}
+    .thumbAnim {
+        padding-left: 80px;  
+}
+        .checkAnim {
+        padding-left: 80px;  
+}
+        .euroAnim {
+        padding-left: 80px;  
+}
+        .clockAnim {
+        padding-left: 80px;  
+}
+            .infoSect {
+        padding-bottom: 15px;
+        width: 300px;
+        margin-left: 30px;
+}
+    .socialSignButtonsRepairCont {
+    margin-top: 1%;
+    margin-left: 0%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .summary {
+        display: none;
+    }
+    .leftFinalTaskSide {
+  border-right: none;
+        width: 100%;
+}
+
+    .taskRepeat, .listTasksMap {
+     padding-left: 1.5em;
+     margin-right: 1.5em;
+     background: #f3f3f9;
+    }
+    .getStartedMainSectionButton{
+    width: 85%;
+}    .browseTasks {
+    padding-left: 2em;
+    padding-right: 5em;
+}  
+    .catwindow {
+    padding-left: 2em;
+    padding-right: 2em;
+    }   
+
+    .mainTitleHeaderTextH {
+    text-align: left;
+    margin-top: -417px;
+    margin-left: 10%;
+    font-size: 50px;
+    margin-right: 10%;
+}
+}
+@media only screen and (max-width: 500px) {
+
+    .progressSprite {
+    z-index: -10;
+    margin-top: 3%;
+    margin-left: 31%;
+    }
+    .well.taskGraphCompleted h4 {
+    font-size: 12px;
+    }
+     .well.taskGraphCompleted {
+    border-radius: 23.5em;
+    height: 10em;
+    width: 7em;
+    margin-left: -36%;
+    }
+
+    .browseTasks {
+    padding-left: 1em;
+    padding-right: 5em;
+}  
+    .catwindow {
+    padding-left: 2em;
+    padding-right: 2em;
+    }   
+}
+
+
+@media only screen and (max-width: 487px) {
+    
+    .descriptionTaskModal {
+    width: 90%;
+    }
+    .browseTasks {
+    margin-left: 0;
+    
+}  
+    .catwindow {
+    padding-left: 2em;
+    padding-right: 2em;
+    }
+    .panel-subtle {
+    width: 80% !important;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+}
+    
+   
+@media only screen and (max-width: 480px) {
+       .socialSingBut {
+    width: 100px;
+    font-size: 10px;
+}
+
+    .progressSprite {
+    z-index: -10;
+    margin-top: 4%;
+    margin-left: 30%;
+    }
+     .browseTasks {
+  padding-right: 0px;
+    
+}  
+    .catwindow {
+  
+        padding-left: 0px;
+        padding-right: 0px;
+    }   
+}
+
+ @media only screen and (max-width: 440px) {   
+.socialSingBut {
+    width: 105px;
+    margin-left: 6%;
+}
+   
+    }
+     
+     
+@media only screen and (max-width: 420px) {
+
+    .socialSingBut {
+    width: 105px;
+    font-size: 10px;
+}
+
+.progressSprite {
+    z-index: -10;
+    margin-top: 6%;
+    margin-left: 27%;
+}
+span.count {
+    font-weight: 200;
+    line-height: 24px;
+    color: #4267b2;
+    font-size: 30px;
+}
+.counterFooter1, counterFooter, counterFooter3 {
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 20px;
+    color: dimgray;
+}
+    
+    .postBtnLoginDash {
+    margin-left: 7%;
+    }
+    .logoEtLoginDash {
+    position: absolute;
+    left: 19%;
+    top: 9px;
+    width: 140px;
+    }
+    
+    .logoHeaderEt {
+   
+    margin-left: 23px;
+}
+
+         .browseTasks {
+  padding-right: 0px;
+  padding-left: 0px;
+    
+} 
+    .socialSignButtonsRepairCont {
+    
+     margin-left: 7%;
+    }
+
+    }
+@media only screen and (max-width: 380px) {
+    img.socialLogin {
+    width: 69px;
+}
+              .modalTitle {
+    font-size:18px;
+}
+    .logoHeaderEt {
+   
+    margin-left: 23px;
+}
+        .catwindow {
+     padding-left: 20%;
+  padding-right: 15%;
+        width: 70%;
+  
+    }
+         .browseTasks {
+  padding-right: 3%;
+  padding-left: 3%;
+    
+} 
+.socialSignButtonsRepairCont {
+    margin-top: 1%;
+    margin-left: 0%;
+    }
+.socialMediaSignUpTitle {
+    margin-left: 0%;
+    margin-right: 2%;
+    font-size: 16px;
+}
+    .comment{
+        font-size:10px;
+        }
+/*
+.panelSubmitApplication {
+    margin-top: 229px;
+    padding-top: 0px;
+    background-color: rgba(0,0,0,.35);
+    width: 90%;
+    margin-left: 5%;
+    top: 51px;
+    }
+*/
+    .titleSignUpSubmit {
+    top: 20px;
+    font-size: 16px;
+    }
+    .infoSect {
+    margin-left: -17px;
+    }
+    p.moreInfo {
+    margin-top: 5px;
+    }
+
+    .logoHeaderEt {
+    margin-left: -10px;
+    }
+    .postbtn {
+    margin-top: 14px;
+    margin-right: 5px;
+    }
+    .mainTitleHeaderTextH {
+    text-align: left;
+    margin-top: -446px;
+    font-size: 46px;
+    }
+    .getStartedMainSectionButton {
+    width: 88%;
+    margin-left: 7%;
+    }
+   
+       .professionalSolution {
+    position: absolute;
+    top: 145px;
+    width: 80%;
+    margin-left: 5%;
+    }
+}
+
+
+
+@media only screen and (max-width: 340px) {
+    .getStartedMainSectionButton {
+        margin-top: -90px;
+    } 
+    .mainTitleHeaderTextH {
+            font-size: 44px;
+    }
+    .catwindow {
+    padding-left: 18%;
+    }
+    .socialSingBut {
+    width: 120px;
+    margin-left: 4%;
+    }
+    .socialMediaSignUpTitle {
+    margin-left: 0%;
+    margin-right: 0%;
+    }
+/*
+    .panelSubmitApplication {
+    margin-top: 229px;
+    }
+*/
+    .professionalSolution {
+    position: absolute;
+    top: 145px;
+    width: 80%;
+    margin-left: 5%;
+    }
+}
+
+
+/*
+@media only screen and (max-width: 800px) {
+
+    
+}
+*/
+
+@media only screen and (min-width:851px) and (max-width: 991px) {
+    .profProgRes {
+        margin-left: 0px;
+    }
+.dashTitles.Res {
+    padding-right: 20% !important;
+}
+.carousel-inner {
+    position: absolute;
+}
+
+.col-sm-12.text-center.profTaskSumInterior.noPadding {
+    margin-top: -430px!important;
+}
+
+.profTaskSumInteriorBadges {
+margin-top: -372px!important;
+    
+}
+}
+
+@media only screen and (min-width:560px) and (max-width: 770px) {
+    
+    .iconWorks {
+        height: 26%;
+        width: 26%;
+    }
+}
+@media only screen and (min-width:620px) and (max-width: 660px) {
+
+.socialSignButtonsRepairCont {
+    margin-top: 1%;
+    margin-left: 2%;
+    }
+        .thumbAnim {
+        padding-left: 60px;  
+}
+        .checkAnim {
+        padding-left: 60px;  
+}
+        .euroAnim {
+        padding-left: 60px;  
+}
+        .clockAnim {
+        padding-left: 60px;  
+}
+}
+@media only screen and (min-width:660px) and (max-width: 690px) {
+
+
+        .thumbAnim {
+        padding-left: 75px;  
+}
+        .checkAnim {
+        padding-left: 75px;  
+}
+        .euroAnim {
+        padding-left: 75px;  
+}
+        .clockAnim {
+        padding-left: 75px;  
+}    
+    
+
+}
+    
+

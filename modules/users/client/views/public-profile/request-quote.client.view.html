@@ -1,0 +1,21 @@
+<section>
+  <div class="container-fluid">
+  <form class="form-horizontal" id="vm.form.quoteForm" name="vm.form.quoteForm"
+  ng-submit="requestAQuoteAlert()" novalidate="">
+    <fieldset>
+      <div class="col-xs-12 LocationCont noPadding">
+        <h3 class="taskDesc text-center">Request a quote</h3>
+        </div>
+        <h4 class="text-center">Invite {{ user.displayName }} to make an offer on your task</h4>
+        <select class="sortBy" ng-model="selectedTask" ng-value="x" ng-options="x.title for x in taskTitles"></select>
+      <div class="form-group">
+        <button class="submitanOffer btn-block" type="submit">Request an
+        offer</button>
+      </div>
+      <div class="text-danger" ng-show="vm.error">
+        <strong ng-bind="vm.error"></strong>
+      </div>
+    </fieldset>
+  </form>
+</div>
+</section>
