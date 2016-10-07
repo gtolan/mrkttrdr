@@ -78,8 +78,9 @@
         <img src="../modules/core/client/img/logoSpinner.png" class="logoSpinner" ui-sref="home">
         <img src="../modules/core/client/img/logoEtLoginDash3.png" class="logoEtLoginDash" ui-sref="home"></div>
       </a>
-      <button class="postBtnLoginDash hvr-sweep-to-right"  ng-if="app.authentication.user" ng-click="app.open()" ng-controller="ModalTaskCtrl as app">Encargar tarea</button>
-      <button class="postBtnLoginDash hvr-sweep-to-right"  ng-show="!app.authentication.user" ng-click="open()">Encargar tarea</button> 
+      <button class="postBtnLoginDash hvr-sweep-to-right" ng-show="authentication.user" ng-click="app.open()" ng-controller="
+      ModalTaskCtrl as app">Encargar tarea</button>
+      <button class="postBtnLoginDash hvr-sweep-to-right" ng-hide="authentication.user" ng-click="open()">Encargar tarea</button>
   </div>
   <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
     <ul class="nav navbar-nav navLoggedIn"  ng-if="menu.shouldRender(authentication.user);">
