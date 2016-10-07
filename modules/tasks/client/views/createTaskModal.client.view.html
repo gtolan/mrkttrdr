@@ -45,17 +45,15 @@ Presupuesto</button>
                     <i class="fa fa-check-circle" aria-hidden="true"></i>
                   </div>
                 <span ng-show="vm.form.taskForm.taskTitle.$touched && vm.form.taskForm.taskTitle.$invalid">
-                  <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Task title is required.
+                  <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Título es requerido.
                 </span>
                 <div ng-messages="vm.form.taskForm.taskTitle.$error || vm.form.taskForm.taskTitle.$touched" role="alert">
-                  <p class="help-block error-text" ng-message="required"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Task
-                title is required.</p>
+                  <p class="help-block error-text" ng-message="required"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Título es requerido.</p>
                   <div ng-message="minlength">
-                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i> 
-su título es demasiado corto
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i> El título es demasiado corto.
                   </div>
                   <div ng-message="maxlength">
-                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Your task title is too long
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i> El título es demasiado largo.
                   </div>
                 </div>
                 <small ng-if="vm.task.title.length > 10">{{ 50 - vm.task.title.length}} characters remaining</small>
@@ -80,10 +78,9 @@ su título es demasiado corto
                 <div ng-messages="vm.form.taskForm.taskDescription.$error" role=
                 "alert">
                   <span ng-show="vm.form.taskForm.taskDescription.$touched && vm.form.taskForm.taskTitle.$invalid">
-                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Task description is required.
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Descripción es requerido.
                   </span>
-                  <p class="help-block error-text" ng-message="required">Task
-                  description is required.</p>
+                  <p class="help-block error-text" ng-message="required">Descripción es requerido.</p>
                   <div ng-message="minlength">
                     <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> su descripción es demasiado corto
                   </div>
@@ -119,26 +116,26 @@ su título es demasiado corto
         "vm.placeChanged()" places-auto-complete="" required="" size="80" type=
         "text" types="{{types}}" placeholder="calle, número y ciudad">
                       <div ng-messages="vm.form.taskForm.taskLocation.$error" role="alert">
-                        <p class="help-block error-text" ng-message="required">Task location
-                    is required.</p>
+                        <p class="help-block error-text" ng-message="required">Ubicación
+          es requerido.</p>
                       </div>
                     </div>
                     <div ng-messages="vm.form.taskForm.taskLocation.$error" role="alert">
-                      <p class="help-block error-text" ng-message="required">Task location
-          is required.</p>
+                      <p class="help-block error-text" ng-message="required">Ubicación
+          es requerido.</p>
                     </div>
                   </div>
                 </div>
-                
-                
-                               <div class="col-xs-6 noPadding">
+                <div class="col-xs-12 noPadding">
+  
+                <div class="col-xs-6 noPadding">
                   <div class="form-group">
-                    <label class="control-label">Categories</label><br>
+                    <label class="control-label">Categorías</label><br>
                       
                       
                        <div class="btn-group btn-block" dropdown>
       <button id="button-template-url" type="button" class="btn btn-primary btn-block btnCategory" dropdown-toggle ng-disabled="disabled">
-      Choose Category &nbsp; <span class="caret"></span>
+       Categorías <span class="caret"></span>
       </button>
       <ul class="dropdown-menu categDropTaskModal" template-url="dropdownCateg.html" aria-labelledby="button-template-url">
       </ul>
@@ -186,24 +183,19 @@ su título es demasiado corto
                             <i class="fa fa-hand-peace-o" aria-hidden="true"></i> Fun &amp; Quirky
                           </label>
                         </li>
-<!--
                         <li class="divider"></li>
                         <li role="menuitem">
-                          <label class="btn skills-repeat" ng-model="vm.task.misc" btn-checkbox>
+                          <label class="btn skills-repeat dropCat" ng-model="vm.task.misc" btn-checkbox>
                             <i class="fa fa-cogs" aria-hidden="true"></i> Misc.
                           </label>
                         </li>
--->
         </ul>
     </script>
                   </div>
                   </div>
-                
-                
-                    
-                <div class="col-xs-12 noPadding row2local">
 
-                              <div class="col-xs-6 noPadding">
+                  <div class="col-xs-12 noPadding row2local">
+                                <div class="col-xs-6 noPadding">
                   <div class="form-group">
                     <label class="control-label" for="taskDate">Fecha <span aria-hidden="true" class=
                     "glyphicon glyphicon-question-sign" tooltip=
@@ -214,14 +206,16 @@ su título es demasiado corto
                       </md-content>
                   </div>
                   <div ng-messages="vm.form.taskForm.taskDate.$error" role="alert">
-                    <p class="help-block error-text" ng-message="required">Task date is
-          required.</p>
+                    <p class="help-block error-text" ng-message="required">Fecha es
+          requerido.</p>
                   </div>
                 </div>
-                    
-                             
+                              </div>
+
+
+
                   <div class="col-xs-6 noPadding " style="overflow: scroll;">
-                    <label class="control-label">Summary</label><br>
+                    <label class="control-label">Resumen</label><br>
                     <!-- cleaning -->
                     <li ng-show="vm.task.cleaning" class="skills-non-repeat task-view"><i class="fa fa-home" aria-hidden="true"></i> Home &amp; Cleaning</li>
                     <!-- onlineIT -->
@@ -263,8 +257,7 @@ su título es demasiado corto
                     </div>
                   </div>   
                         <div class="form-group">
-                          <label class="control-label" for="taskPrice">Task Price
-                    
+                          <label class="control-label" for="taskPrice">Presupuesto
                             <span aria-hidden="true" class=
                     "glyphicon glyphicon-question-sign" tooltip=
               "Tip - Always offer a fair price as you will receive higher quality interest quicker"
@@ -285,16 +278,16 @@ su título es demasiado corto
                         </div>
                         <div class="col-xs-6 summary">
                           <p class="hideSmall">
-                            <strong>Task Title:</strong> {{vm.task.title | limitTo: 15 }}{{ vm.task.title.length > 16 ? '...' : ''}}
+                            <strong>Título:</strong> {{vm.task.title | limitTo: 15 }}{{ vm.task.title.length > 16 ? '...' : ''}}
                           </p>
                           <p class="hideSmall">
-                            <strong>Description:</strong> {{vm.task.description | limitTo: 19 }}{{ vm.task.description.length > 20 ? '...' : ''}}
+                            <strong>Descripción:</strong> {{vm.task.description | limitTo: 19 }}{{ vm.task.description.length > 20 ? '...' : ''}}
                           </p>
                           <p>
-                            <strong>Location:</strong> {{vm.task.taskLocation}}
+                            <strong>Ubicación:</strong> {{vm.task.taskLocation}}
                           </p>
                           <p>
-                            <strong>Category:</strong>
+                            <strong>Categoría:</strong>
                           </p>
                           <li ng-show="vm.task.inPersonTask" class="skills-non-repeat task-view">Tarea presencia</li>
                           <!-- cleaning -->
@@ -316,7 +309,7 @@ su título es demasiado corto
                           <!-- misc -->
                           <li ng-show="vm.task.misc" class="skills-non-repeat task-view">Misc. task</li>
                           <p>
-                            <strong>Due Date:</strong>{{vm.task.dueDate | date:'fullDate'}}
+                            <strong>Vencimiento:</strong>{{vm.task.dueDate | date:'fullDate'}}
                           </p>
                         </div>
                       </div>
@@ -333,7 +326,7 @@ su título es demasiado corto
           <div class="modal-footer">
             <div class="form-group"></div>
             <a class="myBackButton modalCreate" ng-click="vm.handlePrevious()" ng-show=
-    "!vm.isFirstStep()">Back</a>
+    "!vm.isFirstStep()">Volver</a>
             <button type="submit" class="myEteceReuseButton modalCreate hvr-underline-reveal" ng-click=
     "vm.handleNext()">{{vm.getNextLabel()}}</button>
           </div>

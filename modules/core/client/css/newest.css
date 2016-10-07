@@ -2977,3 +2977,157 @@ h1 {
 .four {
   background: linear-gradient(45deg,rgba(0,0,0,0),rgba(0,0,0,0.5)),url(/modules/core/client/img/appgo/four.png);
 }
+
+/* users css*/
+.graph {
+    width: 100px;
+    height: 10px;
+    background-color: #a9a9a9;
+    border-radius: 10px;
+/*    display: block;*/
+    display: inline-block;    
+}
+
+.linkedin {
+    background-image: url("/modules/users/client/img/profile/1460676022_linkedin_circle_color.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;
+}
+
+.linkedin-no-verified {
+    background-image: url("/modules/users/client/img/profile/1460677220_linkedin_circle_gray.png");
+    background-repeat: no-repeat;
+    height: 48px;
+    width: 48px;
+    list-style: none;
+    display: inline-block;
+}
+.phoneNumber {
+    background-image: url("/modules/users/client/img/profile/1463469860_phone.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;
+}
+
+.phoneNumber-no-verified {
+    background-image: url("/modules/users/client/img/profile/1463469833_phone.png");
+    background-repeat: no-repeat;
+    height: 48px;
+    width: 48px;
+    list-style: none;
+    display: inline-block;
+}
+
+.facebook {
+    background-image: url("/modules/users/client/img/profile/1440811813_facebook_circle_color.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;    
+}
+
+.facebook-no-verified {
+    background-image: url("/modules/users/client/img/profile/1460677257_facebook_circle_gray.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;
+}
+
+.twitter {
+    background-image: url("/modules/users/client/img/profile/1440811719_twitter_circle_color.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;    
+}
+
+.twitter-no-verified {
+    background-image: url("/modules/users/client/img/profile/1460677290_twitter_circle_gray.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;    
+}
+
+.google {
+    background-image: url("/modules/users/client/img/profile/1460677049_google_circle_color.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;      
+}
+
+.google-no-verified {
+    background-image: url("/modules/users/client/img/profile/1460677347_google_circle_gray.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;
+}
+
+.instagram {
+    background-image: url("/modules/users/client/img/profile/1466211271_social-instagram-new-circle.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;
+}
+
+.instagram-no-verified {
+    background-image: url("/modules/users/client/img/profile/instaGrey.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;
+}
+
+.paymentDetails {
+    background-image: url("/modules/users/client/img/profile/verified_credit-card.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;
+}
+
+.paymentDetails-no-verified {
+    background-image: url("/modules/users/client/img/profile/non-verified_credit-card.png");
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 48px;
+    width: 48px;
+    display: inline-block;
+}
+.reviews-list {
+    list-style: none;
+}
+
+.reviewRow {
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #f1f1f6;
+}
+
+.change-cover-foto {
+    background-color: transparent;
+    margin-top: 5em;
+    color: #fff;
+    margin-left: 5em;
+    border-radius: 1em;
+    padding: 11px 16px;
+}
+/* users css*/

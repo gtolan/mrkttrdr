@@ -1,4 +1,4 @@
-@media (min-width: 992px) {
+/*/*@media (min-width: 992px) {
   .nav-users {
     position: fixed;
   }
@@ -141,130 +141,6 @@ li.skills-non-repeat.task-view{
     
 }*/
 
-.linkedin {
-    background-image: url("/modules/users/client/img/profile/1460676022_linkedin_circle_color.png");
-    background-repeat: no-repeat;
-    list-style: none;
-    height: 48px;
-    width: 48px;
-    display: inline-block;
-}
-
-.linkedin-no-verified {
-    background-image: url("/modules/users/client/img/profile/1460677220_linkedin_circle_gray.png");
-    background-repeat: no-repeat;
-    height: 48px;
-    width: 48px;
-    list-style: none;
-    display: inline-block;
-}
-.phoneNumber {
-    background-image: url("/modules/users/client/img/profile/1463469860_phone.png");
-    background-repeat: no-repeat;
-    list-style: none;
-    height: 48px;
-    width: 48px;
-    display: inline-block;
-}
-
-.phoneNumber-no-verified {
-    background-image: url("/modules/users/client/img/profile/1463469833_phone.png");
-    background-repeat: no-repeat;
-    height: 48px;
-    width: 48px;
-    list-style: none;
-    display: inline-block;
-}
-
-.facebook {
-    background-image: url("/modules/users/client/img/profile/1440811813_facebook_circle_color.png");
-    background-repeat: no-repeat;
-    list-style: none;
-    height: 48px;
-    width: 48px;
-    display: inline-block;    
-}
-
-.facebook-no-verified {
-    background-image: url("/modules/users/client/img/profile/1460677257_facebook_circle_gray.png");
-    background-repeat: no-repeat;
-    list-style: none;
-    height: 48px;
-    width: 48px;
-    display: inline-block;
-}
-
-.twitter {
-    background-image: url("/modules/users/client/img/profile/1440811719_twitter_circle_color.png");
-    background-repeat: no-repeat;
-    list-style: none;
-    height: 48px;
-    width: 48px;
-    display: inline-block;    
-}
-
-.twitter-no-verified {
-    background-image: url("/modules/users/client/img/profile/1460677290_twitter_circle_gray.png");
-    background-repeat: no-repeat;
-    list-style: none;
-    height: 48px;
-    width: 48px;
-    display: inline-block;    
-}
-
-.google {
-    background-image: url("/modules/users/client/img/profile/1460677049_google_circle_color.png");
-    background-repeat: no-repeat;
-    list-style: none;
-    height: 48px;
-    width: 48px;
-    display: inline-block;      
-}
-
-.google-no-verified {
-    background-image: url("/modules/users/client/img/profile/1460677347_google_circle_gray.png");
-    background-repeat: no-repeat;
-    list-style: none;
-    height: 48px;
-    width: 48px;
-    display: inline-block;
-}
-
-.instagram {
-    background-image: url("/modules/users/client/img/profile/1466211271_social-instagram-new-circle.png");
-    background-repeat: no-repeat;
-    list-style: none;
-    height: 48px;
-    width: 48px;
-    display: inline-block;
-}
-
-.instagram-no-verified {
-    background-image: url("/modules/users/client/img/profile/instaGrey.png");
-    background-repeat: no-repeat;
-    list-style: none;
-    height: 48px;
-    width: 48px;
-    display: inline-block;
-}
-
-.paymentDetails {
-    background-image: url("/modules/users/client/img/profile/verified_credit-card.png");
-    background-repeat: no-repeat;
-    list-style: none;
-    height: 48px;
-    width: 48px;
-    display: inline-block;
-}
-
-.paymentDetails-no-verified {
-    background-image: url("/modules/users/client/img/profile/non-verified_credit-card.png");
-    background-repeat: no-repeat;
-    list-style: none;
-    height: 48px;
-    width: 48px;
-    display: inline-block;
-}
 
 /*
 
@@ -296,4 +172,3 @@ hr {
 .editProfileSpan {
   color: #006DD3;
 }
-
