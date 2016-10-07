@@ -8,6 +8,10 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
     // Get an eventual error defined in the URL query string:
     $scope.error = $location.search().err;
 
+    $scope.cancel = function() {
+            $scope.$dismiss();
+        };
+
     // If user is signed in then redirect back home
     // if ($scope.authentication.user) {
     //   $location.path('/');
@@ -18,9 +22,9 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
         var data = ({
           subject: 'Hi, ' + $scope.authentication.user.displayName + '! Welcome to Taskmatch.ie',
           contactName: $scope.authentication.user.displayName,
-          emailFrom: 'contact@Etece.es',
+          emailFrom: 'contact@taskmatch.ie',
           emailTo: $scope.authentication.user.email,
-          subject: 'Welcome to Etece.es!'
+          subject: 'Welcome to Taskmatch.ie!'
         });
         $http.post('/api/auth/welcome-email', data).success(
           function(data, status, headers, config) {
@@ -69,6 +73,8 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
 
         // And redirect to the previous or home page
         $state.go($state.previous.state.name || 'home', $state.previous.params);
+        $scope.cancel();
+
       }).error(function (response) {
         $scope.error = response.message;
       });
