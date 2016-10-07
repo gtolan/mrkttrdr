@@ -109,8 +109,8 @@
             <div class="col-md-2">
             </div>
             <div class="col-md-4">
-                 <h5 class="profileText"><i>Verifications</i></h5>
-                 <small>Social media:</small>
+                 <h5 class="profileText"><i>Verificaciones</i></h5>
+                 <small>Redes sociales:</small>
                 <ul class="noPadding">
                 <li ng-show="user.additionalProvidersData.facebook || user.provider === "facebook"" class="facebook"></li>
                 <li ng-if="user.additionalProvidersData.facebook || user.provider === "facebook"" class="facebook-no-verified" tooltip-placement="left" tooltip="Not verified"></li>
@@ -123,7 +123,7 @@
                 <li ng-show="user.additionalProvidersData.linkedin" class="linkedin"></li>
                 <li ng-hide="user.additionalProvidersData.linkedin" class="linkedin-no-verified" tooltip-placement="left" tooltip="Not verified"></li>
                 </ul>
-                <small>Acccount:</small>
+                <small>Cuenta:</small>
                 <ul class="noPadding">
                 <li ng-show="user.phoneNumber" class="phoneNumber"></li>
                 <li ng-hide="user.phoneNumber" class="phoneNumber-no-verified" tooltip-placement="right" tooltip="Not verified"></li>
@@ -146,25 +146,25 @@
                 </div>
                 <div class="col-md-10 col-md-offset-1">
                 <div class="col-md-3">
-                <h5 class="profileText"><i>Education</i></h5>
+                <h5 class="profileText"><i>Educación</i></h5>
                     <ul class="skill-ul noPadding">
                         <li ng-repeat="level in user.education" class="skills-repeat">{{ level.text }}</li>
                     </ul>
                 </div>
                 <div class="col-md-3">
-                <h5 class="profileText"><i>Languages</i></h5>
+                <h5 class="profileText"><i>Idiomas</i></h5>
                     <ul class="skill-ul noPadding">
                         <li ng-repeat="language in user.language" class="skills-repeat">{{ language.text }}</li>
                     </ul>
                 </div>
                 <div class="col-md-3">
-                <h5 class="profileText"><i>Work</i></h5>
+                <h5 class="profileText"><i>Trabajo</i></h5>
                     <ul class="skill-ul noPadding">
                         <li class="skills-repeat" ng-repeat="skill in user.work">{{ skill.text }}</li>
                     </ul>
                 </div>
                 <div class="col-md-3">
-                <h5 class="profileText"><i>Transportation</i></h5>
+                <h5 class="profileText"><i>Modos de transporte</i></h5>
                         <ul class="skill-ul noPadding">
                             <li class="skills-non-repeat" ng-show="user.online">Online</li>
                             <li class="skills-non-repeat" ng-show="user.walk">Walk</li>
