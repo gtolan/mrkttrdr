@@ -2201,10 +2201,9 @@ box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.43);
     margin-top: 10em !important;
     position: absolute !important; 
 }
-.moreOptions.myEteceReuseButton {
-    margin-top: 10em !important;
+/*.moreOptions.myEteceReuseButton {
     margin-left: 3em;
-}
+}*/
 .reviewHeader {
     border: 1px solid lightgray;
     padding: 15px;
