@@ -1,0 +1,74 @@
+<div ng-controller="ModalLoginCtrl">
+  <script id="myModalContent.html" type="text/ng-template">
+        <div class="modal-header">
+            <h3 class="modal-title text-center">Acesso Usuario</h3>
+        </div>
+
+                    
+  <div ng-controller="AuthenticationController">
+  <h4 class="col-md-12 text-center">Click to use social media</h4>
+
+    
+    <!-- socia media login -->
+    <div class="row">
+<div class="col-md-12 text-center socialAcc">
+    <img class="socialMediaSignIn animated flipInY" ng-click="callOauthProvider('/api/auth/twitter')" ng-src="/modules/users/client/img/buttons/twitter.png">
+    <img class="socialMediaSignIn animated flipInY" ng-click="callOauthProvider('/api/auth/google')" ng-src="/modules/users/client/img/buttons/google.png">
+     
+    <img class="socialMediaSignIn animated flipInY" ng-click="callOauthProvider('/api/auth/facebook')" ng-src="/modules/users/client/img/buttons/facebook.png">
+    <img class="socialMediaSignIn animated flipInY" ng-click="callOauthProvider('/api/auth/linkedin')" ng-src="/modules/users/client/img/buttons/linkedin.png">
+
+  </div>
+    </div>
+  <!-- socia media login END -->
+    
+  <!-- start of Login Collapse -->      
+    
+    
+    <div class="col-md-1"></div>
+  <div class="col-xs-10 text-center">
+    <form name="userForm" ng-submit="signin(userForm.$valid)" novalidate autocomplete="off">
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" class="form-control SignInInput" ng-model="credentials.username" placeholder="Username" lowercase required>
+          <div ng-messages="userForm.username.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Username is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" class="form-control SignInInput" ng-model="credentials.password" placeholder="Password" required>
+          <div ng-messages="userForm.password.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Password is required.</p>
+          </div>
+        </div>
+          
+        <div class="text-center form-group">
+          <button type="submit" class="btn btn-primary btn-sm" ng-click="cancel()" >Sign in</button>
+          &nbsp; or&nbsp;
+          <a ui-sref="authentication.signup">Sign up</a>
+        </div>
+        <div class="text-center forgot-password">
+          <a ui-sref="password.forgot">Forgot your password?</a>
+        </div>
+        <alert type="danger" ng-show="error" class="text-center text-danger">
+          <span ng-bind="error"></span>
+             <hr>
+        </alert>
+      </fieldset>
+    </form>
+  </div>
+  </div>
+
+
+      <!-- end of Login -->   
+        
+        
+        <div class="modal-footer">
+           
+          
+  <button class="btn btn-default btn-sm" ng-click="cancel()">Close</button>
+        </div>
+  </script><!--Modal -->
+</div>

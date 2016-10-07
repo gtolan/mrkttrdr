@@ -1,0 +1,45 @@
+<section class="row Dash">
+<div class="Dash">
+    <h3 class="text-center EditPrfTitle"><i class="fa fa-star-half" aria-hidden="true"></i> Revisiones</h3>
+  </div>
+    <div class="col-md-12 text-center bottomNav noPadding" ng-show="results.length === 0">
+        <div class="list-group-item">
+      <p>Once you have completed a task on TaskMatch, you will see a summary of your reviews here.</p>
+  </div> 
+    </div>
+    <div class="col-sm-12 bottomNav">
+        <div class="col-sm-4 col-sm-offset-2">
+                <h4 class="profileText">Promedio revisiones</h4>
+                    <li class="reviews-list" ng-show="user.reviews">
+                        <rating readonly="isReadonly" ng-model="userAverage" max="5" state-on="'glyphicon-star'" state-off="'glyphicon-star-empty'"></rating>
+
+                        <p><b>{{ userAverage | number:2 }} from {{ numberOfReviews }} review(s)</b></p>
+                    </li>
+                    <li class="reviews-list" ng-hide="user.reviews">No average rating.</li>
+                </div>
+    <div class="col-sm-4">
+                <h4 class="profileText">Sumario</h4>
+                    <rating readonly="isReadonly" ng-model="five" max="5" state-on="'glyphicon-star'" state-off="'glyphicon-star-empty'"></rating><div class="graph"></div> <span class="badge reviewBadge">{{ fiveStars }}</span><br/>
+                    <rating readonly="isReadonly" ng-model="four" max="5" state-on="'glyphicon-star'" state-off="'glyphicon-star-empty'"></rating><div class="graph"></div> <span class="badge reviewBadge">{{ fourStars }}</span><br/>
+                    <rating readonly="isReadonly" ng-model="three" max="5" state-on="'glyphicon-star'" state-off="'glyphicon-star-empty'"></rating><div class="graph"></div> <span class="badge reviewBadge">{{ threeStars }}</span><br/>
+                    <rating readonly="isReadonly" ng-model="two" max="5" state-on="'glyphicon-star'" state-off="'glyphicon-star-empty'"></rating><div class="graph"></div> <span class="badge reviewBadge">{{ twoStars }}</span><br/>
+                    <rating readonly="isReadonly" ng-model="one" max="5" state-on="'glyphicon-star'" state-off="'glyphicon-star-empty'"></rating><div class="graph"></div> <span class="badge reviewBadge">{{ oneStars }}</span>
+                </div>
+    </div>
+    <div class="col-sm-12">
+        <li class="reviews-list" ng-show="user.reviews" ng-repeat="review in user.reviews | filter:x as results">
+                        <div class="col-xs-12 reviewRow">
+                            <div class="col-xs-4">
+                            <rating readonly="isReadonly" ng-model="review.rating" max="5" state-on="'glyphicon-star'" state-off="'glyphicon-star-empty'"></rating>
+                        </div>
+                        <div class="col-xs-1"><img class="recentActivityIMG" src="{{ review.profileImageURL }}" alt="">
+                        </div>
+                        <div class="col-xs-7">
+                            <p data-ui-sref="tasks.view({ taskId: review.taskId })">{{review.taskName}}</p>
+                            <a data-ui-sref="profile({ userId: review.reviewBy })">{{ review.reviewByDisplayName }}</a> <small> said "{{ review.comment }}"</small><br>
+                            <small>{{ review.created | date:'fullDate' }}</small>
+                        </div>
+                        </div>
+                    </li>
+    </div>
+</section>

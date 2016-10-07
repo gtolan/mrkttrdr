@@ -1,0 +1,46 @@
+<section ng-controller="ArticlesController" ng-init="find()">
+  <div class="container-fluid blogHeader">
+    <h2 class="blogHeaderTitle">Etece Blog</h2>
+  </div>
+  <div class="container">
+    <div class="col-md-8 blogSection">
+      <div class="list-group blog">
+        <a class="list-group-item blogPost" ng-repeat="article in articles" ui-sref=
+        "articles.view({articleId: article._id})">
+        <h4 class="list-group-item-heading blogTitle" ng-bind="article.title">
+        </h4>
+        <blockquote>
+          <p class="list-group-item-text blogContent" ng-bind="article.content">
+        </p><br>
+        <footer>Posted on <span ng-bind=
+        "article.created | date:'mediumDate'"></span> by <span ng-bind=
+        "article.user.displayName"></span>
+      </footer>
+        </blockquote>
+      </a>
+        <hr class="blogSplit">
+      </div>
+      <div class="alert alert-warning text-center" ng-if=
+      "articles.$resolved && !articles.length">
+        No articles yet, why don't you <a ui-sref="articles.create">create
+        one</a>?
+      </div>
+    </div>
+    <div class="col-md-4 blogRightSide">
+<!--      <img class="blogRightImg" src="modules/core/client/img/blogImage.png">-->
+<!--
+      <h3 class="taskCategoriesTitleBlog">Task Categories</h3>
+      <h3 class="taskCategoriesTitleBlog">
+        <a class="taskCategBlogLink" ui-sref="#">Home &amp; Garden</a><br>
+        <a class="taskCategBlogLink" ui-sref="#">Delivery &amp; Removals</a><br>
+        <a class="taskCategBlogLink" ui-sref="#">Handyman &amp; Trades</a><br>
+        <a class="taskCategBlogLink" ui-sref="#">Marketing &amp; Design</a><br>
+        <a class="taskCategBlogLink" ui-sref="#">Events &amp; Photography</a><br>
+        <a class="taskCategBlogLink" ui-sref="#">Business &amp; Admin</a><br>
+        <a class="taskCategBlogLink" ui-sref="#">Fun &amp; Quirky</a><br>
+        <a class="taskCategBlogLink" ui-sref="#">Computer &amp; IT</a><br>
+        <a class="taskCategBlogLink" ui-sref="#">Other</a></h3><br>
+-->
+    </div>
+  </div><!--container-->
+</section>

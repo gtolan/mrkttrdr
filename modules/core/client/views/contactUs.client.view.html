@@ -1,0 +1,37 @@
+<section>
+  <div class="container-fluid newUserPageContainer" data-ng-controller=
+  "ContactFormController as cf">
+    <div class="page-title NewUserPageTitle">
+      <h2 class="text-center">Contacto</h2>
+    </div>
+    <div class="container-fluid text-center ContactUs">
+      <h3 class="text-center ContactPageTitleInfo">Por favor lea nuestra FAQs si 
+Necesita alguna información. Si no puede encontrar lo que busca puede 
+enviar un formulario</h3>
+    </div>
+    <div class="container-fluid NewUser2">
+      <div class="row contactRow">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <form data-ng-submit="cf.sendMail()" role="form">
+            <div class="form-group">
+              <label for="usr">Nombre:</label> <input class="form-control" id=
+              "usr" ng-model="cf.contactName" type="text">
+            </div>
+            <div class="form-group">
+              <label for="comment">Mensaje:</label> 
+              <textarea class="form-control" id="comment" ng-model=
+              "cf.contactMessage" rows="5"></textarea>
+            </div><label>Email:</label>
+            <div class="form-group">
+              <input class="form-control" ng-model="cf.contactEmail"
+              placeholder="Your email" type="text">
+            </div><button class="btn btn-succcess center-block contactBtn"
+            type="submit">Submit your request</button>
+          </form>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+  </div>
+</section>

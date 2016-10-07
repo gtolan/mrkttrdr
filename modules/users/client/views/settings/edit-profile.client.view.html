@@ -1,0 +1,156 @@
+ <section class="row Dash" ng-controller="EditProfileController">
+<!--   <div class="col-sm-12"> -->
+  <div class="Dash">
+    <h3 class="text-center EditPrfTitle"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar mi perfil</h3>
+  </div>
+  <!--<div class="col-xs-offset-1 col-xs-10 col-md-offset-4 col-md-4">-->
+    <form name="userForm" ng-submit="updateUserProfile(userForm.$valid)" novalidate autocomplete="off" class="editProfileSection">
+      <fieldset>
+      <div class="col-sm-6">
+            <md-input-container class="md-block" >
+            <label for="firstName" class="editProfileLabel">Nombre</label>
+            <input type="text" id="firstName" name="firstName"  ng-model="user.firstName"  required>
+            </md-input-container>
+          </div>  
+          
+        <div class="col-sm-6">
+            <md-input-container class="md-block" >
+            <label for="firstName" class="editProfileLabel">Apellido</label>
+            <input type="text" id="lastName" name="lastName" ng-model="user.lastName" required>
+            </md-input-container>
+        </div>
+          
+        <div class="col-sm-6" >
+             <md-input-container class="md-block">
+        <label for="email" class="editProfileLabel"><i class="fa fa-at" aria-hidden="true"></i> Email</label>
+        <input type="email" id="email" name="email" ng-model="user.email"  required  minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+            <div ng-messages="user.email.$error" role="alert">
+              <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                Your email must be between 10 and 100 characters long and look like an e-mail address.
+              </div>
+            </div>
+      </md-input-container>  
+        </div>  
+      
+        <div class="col-sm-6" >
+             <md-input-container class="md-block" flex-gt-sm>
+          <label for="phoneNum" class="editProfileLabel"><span class="glyphicon glyphicon-phone" tooltip=
+          "Enter your phone number to verify your contact info" tooltip-placement="right"></span> Teléfono </label>
+          <input  name="phone"  ng-maxlength="12" ng-minlength="9" id="phoneNumber" name="phoneNumber"  ng-model="user.phoneNumber" placeholder="+34" tooltip="no olvide incluir el código de país" ng-pattern="/^[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}$/" />
+
+              <div class="hint" ng-show="showHints">(+##) ###-####</div>
+              <div ng-messages="user.phoneNumber.$error" ng-hide="showHints">
+                <div ng-message="pattern">(###) ###-#### - Please enter a valid phone number.</div>
+              </div>
+            </md-input-container>
+     
+        </div>   
+      </div> <!-- end of col-sm-6 /-->
+      <div class="col-sm-6">
+        <div class="form-group" show-errors="">
+    <label class="editProfileLabel" for="education">Educación <span class=
+          "glyphicon glyphicon-question-sign" tooltip=
+          "Type in a skill and press enter to add another"
+          tooltip-placement="right"></span></label> 
+    <tags-input ng-model="user.education"></tags-input>
+    <div ng-messages="userForm.education.$error" role="alert">
+      <p class="help-block error-text" ng-message="required">Education is
+      required.</p>
+    </div>
+  </div>
+        </div>
+        
+        <div class="col-sm-6" show-errors="">
+            <div class="form-group" show-errors="">
+    <label class="editProfileLabel" for="languages">Idiomas <span class=
+          "glyphicon glyphicon-question-sign" tooltip=
+          "Type in a skill and press enter to add another"
+          tooltip-placement="right"></span></label> 
+    <tags-input ng-model="user.language"></tags-input>
+    <div ng-messages="userForm.language.$error" role="alert">
+      <p class="help-block error-text" ng-message="required">Languages are
+      required.</p>
+    </div>
+  </div>
+        </div>
+          
+      <div class="col-sm-6">  
+        <div class="form-group">
+        <label class="editProfileLabel">Transporte <span class=
+          "glyphicon glyphicon-question-sign" tooltip=
+          "Select your available transport modes by clicking the relevant button"
+          tooltip-placement="right"></span></label><br>
+            <div class="btn-group">
+                <label class="btn btn-default btn-xs" ng-model="user.online" btn-checkbox>Online</label>
+                <label class="btn btn-default btn-xs" ng-model="user.walk" btn-checkbox>Walk</label>
+                <label class="btn btn-default btn-xs" ng-model="user.bicycle" btn-checkbox>Bicycle</label>
+                <label class="btn btn-default btn-xs" ng-model="user.scooter" btn-checkbox>Scooter</label>
+                <label class="btn btn-default btn-xs" ng-model="user.car" btn-checkbox>Car</label>
+                <label class="btn btn-default btn-xs" ng-model="user.truck" btn-checkbox>Truck</label>
+            </div>
+            </div>
+        </div>
+      
+      </div><!-- end of col-sm-6 -->
+      <hr class="hrEditProfile">
+      <div class="col-xs-12">
+  <hr class="hrEditProfile">
+  <div class="form-group" show-errors>
+    <label class="editProfileSpan" for="tagline">Un poco sobre mí</label> 
+    <textarea class="form-control" id="tagline" name="about"
+    ng-model="user.tagline" placeholder="A mini bio"
+    required="" rows="1" tooltip="Give us a one liner about you"
+    tooltip-placement="right" tooltip-trigger="focus" type="text"></textarea>
+    <div ng-messages="userForm.about.$error" role="alert">
+      <p class="help-block error-text" ng-message="required">Tagline is required.</p>
+    </div>
+  </div>
+  <div class="form-group" show-errors>
+    <label class="editProfileSpan" for="tagline">Mi ubicación</label> 
+    <textarea class="form-control" id="tagline" name="about"
+    ng-model="user.location" placeholder="Your city"
+    required="" rows="1" tooltip="Let users know your neighbourhood"
+    tooltip-placement="right" tooltip-trigger="focus" type="text"></textarea>
+    <div ng-messages="userForm.location.$error" role="alert">
+      <p class="help-block error-text" ng-message="required">Location is required.</p>
+    </div>
+  </div>          
+  <div class="form-group" show-errors="">
+    <label class="editProfileSpan" for="about">Sobre mí</label> 
+    <textarea class="form-control" id="about" name="about"
+    ng-model="user.about" placeholder="Tell us a little about yourself"
+    required="" rows="5" tooltip="Tell us a little about yourself"
+    tooltip-placement="right" tooltip-trigger="focus" type="text"></textarea>
+    <div ng-messages="userForm.about.$error" role="alert">
+      <p class="help-block error-text" ng-message="required">About me
+      description is required.</p>
+    </div>
+  </div>
+  <div class="form-group" show-errors="">
+    <label class="editProfileSpan" for="work">Experiencia de trabajo y habilidades<span class=
+          "glyphicon glyphicon-question-sign" tooltip=
+          "Type in a skill and press enter to add another"
+          tooltip-placement="right"></span></label> 
+    <tags-input ng-model="user.work"></tags-input>
+<!--     <tags-input ng-model="user.alerts"></tags-input> -->
+    <div ng-messages="userForm.work.$error" role="alert">
+      <p class="help-block error-text" ng-message="required">Work skills are
+      required.</p>
+    </div>
+  </div>
+  <div class="text-center form-group">
+          <button type="submit" class="submit-comment myEteceReuseButton hvr-underline-reveal">Guardar perfil</button>
+          <button class="myBackButton hvr-underline-reveal" data-ui-sref="profile({ userId : user._id })">Ver perfil</button>    
+        </div>
+        <div ng-show="success" class="alert alert-success text-center">
+          <strong><i class="fa fa-check-circle-o" aria-hidden="true"></i>Perfil guardado correctamente</strong>
+        </div>
+        <div ng-show="error" class="alert alert-danger text-center">
+          <strong ng-bind="error"></strong>
+        </div>
+</div><!-- end of col-sm-12 -->
+      </fieldset>
+    </form>
+<!--   </div> -->
+  </div>
+</section>

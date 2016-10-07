@@ -1,0 +1,41 @@
+<section ng-controller="NgMapController as vm">
+ <ng-map default-style="false" style="height:550px;" scrollwheel="false" zoom="12" center="{{addressMapCenter}}" geo-fallback-center="Madrid, Spain" map-type-control-options='{position:"top_right", style:"dropdown_menu", mapTypeIds:["HYBRID","ROADMAP","SATELLITE","TERRAIN"]}'
+>
+        <info-window id="myInfoWindow">
+            <div ng-non-bindable>
+               <div class="row">
+                <div class="col-xs-5 priceCol">
+                  <h2 class="priceInfoW">€ {{selectedTask.price}}</h2>
+                   </div>
+                <div class="col-xs-5">
+                   <img class="priceCol3" src="{{selectedTask.profileImageURL}}">
+                   </div>
+                </div>
+                <hr>
+                
+                <p class="mapTitle">{{selectedTask.title}}</p>
+                <p class="mapDate">Due Date:{{selectedTask.dueDate | date:'mediumDate'}}</p>
+                
+                <p class="mapDate">Created on: {{selectedTask.created | date:'mediumDate'}}</p>
+                <button type="button" class="moreInfoBtn hvr-underline-reveal btn-block" data-ui-sref=
+      "tasks.view({ taskId: selectedTask._id })" ng-click="showme=false">More Info</button>
+            </div>
+        </info-window>
+<!--                    ng-repeat="task in vm.tasks | filter:search | filter:myFilter | orderBy:predicate:reverse"-->
+        <marker data-ng-repeat="task in vm.tasks | filter:search | filter:myFilter | orderBy:predicate:reverse | filter:x as results"
+                position="{{task.taskLocation}}"
+                icon="{url:'modules/core/client/img/EtecePin.png',
+                scaledSize:[25,50],
+                origin: [0,0],
+                anchor: [10,10]}"
+                
+                
+                title="{{task.title}}" id="{{task.id}}" on-click="showCity(event, task)">
+        </marker>
+    <custom-control id="go-home" position="TOP_LEFT" index="1" on-click="vm.goHome()">
+      <div class="mapInputCenter Row">    
+        &nbsp;Elegir otra ciudad : <input class="mapInputCenter" ng-model="addressMapCenter" /></div>
+    </custom-control>
+
+    </ng-map><br/>
+</section>

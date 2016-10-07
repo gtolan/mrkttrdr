@@ -1,0 +1,80 @@
+<section class="row profileWrapper">
+  <div class="profile-wrapper">
+  <div class="EditPrfTitle">
+  <h3 class="blueHeader text-center" ng-show="vm.authentication.user._id === vm.offer.taskOwnerUser">Leave a review for <strong>{{
+  vm.offer.displayName }}</strong> on {{ vm.offer.taskName }}</h3>
+  <h3 class="blueHeader text-center" ng-hide="vm.authentication.user._id === vm.offer.taskOwnerUser">Leave a review for <strong>{{
+  vm.offer.taskOwnerDisplayName }}</strong> on {{ vm.offer.taskName }}</h3>
+</div>
+  <md-tabs md-center-tabs>
+  <md-tab label="Leave a Review">
+        <div class="container">
+        <div class="col-sm-10 col-sm-offset-1">
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>
+        <div ng-show="vm.authentication.user._id === vm.offer.user._id && vm.offer.taskOwnerReviewed === true"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Whoops! You have already left a review for {{
+  vm.offer.taskOwnerDisplayName }} </div>
+        <div ng-show="vm.authentication.user._id === vm.offer.taskOwnerUser && vm.offer.taskRunnerReviewed === true"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Whoops! You have already left a review for {{
+  vm.offer.user.displayName }} </div>
+        <span class="md-headline" ng-show="vm.authentication.user._id === vm.offer.taskOwnerUser">Review for {{ vm.offer.displayName }}</span>
+        <img ng-show="vm.authentication.user._id === vm.offer.taskOwnerUser" ng-src="{{vm.offer.profileImageURL}}" onerror="if (this.src != 'default.png') this.src = '../modules/users/client/img/profile/default.png';" class="reviewImage" alt="Taskmatch.ie">
+        <span class="md-headline" ng-hide="vm.authentication.user._id === vm.offer.taskOwnerUser">Review for {{ vm.offer.taskOwnerDisplayName }}</span>
+        <img ng-hide="vm.authentication.user._id === vm.offer.taskOwnerUser" ng-src="{{vm.authentication.user.profileImageURL}}" onerror="if (this.src != 'default.png') this.src = '../modules/users/client/img/profile/default.png';" class="reviewImage" alt="Taskmatch.ie">
+        </md-card-title-text>
+      </md-card-title>
+    <md-card-content>
+      <form name="vm.form" type="submit" class="form-horizontal" novalidate>
+        <input value="{{ vm.offer.user._id }}" ng-model="vm.review.reviewFor" hidden>
+        <!-- begin star rating -->
+        <h1>
+        <rating tooltip-placement="left" tooltip="Leave a rating from 1 to 5" ng-model="vm.review.rating" max="5" state-on="'glyphicon-star'" state-off="'glyphicon-star-empty'" class="pull-left" required></rating></h1>
+        <!-- end star rating -->
+        <input type="text" ng-model="vm.review.comment" name="comments" id="comments" class="form-control reviewComment" placeholder="leave your review comments here" maxlength="500">
+        <!-- <input type="number" ng-model="vm.review.rating" name="rating" id="rating" class="form-control" placeholder="leave your rating from 1 to 5 here" maxlength="1"> -->
+        <small>{{ 500 - vm.review.comment.length}} characters remaining</small><br>
+        <!-- Review from the task owner user to the offer owner user -->
+        <button type="submit" ng-if="vm.authentication.user._id === vm.offer.taskOwnerUser" ng-click="vm.newTaskReview()" class="submit-comment pull-right">Leave a review for {{ vm.offer.displayName }}</button>
+        <!-- Review from the offer owner user to the task owner user -->
+        <button type="submit" ng-if="vm.authentication.user._id === vm.offer.user._id" ng-click="vm.newOfferTaskReview()" class="submit-comment pull-right">Leave a review for {{ vm.offer.taskOwnerDisplayName }}</button>
+      </form>
+    </md-card-content>
+  </md-card>
+  </div>
+</div>
+</md-tab>
+      <md-tab label="Task Info">
+      <div class="container">
+        <div class="col-sm-10 col-sm-offset-1">
+    <div class="list-group">
+      <div class="list-group-item">
+        <h3 class="offer-h3">Task details</h3>
+      </div>
+      <div class="list-group-item">
+        <small>Task title</small>
+        <h4 tooltip="The name of your task." tooltip-placement="right">{{
+        vm.offer.taskName }}</h4>
+      </div>
+      <div class="list-group-item">
+        <small>Services offered description</small>
+        <h4 tooltip="A short description of the task agreed upon."
+        tooltip-placement="right">{{ vm.offer.offerDesc}}</h4>
+      </div>
+      <div class="list-group-item">
+        <small>Offer created</small>
+        <h4 tooltip="The date on which the offer was made." tooltip-placement=
+        "right">{{ vm.offer.created | date:medium }}</h4>
+      </div>
+      <div class="list-group-item">
+        <small>Accepted price</small>
+        <h4 tooltip="This is total price you will pay if you accept the offer."
+        tooltip-placement="right">{{ vm.offer.offerPrice | currency: "&euro;"
+        }}</h4>
+      </div>
+    </div>
+  </div>
+  </div>
+</md-tab>
+</md-tabs>
+</div>
+</section>

@@ -1,0 +1,42 @@
+
+<section>
+  <div ng-controller="FAQCollapseCtrl">
+    <div class="row FaqBG">
+      <img class="ipad" src="../modules/core/client/img/ipad2c.png">
+      <div class="col-sm-12 text-center faqRow">
+        <h1 class="FaqInfo">Want to Learn More?</h1>
+        <h4 class="faqSup">Find out more about:</h4>
+        <button class="postingTask" ui-sref="post">Posting a Task</button>
+        <button class="postingTask" ui-sref="earnWithUs">Completing a task</button>
+      </div>
+    </div><!-- end of the row FaqBG -->
+   <!-- Posting collapse start section -->
+   <!-- Mid section -->
+    <div class="row Faq2BG">
+      <div class="container-fluid">
+        <div class="container-fluid">
+          <div class="col-sm-6 faqs">
+          <h1 class="valueTitle2">FAQs</h1>    
+            <div ng-controller="AccordionValuesCtrl">
+              <accordion close-others="oneAtATime">
+                <accordion-group heading="What is TaskMatch? &#43;" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled"> TaskMatch is a trusted community marketplace for people to outsource tasks, find local services or complete flexible jobs to earn money online or via mobile.
+                </accordion-group>
+                <accordion-group heading="What tasks can I get done on TaskMatch? &#43;" is-open="status.isSecondOpen" is-disabled="status.isSecondDisabled"> You can post almost any task you need done on TaskMatch. From tasks around the house (like gardening or cleaning) to office tasks (like data entry or website support) to tasks for business (like promotional staffing or mystery shopper). 
+                </accordion-group>
+                <accordion-group heading="How can I get my tasks completed on TaskMatch? &#43;" is-open="status.isThirdOpen" is-disabled="status.isThirdDisabled"> It's very simple. You Start by Posting a Task - it's FREE to post and takes just a few minutes. TaskMatch Workers will then make offers to complete your task. Check out their profile and once you've found the TaskMatch worker that's perfect for your task, accept their offer to assign them to the task.<br><br>
+                    When accepting the offer you will Add Funds for the task via TaskMatch Pay, which are securely held in an TaskMatch Trust Account until the task has been completed. This allows the TaskMatch Worker to start working knowing there are Funds secured for the task. Funds are only released to the TaskMatch Worker once both of you are satisfied that the task has been completed.
+                </accordion-group>
+                <accordion-group heading="How much does it cost to post a task?
+ &#43;" is-open="status.isFourthOpen" is-disabled="status.isFourthDisabled"> It is FREE to post a task. Once you have accepted the agreed task price you will need to Add Funds for the task via TaskMatch Pay, which are securely held in an TaskMatch Trust Account until the task has been completed. You will need to Release Funds upon task completion. There are no additional fees or hidden costs and cash payments are not supported on TaskMatch. (We deduct a Service Fee from the TaskMatch Worker who completes your job.)
+                </accordion-group>
+                <accordion-group heading="Once I post a task, do I have to hire a TaskMatch Worker? &#43;" is-open="status.isFifthOpen" is-disabled="status.isFifthDisabled"> No, it is FREE to post a task and there are no obligations to select an TaskMatch Worker unless you find the right person for the job and accept their offer.
+                </accordion-group>
+              </accordion>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- collapse ctrl end -->
+  <!-- Mid section -->
+</section>

@@ -1,0 +1,254 @@
+ <section>
+     
+
+    <div class="container-fluid tareaCont">
+        <div class="row text-center"><h3>Mis Tareas</h3></div>
+<div class="col-md-4 col-md-12 taskRepeat noPadding">
+    <!-- new attempt -->
+    <div class="btn-group btn-group-justified" role="group">
+<!--             <div class="btn-group" role="group">
+              <button class="btn btn-primary btnFilters" ng-click="filterbox2 = !filterbox2"><span class="glyphicon glyphicon-search"></span> Search</button>
+            </div> -->
+<!--             <div class="btn-group" role="group">
+              <button class="btn btn-primary btnFilters" ng-click="filterbox = !filterbox"><span class="glyphicon glyphicon-cog"></span> Filters</button>
+            </div> -->
+            <div class="btn-group" role="group">
+              <button ng-show="filterbox2 " class="btn btn-primary btnFilters hvr-underline-reveal" ng-click="filterbox2 = !filterbox2; showmeSearch=false"><span class="glyphicon glyphicon-remove"></span> Cerrar</button>
+              <button ng-show="!filterbox2 "class="btn btn-primary btnFilters hvr-underline-reveal" ng-click="filterbox2 = !filterbox2; showmeSearch=true"><span class="glyphicon glyphicon-search"></span> Buscar</button>
+            </div>
+            <div class="btn-group" role="group">
+              <button ng-show="filterbox " class="btn btn-primary btnFilters hvr-underline-reveal" ng-click="filterbox = !filterbox; showmeFilters=false"><span class="glyphicon glyphicon-remove"></span> Cerrar</button>
+              <button ng-show="!filterbox "class="btn btn-primary btnFilters hvr-underline-reveal" ng-click="filterbox = !filterbox; showmeFilters=true"><span class="glyphicon glyphicon-cog"></span> Filtrar</button>
+            </div>
+             <div class="btn-group" role="group">
+              <button ng-show="!showBoxOne" class="btn btn-primary btnFilters hvr-underline-reveal" ng-click="showBoxOne = !showBoxOne; showmeMapView=false"><span class="glyphicon glyphicon-remove"></span> Cerrar la mapa</button>
+              <button ng-hide="!showBoxOne"class="btn btn-primary btnFilters hvr-underline-reveal" ng-click="showBoxOne = !showBoxOne; showmeMapView=true"><span class="glyphicon glyphicon-map-marker"></span> Mapa</button>
+              </div> 
+          </div>
+    <!-- new attempt -->
+    <div class="well filterbox2" ng-show="filterbox2">
+            <p>Start typing to search for tasks</p>
+            <input type="text" class="form-control taskSearchInput" placeholder="Search for tasks..." ng-model="search.$">
+        </div>
+    
+    <div class="well filterbox filterTaskWell" ng-show="filterbox">
+            <div class="row">
+            <div class="col-xs-12 noPadding">
+               
+                
+        <div class="row noPadding">
+            <div class="col-xs-5 noPadding"> 
+              <p class="noBtmMargin">Task status</p>
+                 <div class="btn-group btn-group-xs filterGroups">
+              <button class="btn btn-default btn-sm allFilterButton focus" ng-click="myFilter = { statusOpen: true }" >All</button>
+              <button class="btn btn-default btn-sm openFilterButton" ng-click="myFilter = { statusAssigned: false }">Open</button>
+                </div>
+                </div>
+              
+          <div class="col-xs-7 noPadding">
+              <p class="noBtmMargin">Task Category</p>
+                <select class="sortBy taskCatgFilterInput" ng-model="selectedCat" ng-value="x.filter" ng-options="x.cat for x in taskCategories">
+                </select>
+                  </div>
+        </div>    
+            
+                
+     <p class="noBtmMargin">Sort by</p>
+        <div class="btn-group btn-group-xs filterGroups">
+            <button class="btn btn-default btn-sm" ng-click="order('price')">Price</button>
+            <span class="sortorder" ng-show="predicate === 'price'" ng-class="{reverse:reverse}"></span>
+            <button class="btn btn-default btn-sm" ng-click="order('created')">Created</button>
+            <span class="sortorder" ng-show="predicate === 'created'" ng-class="{reverse:reverse}"></span>
+            <button class="btn btn-default btn-sm" ng-click="order('title')">Title</button>
+            <span class="sortorder" ng-show="predicate === 'title'" ng-class="{reverse:reverse}"></span>
+            <button class="btn btn-default btn-sm" ng-click="myFilter =  { statusOpen : true }">Open</button>    
+        </div>    
+             
+                
+        <p class="noBtmMargin">Task type</p>
+        <div class="btn-group btn-group-xs filterGroups">
+            <button class=" btn btn-default btn-sm" ng-click="myFilter = { statusOpen: true }">All</button>
+            <button class="btn btn-default btn-sm" ng-click="myFilter = { inPersonTask: true }">In Person</button>
+            <button class="btn btn-default btn-sm" ng-click="myFilter = { onlineTask: true }">Online tasks</button>
+        </div>
+                
+<div class="row">
+    <md-slider-container>
+      <span class="md-body-1">Price</span>
+      <md-slider flex ng-model="color.blue" min="0" max="999" aria-label="blue" id="blue-slider" class="md-primary">
+      </md-slider>
+      <md-input-container>
+        <input flex type="number" ng-model="color.blue" aria-label="blue" aria-controls="blue-slider">
+      </md-input-container>
+    </md-slider-container>                
+                
+</div>
+                      
+            </div>    
+            </div> 
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="newTasksToday row">
+    <p class="text-center"> There are X new Tasks </p>
+    </div>
+        <div class="scrollable ">
+
+     
+        <md-list-item class="md-3-line taskListRepeatCont" data-ng-repeat="task in myTasks | filter:search | filter:myFilter | customFilter: selectedCat.filter | orderBy:predicate:reverse | filter:x as results"> 
+    
+            <div class="col-xs-2 noPadding">
+          <img src="{{ task.profileImageURL }}" onerror="if (this.src != 'default.png') this.src = '../modules/users/client/img/profile/default.png';" class="md-avatar myTaskProf" alt="{{item.who}}">
+          </div>
+        <div class="col-xs-7 noPadding md-ink-ripple">
+            <div class="md-list-item-text" layout="column">
+              
+            <h3 data-ui-sref="tasks.view({ taskId: task._id })" class="md-ink-ripple">{{ task.title | limitTo: 19 }}{{ task.title.length > 20 ? '...' : ''}}</h3>
+            <h4 data-ui-sref="tasks.view({ taskId: task._id })" class="md-ink-ripple"><i class="fa fa-map-marker" aria-hidden="true"></i> {{task.taskLocation}}</h4>
+        <div class="row noPadding lastRowRepeatTask">
+            <small ng-hide="!task.comments.length > 0" class="list-group-item-text noOfComments"><span class="glyphicon glyphicon-comment"></span>&nbsp;{{ task.comments.length }} comments
+<!-- <span data-ng-bind="task.user.displayName" data-ng-if="task.user"></span> -->
+<!--<span data-ng-if="!task.user">Deleted User</span>-->
+         </small>
+                     <small ng-hide="!task.offers.length > 0" class="list-group-item-text PostedOn"><i class="fa fa-wpforms" aria-hidden="true"></i> &nbsp;&nbsp; {{ task.offers.length }} offers
+<!--- <span data-ng-bind="task.user.displayName" data-ng-if="task.user"></span> -->
+<!--<span data-ng-if="!task.user">Deleted User</span>-->
+         </small>
+                     <small class="list-group-item-text PostedOn">Posted on 
+                        <span data-ng-bind="task.created | date:' MMM d'"></span>
+                    </small> 
+                </div>
+            </div>
+            </div>
+                    <div class="col-xs-3 noPadding PriceSection text-center">
+                       <h3 class="text-center taskPriceRepeat">&euro;{{task.price}}</h3> 
+                          <md-button class="md-raised md-primary applyBut2" ng-hide="task.statusAssigned" data-ui-sref="tasks.view({ taskId: task._id })" ng-click="showme=false">Abrir</md-button>
+<!--                         <button class="btn-primary btn-block EarnBut" ng-hide="task.statusAssigned" data-ui-sref="tasks.view({ taskId: task._id })" ng-click="showme=false">Apply now</button>-->
+                         <button disabled class="btn btn-default assigned" ng-disabled="disabled" ng-show="task.statusAssigned && !task.statusClosed" data-ui-sref="tasks.view({ taskId: task._id })" ng-click="showme=false" disabled/>Assigned</button>
+                         <button disabled class="btn btn-default btn-block completed" ng-disabled="disabled" ng-show="task.statusClosed" data-ui-sref="tasks.view({ taskId: task._id })" ng-click="showme=false" disabled/>Complete</button>
+                     </div>
+           
+        </md-list-item>
+    
+
+            
+<!--
+    <ul class="list-group">
+        <li class="list-group-item taskRepeatPad" data-ng-repeat="task in vm.tasks | filter:search | filter:myFilter | customFilter: selectedCat.filter | orderBy:predicate:reverse | filter:x as results">  
+         <a data-ui-sref="tasks.view({ taskId: task._id })">
+             <div class="row taskRepeatRow">
+                 <div class="col-xs-2 taskRepeatImg noPadding"> 
+                 <img class="taskProfileImg" src="{{ task.profileImageURL }}" onerror="if (this.src != 'default.png') this.src = '../modules/users/client/img/profile/default.png';" alt=""/>
+                 </div>
+                 
+                 <div class="col-xs-7 midTaskRepeat"> -center div 
+-->
+<!--
+         
+<h3 class="list-group-item-heading taskTitleRepeat">&nbsp; &nbsp; {{ task.title | limitTo: 19 }}{{ task.title.length > 20 ? '...' : ''}}</h3>
+                  
+                     
+                     <h4 class="taskLocatRepeat listIcon"><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; &nbsp; {{task.taskLocation}} </h4>
+                     <div class="row noPadding">
+                     <small ng-hide="!task.comments.length > 0" class="list-group-item-text noOfComments"><span class="glyphicon glyphicon-comment"></span> &nbsp;&nbsp; {{ task.comments.length }} comments  </small>
+-->
+<!-- <span data-ng-bind="task.user.displayName" data-ng-if="task.user"></span> -->
+<!--<span data-ng-if="!task.user">Deleted User</span>-->
+<!--
+         
+                     <small ng-hide="!task.offers.length > 0" class="list-group-item-text PostedOn"><i class="fa fa-wpforms" aria-hidden="true"></i> &nbsp;&nbsp; {{ task.offers.length }} offers
+-->
+<!--- <span data-ng-bind="task.user.displayName" data-ng-if="task.user"></span> -->
+<!--<span data-ng-if="!task.user">Deleted User</span>-->
+<!--
+         </small>
+                     <small class="list-group-item-text PostedOn">Posted on 
+                        <span data-ng-bind="task.created | date:'mediumDate'"></span>
+                    </small>    </div>         
+                  </div>nd of center div 
+-->
+<!--
+                    </a>
+             
+             <div class="col-xs-3 noPadding PriceSection text-center">
+               <h3 class="text-center taskPriceRepeat">&euro;{{task.price}}</h3> 
+                 <button class="btn-primary btn-block EarnBut" ng-hide="task.statusAssigned" data-ui-sref="tasks.view({ taskId: task._id })" ng-click="showme=false">Aplicar Ahora</button>
+                 <button disabled class="btn btn-default assigned" ng-disabled="disabled" ng-show="task.statusAssigned && !task.statusClosed" data-ui-sref="tasks.view({ taskId: task._id })" ng-click="showme=false" disabled/>Assigned</button>
+                 <button disabled class="btn btn-default btn-block completed" ng-disabled="disabled" ng-show="task.statusClosed" data-ui-sref="tasks.view({ taskId: task._id })" ng-click="showme=false" disabled/>Complete</button>
+             </div>
+             
+         </div>
+        </li>
+    </ul>
+-->
+    <div class="alert alert-warning text-center" ng-show="results.length === 0">
+    No Tasks yet, why don't you <a data-ui-sref="tasks.create">create one</a>?
+  </div>
+  </div>
+        
+
+</div> <!-- close the col-sm-4 -->   
+       
+
+
+
+
+
+        <div class="col-md-8 col-md-12 noPadding viewTaskWindow">
+        <ui-view></ui-view> 
+    
+        <div class="listTasksMap showBoxOne" ng-show="!showBoxOne" ng-controller="NgMapController as vm">
+  
+    
+  <!--      <div collapse="mapCollapsed"> -->
+  <!--             <div class="well mapWell"> -->
+
+                <ng-map default-style="false" style="height:550px;" scrollwheel="false" zoom="12" center="{{addressMapCenter}}" geo-fallback-center="Madrid, Spain" map-type-control-options='{position:"top_right", style:"dropdown_menu", mapTypeIds:["HYBRID","ROADMAP","SATELLITE","TERRAIN"]}'
+>
+        <info-window id="myInfoWindow">
+            <div ng-non-bindable>
+               <div class="row">
+                <div class="col-xs-5 priceCol">
+                  <h2 class="priceInfoW">€ {{selectedTask.price}}</h2>
+                   </div>
+                <div class="col-xs-5">
+                   <img class="priceCol3" src="{{selectedTask.profileImageURL}}">
+                   </div>
+                </div>
+                <hr>
+                
+                <p class="mapTitle">{{selectedTask.title}}</p>
+                <p class="mapDate">Due Date:{{selectedTask.dueDate | date:'mediumDate'}}</p>
+                
+                <p class="mapDate">Created on: {{selectedTask.created | date:'mediumDate'}}</p>
+                <button type="button" class="moreInfoBtn hvr-underline-reveal btn-block" data-ui-sref=
+      "tasks.view({ taskId: selectedTask._id })" ng-click="showme=false">More Info</button>
+            </div>
+        </info-window>
+<!--                    ng-repeat="task in vm.tasks | filter:search | filter:myFilter | orderBy:predicate:reverse"-->
+        <marker ng-hide="task.user._id !== vm.user._id" data-ng-repeat="task in myTasks | filter:search | filter:myFilter | customFilter: selectedCat.filter | orderBy:predicate:reverse | filter:x as results" data-ui-sref=
+          "tasks.view({ taskId: task._id })"
+                position="{{task.taskLocation}}"
+
+                icon="{url:'modules/core/client/img/EtecePin.png',
+                scaledSize:[25,50],
+                origin: [0,0],
+                anchor: [10,10]}"
+                title="{{task.title}}" id="{{task.id}}" on-click="showCity(event, task)">
+        </marker>
+    <custom-control id="go-home" position="TOP_LEFT" index="1" on-click="vm.goHome()">
+      <div class="mapInputCenter Row">    
+        &nbsp;Elegir otra ciudad : <input class="mapInputCenter" ng-model="addressMapCenter" /></div>
+    </custom-control>
+
+    </ng-map><br/>
+        
+            </div><!-- close well -->
+        </div><!-- close collapse -->
+       
+    </div>    
+</section>

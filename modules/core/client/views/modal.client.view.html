@@ -1,0 +1,201 @@
+<div class="modal-header" ng-controller="NappCtrl as app">
+  <button aria-hidden="true" class="close" ng-click=
+  "modal.dismiss('You cancelled your task, please try again!')" type=
+  "button">&times;</button>
+  <h3 style="text-align:center;color:#265a88;">Get free quotes now!</h3>
+</div>
+<form class="form" id="vm.form.taskForm" name="vm.form.taskForm" ng-submit=
+"vm.save(vm.form.taskForm.$valid)" novalidate="">
+  <fieldset>
+    <div class="modal-body">
+      <div>
+        <div class="btn-group btn-xs progressmodalBtns">
+          <button class="btn btn-xs" ng-class=
+          "{'btn-success btn-sm':modal.isCurrentStep(0)}" ng-click=
+          "modal.setCurrentStep(0)">Details</button> <button class="btn btn-xs"
+          ng-class="{'btn-success btn-sm':modal.isCurrentStep(1)}" ng-click=
+          "modal.setCurrentStep(1)">Location</button> <button class=
+          "btn btn-xs" ng-class="{'btn-success btn-sm':modal.isCurrentStep(2)}"
+          ng-click="modal.setCurrentStep(2)">Budget</button>
+        </div>
+        <div class="slide-frame" ng-switch="modal.getCurrentStep()">
+          <div class="wave" ng-switch-when="one">
+            <fieldset>
+              <div class="form-group divTaskModalTitle" show-errors="">
+                <label class="control-label ModalTitleTask" for=
+                "firstName">Task title <span aria-hidden="true" class=
+                "glyphicon glyphicon-question-sign" tooltip=
+                "The Task Title is a short heading for your task, Eg, Cleaner needed for my home."
+                tooltip-placement="right"></span></label>
+                <div>
+                  <input class="input-xlarge" id="TaskTitle" ng-model=
+                  "vm.task.title" type="text">
+                </div>
+              </div>
+              <div class="form-group divTaskModalDesc" show-errors="">
+                <label class="control-label" for="lastName">Task Description
+                <span aria-hidden="true" class=
+                "glyphicon glyphicon-question-sign" tooltip=
+                "Please enter a Task Description, give as much detail as you can about your task. Eg, Clean my four bedroom apartment for two hours"
+                tooltip-placement="right"></span></label>
+                <div>
+                  <textarea class="input-xlarge descriptionTaskModal" cols="45"
+                  ng-model="vm.task.description" rows="3" type=
+                  "text"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <div>
+                  <a ui-sref="#">
+                  <p class="help">Need more help <span aria-hidden="true"
+                  class="glyphicon glyphicon-question-sign" tooltip=
+                  "Click the link to visit our FAQs" tooltip-placement=
+                  "right"></span></p></a>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="wave" ng-switch-when="two">
+            <fieldset>
+              <div class="col-md-5 noPadding">
+  <!-- Split button --><br>
+  <div class="btn-group" dropdown="">
+    <div class="btn-group" dropdown="" dropdown-append-to-body="">
+      <button class="btn btn-default splitCategBt" dropdown-toggle="" id=
+      "btn-append-to-body" type="button">Category <span class=
+      "caret"></span></button>
+      <ul aria-labelledby="split-button" class="dropdown-menu categDropD" role=
+      "menu">
+        <li role="menuitem">
+          <a btn-checkbox="" href="#" ng-model="vm.task.cleaning">Home &amp;
+          Cleaning</a>
+        </li>
+        <li role="menuitem">
+          <a btn-checkbox="" href="#" ng-model="vm.task.moving">Delivery &amp;
+          Removals</a>
+        </li>
+        <li role="menuitem">
+          <a btn-checkbox="" href="#" ng-model="vm.task.DIY">Handyman &amp;
+          Trades</a>
+        </li>
+        <li role="menuitem">
+          <a btn-checkbox="" href="#" ng-model="vm.task.marketing">Marketing
+          &amp; Design</a>
+        </li>
+        <li role="menuitem">
+          <a btn-checkbox="" href="#" ng-model="vm.task.onlineIT">Computer
+          &amp; IT</a>
+        </li>
+        <li role="menuitem">
+          <a btn-checkbox="" href="#" ng-model="vm.task.photoEvents">Events
+          &amp; Photography</a>
+        </li>
+        <li role="menuitem">
+          <a btn-checkbox="" href="#" ng-model="vm.task.office">Business &amp;
+          Admin</a>
+        </li>
+        <li role="menuitem">
+          <a btn-checkbox="" href="#" ng-model="vm.task.funQuirky">Fun &amp;
+          Quirky</a>
+        </li>
+        <li class="divider"></li>
+        <li role="menuitem">
+          <a btn-checkbox="" href="#" ng-model="vm.task.misc">Other</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+              <div class="col-md-4 noPadding">
+                <div class="form-group">
+                  <label class="control-label" for="select01">How Many Workers
+                  <span aria-hidden="true" class=
+                  "glyphicon glyphicon-question-sign"></span></label>
+                  <div class="controls">
+                    <select class="form-control" id="select01" ng-model=
+                    "vm.task.workerQty">
+                      <option>
+                        Unlimited
+                      </option>
+                      <option>
+                        2
+                      </option>
+                      <option>
+                        3
+                      </option>
+                      <option>
+                        4
+                      </option>
+                      <option>
+                        5
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="firstName">Task Location
+                <span aria-hidden="true" class=
+                "glyphicon glyphicon-question-sign"></span></label>
+                <div>
+                  <input class="input-xlarge" id="firstName" ng-model=
+                  "vm.task.taskLocation" type="text">
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="wave" ng-switch-when="three">
+            <fieldset>
+              <div class="control-group">
+                <h4>Thanks, your {{modal.wizard.firstName}}
+                {{modal.wizard.lastName}}!</h4>
+                <div class="row">
+                  <div class="col-xs-4">
+                    <div class="form-group">
+                      <label class="control-label" for="firstName">Task Price
+                      <span aria-hidden="true" class=
+                      "glyphicon glyphicon-question-sign"></span></label>
+                      <div>
+                        <input class="input-xlarge" id="firstName" ng-model=
+                        "modal.wizard.firstName" type="text">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-4">
+<!--
+                    <div class="form-group">
+                      <label>Status:</label>
+                      <div class="btn-group">
+                        <label btn-checkbox="" class="btn btn-info" ng-model=
+                        "vm.task.statusOpen">Open</label> <label btn-checkbox=
+                        "" class="btn btn-info" ng-model=
+                        "vm.task.statusAssigned">Assigned</label>
+                        <label btn-checkbox="" class="btn btn-info" ng-model=
+                        "vm.task.statusClosed">Completed</label>
+                      </div>
+                    </div>
+-->
+                    <p><strong>Task Title:</strong> {{vm.task.title}}</p>
+                    <p><strong>Description:</strong>
+                    {{vm.task.description}}</p>
+                    <p><strong>Location:</strong></p>{{vm.task.taskLocation}}
+                    <p><strong>Category:</strong></p>{{vm.task.Category}}
+                    <div class="badge badge-success pull-left" ng-repeat=
+                    "topping in modal.wizard.toppings">
+                      {{topping}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a class="myBackButton" ng-click="modal.handlePrevious()" ng-show=
+      "!modal.isFirstStep()">Back</a> <a class="myNextButton" ng-click=
+      "modal.handleNext()">{{modal.getNextLabel()}}</a>
+    </div>
+  </fieldset>
+</form>

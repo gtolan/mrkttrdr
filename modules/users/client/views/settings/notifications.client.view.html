@@ -1,0 +1,45 @@
+<section class="row Dash">
+<div class="Dash">
+    <h3 class="text-center EditPrfTitle"><i class="fa fa-bell-o" aria-hidden="true"></i> Notificaciones</h3>
+  </div>
+    <div class="col-sm-12">
+        <md-content>
+          <md-tabs md-dynamic-height="" md-border-bottom="">
+            <md-tab label="Notificaciones">
+              <md-content class="md-padding">
+                <div class="col-md-12 text-center bottomNav noPadding" ng-show="results.length === 0">
+                  <div class="list-group-item">
+                <p>Once you have assigned or been assigned a task on TaskMatch, you will see a summary of your notifications here.</p>
+                  </div> 
+              </div>
+                <md-content>
+                <md-list flex="">
+                  <div ng-repeat="task in myTasks">
+                  <md-list-item class="md-3-line" ng-repeat="comment in task.comments | filter:search | orderBy:predicate:reverse | filter:x as taskResults" ng-click="null" data-ui-sref="tasks.view({ taskId: task._id })">
+                    <img ng-src="{{comment.profileImageURL}}" class="md-avatar" alt="">
+                    <div class="md-list-item-text" layout="column">
+                      <h3>{{ task.title }}</h3>
+                      <h4>{{ comment.displayName }} commented on {{ task.title }}</h4>
+                      <p>{{ item.notes }}</p>
+                    </div>
+                  </md-list-item>
+                  </div>
+                  <div>
+                  <md-list-item class="md-3-line" ng-repeat="offer in offersOnMyTasks | filter:search | orderBy:predicate:reverse | filter:x as results">
+                    <img ng-src="{{ offer.profileImageURL }}" class="md-avatar" alt="">
+                    <div class="md-list-item-text" layout="column">
+                      <h3><strong>{{ offer.offerDesc }}</strong></h3>
+                      <h4><a data-ui-sref="profile({ userId : offer.user._id })">{{ offer.displayName }}</a> made an offer on your task <a data-ui-sref="tasks.view({ taskId: offer.taskId })">{{ offer.taskName }}</a></h4>
+                      <p>{{ item.notes }}</p>
+                    </div>
+                  </md-list-item>
+                  </div>
+                </md-list>
+              </md-content>
+              </md-content>
+            </md-tab>
+          </md-tabs>
+        </md-content>
+    </div>
+
+</section>
