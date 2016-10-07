@@ -1280,6 +1280,7 @@ md-tab-content{
     border: 1px lightgray solid;
     height: 2.5em;
     border-radius: 5px;
+    width: 90%;
 }
 .datepickBorder:focus {
         border-color: #66afe9;
@@ -2182,7 +2183,7 @@ box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.43);
 
     width: 90%;
     text-align: left;
-    border:1px solid rgb(166, 166, 166) !important;
+   border: 1px lightgray solid !important;
     color:dimgray !important;
     background-color: white !important;
     background-image: -webkit-linear-gradient(top, white, white) !important;
@@ -2484,7 +2485,8 @@ box-shadow: 3px 3px 18px 8px rgba(0,0,0,0.33);
 .slide-frame {
   position: relative;
   overflow: hidden;
-  min-height: 11.5em;
+  min-height: 14.9em;
+   
 }
 
 .slide-frame > div {
@@ -2494,15 +2496,21 @@ box-shadow: 3px 3px 18px 8px rgba(0,0,0,0.33);
 .taskListRepeatCont.ng-enter {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
-  -webkit-animation-duration: .3s ;
-  animation-duration: .3s ;
+  -webkit-animation-duration: .7s ;
+  animation-duration: .7s ;
 }
 .taskListRepeatCont.ng-leave {
   -webkit-animation-name: fadeOutUp;
   animation-name: fadeOutUp;
-  -webkit-animation-duration: .3s ;
-  animation-duration: .3s ;
+  -webkit-animation-duration: .5s ;
+  animation-duration: .5s ;
 }
+.categDropTaskModal {
+    margin-top: -2.4em !important;
+    z-index: 20000 !important;
+/*    position: absolute!important;*/
 
-
-
+}
+.row2local {
+    margin-top: 10px;
+}
