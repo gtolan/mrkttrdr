@@ -5,7 +5,7 @@
            <h3 class="modal-title text-center">Acceso Usuario</h3>
         </div>                    
   <div ng-controller="AuthenticationController">
-  <h4 class="col-md-12 text-center">Click to use social media</h4>
+  <h4 class="col-md-12 text-center">Haga clic para usar redes sociales</h4>
 
     
     <!-- socia media login -->
@@ -26,14 +26,14 @@
     <form name="userForm" ng-submit="signin(userForm.$valid)" novalidate autocomplete="off">
       <fieldset>
         <div class="form-group" show-errors>
-          <label for="username">Username</label>
+          <label for="username">Usuario</label>
           <input type="text" id="username" name="username" class="form-control" ng-model="credentials.username" placeholder="Username" lowercase required>
           <div ng-messages="userForm.username.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Username is required.</p>
           </div>
         </div>
         <div class="form-group" show-errors>
-          <label for="password">Password</label>
+          <label for="password">Contraseña</label>
           <input type="password" id="password" name="password" class="form-control" ng-model="credentials.password" placeholder="Password" required>
           <div ng-messages="userForm.password.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Password is required.</p>
@@ -41,11 +41,11 @@
         </div>
         <div class="text-center form-group">
           <button type="submit" class="btn btn-primary">Sign in</button>
-          &nbsp; or&nbsp;
-          <a ui-sref="authentication.signup" ng-click="cancel()">Sign up</a>
+          &nbsp; o&nbsp;
+          <a ui-sref="authentication.signup" ng-click="cancel()">Registrarse</a>
         </div>
         <div class="text-center forgot-password">
-          <a ui-sref="password.forgot" ng-click="cancel()">Forgot your password?</a>
+          <a ui-sref="password.forgot" ng-click="cancel()">¿Olvidó su contraseña?</a>
         </div>
         <alert type="danger" ng-show="error" class="text-center text-danger">
           <span ng-bind="error"></span>
@@ -57,7 +57,7 @@
  <!--end of Login -->
         <div class="modal-footer">
           
-  <button class="btn btn-default btn-sm" ng-click="cancel()">Close</button>
+  <button class="btn btn-default btn-sm" ng-click="cancel()">Cerrar</button>
         </div>
   </script>
 
@@ -78,7 +78,8 @@
         <img src="../modules/core/client/img/logoSpinner.png" class="logoSpinner" ui-sref="home">
         <img src="../modules/core/client/img/logoEtLoginDash3.png" class="logoEtLoginDash" ui-sref="home"></div>
       </a>
-      <button class="postBtnLoginDash hvr-sweep-to-right"  ng-click="app.open()" ng-controller="ModalTaskCtrl as app">Encargar tarea</button> 
+      <button class="postBtnLoginDash hvr-sweep-to-right"  ng-if="app.authentication.user" ng-click="app.open()" ng-controller="ModalTaskCtrl as app">Encargar tarea</button>
+      <button class="postBtnLoginDash hvr-sweep-to-right"  ng-show="!app.authentication.user" ng-click="open()">Encargar tarea</button> 
   </div>
   <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
     <ul class="nav navbar-nav navLoggedIn"  ng-if="menu.shouldRender(authentication.user);">
@@ -98,7 +99,7 @@
       <p class="contactNumber" ani-scroll="700"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> 902 09 18 36</p>
       </div>
       <li ui-sref-active="active">
-        <a ui-sref="authentication.signup">Registrame</a>
+        <a ui-sref="authentication.signup">Registrarse</a>
       </li>
     <li ui-sref-active="active" class="signIn" ng-controller="AuthenticationController"
         ui-sref-active="active">
@@ -113,45 +114,44 @@
         </a>
         <ul class="dropdown-menu" role="menu">
           <li ui-sref-active="active">
-              <a ui-sref="settings.dashboard">Dashboard</a>
+              <a ui-sref="settings.dashboard">Tablero</a>
             </li>
             <li ui-sref-active="active">
-              <a ui-sref="settings.tasks">My tasks</a>
+              <a ui-sref="settings.tasks">Mis tareas</a>
             </li>
             <li ui-sref-active="active">
-              <a ui-sref="settings.messages">Messages</a>
+              <a ui-sref="settings.messages">Mensajes</a>
             </li>
             <li ui-sref-active="active">
-              <a ui-sref="settings.notifications">Notifications</a>
+              <a ui-sref="settings.notifications">Notificaciones</a>
             </li>
             <li ui-sref-active="active">
-              <a ui-sref="settings.reviews">Reviews</a>
+              <a ui-sref="settings.reviews">Reseñas</a>
             </li>  
             <li ui-sref-active="active">
               <a data-ui-sref=
-              "profile({ userId : authentication.user._id })">Public
-              Profile</a>
+              "profile({ userId : authentication.user._id })">Perfil público</a>
             </li>
             <li class="divider"></li>
             <li ui-sref-active="active">
-              <a ui-sref="settings.profile">Edit Profile</a>
+              <a ui-sref="settings.profile">Editar perfil</a>
             </li>
             <li ui-sref-active="active">
-              <a ui-sref="settings.payments">Payment Methods</a>
+              <a ui-sref="settings.payments">Métodos de pago</a>
             </li>
             <li ui-sref-active="active">
-              <a ui-sref="settings.picture">Change Profile Picture</a>
+              <a ui-sref="settings.picture">Cambiar foto de perfil</a>
             </li>
             <li ng-show="authentication.user.provider === 'local'"
             ui-sref-active="active">
-              <a ui-sref="settings.password">Change Password</a>
+              <a ui-sref="settings.password">Cambiar contraseña</a>
             </li>
             <li ui-sref-active="active">
-              <a ui-sref="settings.accounts">Verify Social Accounts</a>
+              <a ui-sref="settings.accounts">Verificar redes sociales</a>
             </li>
           <li class="divider"></li>
           <li>
-            <a href="/api/auth/signout" target="_self">Signout</a>
+            <a href="/api/auth/signout" target="_self">Salir</a>
           </li>
         </ul>
       </li>
