@@ -77,6 +77,11 @@
     width: 100%;
     text-align: left;
 }
+.skills-repeat.dropCat {
+    padding: 0.1em !important;
+    font-size: 11px !important;
+    margin: 0.0em !important;
+}
 
 .skills-repeat-white {
     list-style: none;

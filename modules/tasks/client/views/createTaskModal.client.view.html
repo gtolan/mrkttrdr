@@ -130,6 +130,79 @@ su título es demasiado corto
                   </div>
                 </div>
                 
+                
+                               <div class="col-xs-6 noPadding">
+                  <div class="form-group">
+                    <label class="control-label">Categories</label><br>
+                      
+                      
+                       <div class="btn-group btn-block" dropdown>
+      <button id="button-template-url" type="button" class="btn btn-primary btn-block btnCategory" dropdown-toggle ng-disabled="disabled">
+      Choose Category &nbsp; <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu categDropTaskModal" template-url="dropdownCateg.html" aria-labelledby="button-template-url">
+      </ul>
+    </div>
+    <script type="text/ng-template" id="dropdownCateg.html">
+        <ul class="dropdown-menu categDropTaskModal" role="menu" aria-labelledby="button-template-url">
+                              <li role="menuitem">
+                          <label class="btn skills-repeat dropCat" ng-model=
+                      "vm.task.cleaning" btn-checkbox>
+                            <i class="fa fa-home" aria-hidden="true"></i> Home &amp; Cleaning
+                          </label>
+                        </li>
+                        <li role="menuitem">
+                          <label class="btn skills-repeat dropCat" ng-model="vm.task.moving" btn-checkbox>
+                            <i class="fa fa-truck" aria-hidden="true"></i> Delivery &amp; Removals
+                          </label>
+                        </li>
+                        <li role="menuitem">
+                          <label class="btn skills-repeat dropCat" ng-model="vm.task.DIY" btn-checkbox>
+                            <i class="fa fa-wrench" aria-hidden="true"></i> Handyman &amp; Trades
+                          </label>
+                        </li>
+                        <li role="menuitem">
+                          <label class="btn skills-repeat dropCat" ng-model="vm.task.marketing" btn-checkbox>
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Marketing &amp; Design
+                          </label>
+                        </li>
+                        <li role="menuitem">
+                          <label class="btn skills-repeat dropCat" ng-model="vm.task.onlineIT" btn-checkbox>
+                            <i class="fa fa-laptop" aria-hidden="true"></i> Digital &amp; IT
+                          </label>
+                        </li>
+                        <li role="menuitem">
+                          <label class="btn skills-repeat dropCat" ng-model="vm.task.photoEvents" btn-checkbox>
+                            <i class="fa fa-camera-retro" aria-hidden="true"></i> Photography &amp; Events 
+                          </label>
+                        </li>
+                        <li role="menuitem">
+                          <label class="btn skills-repeat dropCat" ng-model="vm.task.office" btn-checkbox>
+                            <i class="fa fa-bar-chart" aria-hidden="true"></i> Business &amp; Admin
+                          </label>
+                        </li>
+                        <li role="menuitem">
+                          <label class="btn skills-repeat dropCat" ng-model="vm.task.funQuirky" btn-checkbox>
+                            <i class="fa fa-hand-peace-o" aria-hidden="true"></i> Fun &amp; Quirky
+                          </label>
+                        </li>
+<!--
+                        <li class="divider"></li>
+                        <li role="menuitem">
+                          <label class="btn skills-repeat" ng-model="vm.task.misc" btn-checkbox>
+                            <i class="fa fa-cogs" aria-hidden="true"></i> Misc.
+                          </label>
+                        </li>
+-->
+        </ul>
+    </script>
+                  </div>
+                  </div>
+                
+                
+                    
+                <div class="col-xs-12 noPadding row2local">
+
                               <div class="col-xs-6 noPadding">
                   <div class="form-group">
                     <label class="control-label" for="taskDate">Fecha <span aria-hidden="true" class=
@@ -145,73 +218,8 @@ su título es demasiado corto
           required.</p>
                   </div>
                 </div>
-                <div class="col-xs-12 noPadding">
-  
-                <div class="col-xs-6 noPadding">
-                  <div class="form-group">
-                    <label class="control-label">Categories</label><br>
-                      
-                      
-                       <div class="btn-group btn-block" dropdown>
-      <button id="button-template-url" type="button" class="btn btn-primary btn-block btnCategory" dropdown-toggle ng-disabled="disabled">
-       Categories <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" template-url="dropdownCateg.html" aria-labelledby="button-template-url">
-      </ul>
-    </div>
-    <script type="text/ng-template" id="dropdownCateg.html">
-        <ul class="dropdown-menu" role="menu" aria-labelledby="button-template-url">
-                              <li role="menuitem">
-                          <label class="btn skills-repeat" ng-model=
-                      "vm.task.cleaning" btn-checkbox>
-                            <i class="fa fa-home" aria-hidden="true"></i> Home &amp; Cleaning
-                          </label>
-                        </li>
-                        <li role="menuitem">
-                          <label class="btn skills-repeat" ng-model="vm.task.moving" btn-checkbox>
-                            <i class="fa fa-truck" aria-hidden="true"></i> Delivery &amp; Removals
-                          </label>
-                        </li>
-                        <li role="menuitem">
-                          <label class="btn skills-repeat" ng-model="vm.task.DIY" btn-checkbox>
-                            <i class="fa fa-wrench" aria-hidden="true"></i> Handyman &amp; Trades
-                          </label>
-                        </li>
-                        <li role="menuitem">
-                          <label class="btn skills-repeat" ng-model="vm.task.marketing" btn-checkbox>
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Marketing &amp; Design
-                          </label>
-                        </li>
-                        <li role="menuitem">
-                          <label class="btn skills-repeat" ng-model="vm.task.onlineIT" btn-checkbox>
-                            <i class="fa fa-laptop" aria-hidden="true"></i> Digital &amp; IT
-                          </label>
-                        </li>
-                        <li role="menuitem">
-                          <label class="btn skills-repeat" ng-model="vm.task.photoEvents" btn-checkbox>
-                            <i class="fa fa-camera-retro" aria-hidden="true"></i> Photography &amp; Events 
-                          </label>
-                        </li>
-                        <li role="menuitem">
-                          <label class="btn skills-repeat" ng-model="vm.task.office" btn-checkbox>
-                            <i class="fa fa-bar-chart" aria-hidden="true"></i> Business &amp; Admin
-                          </label>
-                        </li>
-                        <li role="menuitem">
-                          <label class="btn skills-repeat" ng-model="vm.task.funQuirky" btn-checkbox>
-                            <i class="fa fa-hand-peace-o" aria-hidden="true"></i> Fun &amp; Quirky
-                          </label>
-                        </li>
-                        <li class="divider"></li>
-                        <li role="menuitem">
-                          <label class="btn skills-repeat" ng-model="vm.task.misc" btn-checkbox>
-                            <i class="fa fa-cogs" aria-hidden="true"></i> Misc.
-                          </label>
-                        </li>
-        </ul>
-    </script>
-                  </div>
-                  </div>                            
+                    
+                             
                   <div class="col-xs-6 noPadding " style="overflow: scroll;">
                     <label class="control-label">Summary</label><br>
                     <!-- cleaning -->
