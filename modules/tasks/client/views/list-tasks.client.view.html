@@ -92,7 +92,7 @@
         <div class="scrollable ">
     
      
-        <md-list-item class="md-3-line taskListRepeatCont" data-ng-repeat="task in vm.tasks | filter:search | filter:myFilter | customFilter: selectedCat.filter | orderBy:predicate:reverse | filter:x as results" ui-sref="tasks.view({ taskId: task._id })" ng-click="showBoxOne = !showBoxOne; showmeMapView=true"> 
+        <md-list-item class="md-3-line taskListRepeatCont" ng-animate="'animate'" data-ng-repeat="task in vm.tasks | filter:search | filter:myFilter | customFilter: selectedCat.filter | orderBy:predicate:reverse | filter:x as results" ui-sref="tasks.view({ taskId: task._id })" ng-click="showBoxOne = !showBoxOne; showmeMapView=true"> 
     
             <div class="col-xs-2 noPadding">
           <img src="{{ task.profileImageURL }}" onerror="if (this.src != 'default.png') this.src = '../modules/users/client/img/profile/default.png';" class="md-avatar" alt="{{item.who}}">

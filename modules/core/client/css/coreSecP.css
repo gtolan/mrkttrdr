@@ -2491,3 +2491,18 @@ box-shadow: 3px 3px 18px 8px rgba(0,0,0,0.33);
   width: 100%;
  
 }
+.taskListRepeatCont.ng-enter {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: .3s ;
+  animation-duration: .3s ;
+}
+.taskListRepeatCont.ng-leave {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+  -webkit-animation-duration: .3s ;
+  animation-duration: .3s ;
+}
+
+
+
