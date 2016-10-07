@@ -2,13 +2,7 @@
 <div ng-controller="ModalLoginCtrl">
 <script id="myModalContent.html" type="text/ng-template">
         <div class="modal-header">
-            
-            <div class="col-xs-offset-2 col-xs-8 noPadding">
-           <h3 class="modal-title text-center">Acceso Usuario</h3></div>
-            <div class="col-xs-2 noPadding">
-            <button aria-hidden="true" class="close pull-right" ng-click="cancel()" type=
-    "button" style="font-size:33px;">&times;</button>
-            </div>
+           <h3 class="modal-title text-center">Acceso Usuario</h3>
         </div>                    
   <div ng-controller="AuthenticationController">
   <h4 class="col-md-12 text-center">Click to use social media</h4>
@@ -46,7 +40,7 @@
           </div>
         </div>
         <div class="text-center form-group">
-          <button type="submit" class="btn btn-primary" ng-click="cancel()">Sign in</button>
+          <button type="submit" class="btn btn-primary">Sign in</button>
           &nbsp; or&nbsp;
           <a ui-sref="authentication.signup" ng-click="cancel()">Sign up</a>
         </div>
@@ -63,7 +57,7 @@
  <!--end of Login -->
         <div class="modal-footer">
           
-<!--  <button class="btn btn-default btn-sm" ng-click="cancel()">Close</button>-->
+  <button class="btn btn-default btn-sm" ng-click="cancel()">Close</button>
         </div>
   </script>
 
@@ -84,8 +78,7 @@
         <img src="../modules/core/client/img/logoSpinner.png" class="logoSpinner" ui-sref="home">
         <img src="../modules/core/client/img/logoEtLoginDash3.png" class="logoEtLoginDash" ui-sref="home"></div>
       </a>
-      <button class="postBtnLoginDash hvr-sweep-to-right" ng-hide="!vm.authentication.user" ng-click="app.open()" ng-controller="ModalTaskCtrl as app">Encargar tarea</button> 
-      <button class="postBtnLoginDash hvr-sweep-to-right" ng-show="!vm.authentication.user" ng-click="open()">Encargar tarea</button> 
+      <button class="postBtnLoginDash hvr-sweep-to-right"  ng-click="app.open()" ng-controller="ModalTaskCtrl as app">Encargar tarea</button> 
   </div>
   <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
     <ul class="nav navbar-nav navLoggedIn"  ng-if="menu.shouldRender(authentication.user);">
