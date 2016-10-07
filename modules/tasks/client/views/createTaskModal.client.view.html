@@ -50,13 +50,13 @@ Presupuesto</button>
                 <div ng-messages="vm.form.taskForm.taskTitle.$error || vm.form.taskForm.taskTitle.$touched" role="alert">
                   <p class="help-block error-text" ng-message="required"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Título es requerido.</p>
                   <div ng-message="minlength">
-                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i> El título es demasiado corto.
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Título es demasiado corto
                   </div>
                   <div ng-message="maxlength">
                     <i class="fa fa-exclamation-circle" aria-hidden="true"></i> El título es demasiado largo.
                   </div>
                 </div>
-                <small ng-if="vm.task.title.length > 10">{{ 50 - vm.task.title.length}} characters remaining</small>
+                <small ng-if="vm.task.title.length > 10">{{ 50 - vm.task.title.length}} chars pendientes</small>
               </div>
               <div class="form-group divTaskModalDesc">
                 <label class="control-label taskDescTitleModal" for="taskDescription">Descripción
@@ -82,10 +82,10 @@ Presupuesto</button>
                   </span>
                   <p class="help-block error-text" ng-message="required">Descripción es requerido.</p>
                   <div ng-message="minlength">
-                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> su descripción es demasiado corto
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Descripción es demasiado corto.
                   </div>
                 </div>
-                <small ng-if="vm.task.description.length > 23">{{ 250 - vm.task.description.length}} characters remaining</small>
+                <small ng-if="vm.task.description.length > 23">{{ 250 - vm.task.description.length}} chars pendientes</small>
               </div>
               <div class="form-group">
                 <div>
@@ -126,16 +126,16 @@ Presupuesto</button>
                     </div>
                   </div>
                 </div>
-                <div class="col-xs-12 noPadding">
-  
-                <div class="col-xs-6 noPadding">
+                
+                
+                               <div class="col-xs-6 noPadding">
                   <div class="form-group">
                     <label class="control-label">Categorías</label><br>
                       
                       
                        <div class="btn-group btn-block" dropdown>
       <button id="button-template-url" type="button" class="btn btn-primary btn-block btnCategory" dropdown-toggle ng-disabled="disabled">
-       Categorías <span class="caret"></span>
+      Elegir categoría &nbsp; <span class="caret"></span>
       </button>
       <ul class="dropdown-menu categDropTaskModal" template-url="dropdownCateg.html" aria-labelledby="button-template-url">
       </ul>
@@ -183,19 +183,24 @@ Presupuesto</button>
                             <i class="fa fa-hand-peace-o" aria-hidden="true"></i> Fun &amp; Quirky
                           </label>
                         </li>
+<!--
                         <li class="divider"></li>
                         <li role="menuitem">
-                          <label class="btn skills-repeat dropCat" ng-model="vm.task.misc" btn-checkbox>
+                          <label class="btn skills-repeat" ng-model="vm.task.misc" btn-checkbox>
                             <i class="fa fa-cogs" aria-hidden="true"></i> Misc.
                           </label>
                         </li>
+-->
         </ul>
     </script>
                   </div>
                   </div>
+                
+                
+                    
+                <div class="col-xs-12 noPadding row2local">
 
-                  <div class="col-xs-12 noPadding row2local">
-                                <div class="col-xs-6 noPadding">
+                              <div class="col-xs-6 noPadding">
                   <div class="form-group">
                     <label class="control-label" for="taskDate">Fecha <span aria-hidden="true" class=
                     "glyphicon glyphicon-question-sign" tooltip=
@@ -210,30 +215,28 @@ Presupuesto</button>
           requerido.</p>
                   </div>
                 </div>
-                              </div>
-
-
-
+                    
+                             
                   <div class="col-xs-6 noPadding " style="overflow: scroll;">
                     <label class="control-label">Resumen</label><br>
                     <!-- cleaning -->
-                    <li ng-show="vm.task.cleaning" class="skills-non-repeat task-view"><i class="fa fa-home" aria-hidden="true"></i> Home &amp; Cleaning</li>
+                    <li ng-show="vm.task.cleaning" class="skills-non-repeat task-view"><i class="fa fa-home" aria-hidden="true"></i> Limpieza del hogar</li>
                     <!-- onlineIT -->
                     <li ng-show="vm.task.onlineIT" class="skills-non-repeat task-view"><i class="fa fa-laptop" aria-hidden="true"></i> Digital &amp; IT</li>
                     <!-- photoEvents -->
-                    <li ng-show="vm.task.photoEvents" class="skills-non-repeat task-view"><i class="fa fa-camera-retro" aria-hidden="true"></i> Photography &amp; Events</li>
+                    <li ng-show="vm.task.photoEvents" class="skills-non-repeat task-view"><i class="fa fa-camera-retro" aria-hidden="true"></i> Fotografía &amp; Eventos</li>
                     <!-- funQuirky -->
                     <li ng-show="vm.task.funQuirky" class="skills-non-repeat task-view"><i class="fa fa-hand-peace-o" aria-hidden="true"></i> Fun &amp; Quirky</li>
                     <!-- DIY -->
-                    <li ng-show="vm.task.DIY" class="skills-non-repeat task-view"><i class="fa fa-wrench" aria-hidden="true"></i> Handyman &amp; Trades</li>
+                    <li ng-show="vm.task.DIY" class="skills-non-repeat task-view"><i class="fa fa-wrench" aria-hidden="true"></i> Manitas</li>
                     <!-- marketing -->
-                    <li ng-show="vm.task.marketing" class="skills-non-repeat task-view"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Marketing &amp; Design</li>
+                    <li ng-show="vm.task.marketing" class="skills-non-repeat task-view"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Marketing &amp; Diseño</li>
                     <!-- office -->
-                    <li ng-show="vm.task.office" class="skills-non-repeat task-view"><i class="fa fa-bar-chart" aria-hidden="true"></i> Business &amp; Admin</li>
+                    <li ng-show="vm.task.office" class="skills-non-repeat task-view"><i class="fa fa-bar-chart" aria-hidden="true"></i> Administración &amp; negocio</li>
                     <!-- moving -->
-                    <li ng-show="vm.task.moving" class="skills-non-repeat task-view"><i class="fa fa-truck" aria-hidden="true"></i> Delivery &amp; Removals</li>
+                    <li ng-show="vm.task.moving" class="skills-non-repeat task-view"><i class="fa fa-truck" aria-hidden="true"></i> Recogidas &amp; Mudanzas</li>
                     <!-- misc -->
-                    <li ng-show="vm.task.misc" class="skills-non-repeat task-view"><i class="fa fa-cogs" aria-hidden="true"></i> Misc.</li>
+                    <li ng-show="vm.task.misc" class="skills-non-repeat task-view"><i class="fa fa-cogs" aria-hidden="true"></i> Otro.</li>
                   </div>
           </div>             
                 </div>
@@ -249,7 +252,7 @@ Presupuesto</button>
                     <label class="control-label">Completado por:</label>
                     <br>
                       <label ng-disabled="vm.task.inPersonTask" class="btn skills-repeat-white" ng-model="vm.task.onlineTask" btn-checkbox>
-                        <i class="fa fa-laptop" aria-hidden="true"></i> Online task
+                        <i class="fa fa-laptop" aria-hidden="true"></i> Tarea online
                       </label>
                       <label ng-disabled="vm.task.onlineTask" class="btn skills-repeat-white" ng-model="vm.task.inPersonTask"btn-checkbox>
                         <i class="fa fa-user" aria-hidden="true"></i> Tarea presencial
@@ -258,6 +261,7 @@ Presupuesto</button>
                   </div>   
                         <div class="form-group">
                           <label class="control-label" for="taskPrice">Presupuesto
+                    
                             <span aria-hidden="true" class=
                     "glyphicon glyphicon-question-sign" tooltip=
               "Tip - Always offer a fair price as you will receive higher quality interest quicker"
@@ -271,8 +275,7 @@ Presupuesto</button>
                               </div>
                             </div>
                             <div ng-messages="vm.form.taskForm.taskPrice.$error" role="alert">
-                              <p class="help-block error-text" ng-message="required">Task price
-            is required.</p>
+                              <p class="help-block error-text" ng-message="required">Presupuesto es requerido.</p>
                             </div>
                           </div>
                         </div>
@@ -289,25 +292,24 @@ Presupuesto</button>
                           <p>
                             <strong>Categoría:</strong>
                           </p>
-                          <li ng-show="vm.task.inPersonTask" class="skills-non-repeat task-view">Tarea presencia</li>
                           <!-- cleaning -->
-                          <li ng-show="vm.task.cleaning" class="skills-non-repeat task-view">Cleaning task</li>
+                          <li ng-show="vm.task.cleaning" class="skills-non-repeat task-view">Limpieza del hogar</li>
                           <!-- onlineIT -->
                           <li ng-show="vm.task.onlineIT" class="skills-non-repeat task-view">Digital/IT task</li>
                           <!-- photoEvents -->
-                          <li ng-show="vm.task.photoEvents" class="skills-non-repeat task-view">Photography &amp; events task</li>
+                          <li ng-show="vm.task.photoEvents" class="skills-non-repeat task-view">Fotografía &amp; eventos</li>
                           <!-- funQuirky -->
-                          <li ng-show="vm.task.funQuirky" class="skills-non-repeat task-view">Fun &amp; quirky task</li>
+                          <li ng-show="vm.task.funQuirky" class="skills-non-repeat task-view">Fun &amp; quirky</li>
                           <!-- DIY -->
-                          <li ng-show="vm.task.DIY" class="skills-non-repeat task-view">DIY task</li>
+                          <li ng-show="vm.task.DIY" class="skills-non-repeat task-view">Manitas</li>
                           <!-- marketing -->
-                          <li ng-show="vm.task.marketing" class="skills-non-repeat task-view">Marketing task</li>
+                          <li ng-show="vm.task.marketing" class="skills-non-repeat task-view">Marketing &amp; Diseño</li>
                           <!-- office -->
-                          <li ng-show="vm.task.office" class="skills-non-repeat task-view">Office task</li>
+                          <li ng-show="vm.task.office" class="skills-non-repeat task-view">Administración y negocio</li>
                           <!-- moving -->
-                          <li ng-show="vm.task.moving" class="skills-non-repeat task-view">Moving task</li>
+                          <li ng-show="vm.task.moving" class="skills-non-repeat task-view">Recogidas y mudanzas</li>
                           <!-- misc -->
-                          <li ng-show="vm.task.misc" class="skills-non-repeat task-view">Misc. task</li>
+                          <li ng-show="vm.task.misc" class="skills-non-repeat task-view">Otro.</li>
                           <p>
                             <strong>Vencimiento:</strong>{{vm.task.dueDate | date:'fullDate'}}
                           </p>
@@ -330,5 +332,4 @@ Presupuesto</button>
             <button type="submit" class="myEteceReuseButton modalCreate hvr-underline-reveal" ng-click=
     "vm.handleNext()">{{vm.getNextLabel()}}</button>
           </div>
-        </div><!-- 
-        && vm.form.taskForm.taskTitle.$invalid || vm.form.taskForm.taskDescription.$touched && vm.form.taskForm.taskDescription.$invalid && vm.form.taskForm.taskLocation.$invalid" -->
+        </div>
