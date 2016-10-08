@@ -456,6 +456,7 @@ margin-top: 40px;
     padding: 0px;
 }
 .categoryListButton {
+  z-index: 1000;
   border: 1px solid #1e90ff;
   color: #1e90ff !important;
   font-weight: 200;
@@ -661,6 +662,7 @@ overflow: hidden;
     z-index: 10;
     top:50px;
     height: 17px;
+    overflow-x: hidden;
 }
 .hiddenHeader.ng-hide {
     display: block;
@@ -2512,4 +2514,19 @@ box-shadow: 3px 3px 18px 8px rgba(0,0,0,0.33);
 }
 .row2local {
     margin-top: 10px;
+}
+.SocialLinks:hover, .SocialLinks:focus {
+    color:white;
+}
+.mobileFooterH:hover {
+    color: white !important;
+    outline: none;
+}
+.mobileFooterH:focus {
+    color:#b0bfc3 !important;
+    outline: none;
+}
+.imalink {
+    position: relative;
+    z-index: 1000;
 }

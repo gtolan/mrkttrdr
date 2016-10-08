@@ -7,12 +7,22 @@
     }
 }
 
+
+
+
+
+
 @media only screen and (max-width: 1200px) {
 
     small.noOfComments, small.PostedOn {
     font-size:11px !important;
     }
 }
+
+
+
+
+
 
 @media only screen and (max-width: 1160px) {
 
@@ -22,6 +32,10 @@
 
     }
 }
+
+
+
+
 
 @media only screen and (max-width: 1150px) {
     .browseTasks {
@@ -39,6 +53,11 @@
     line-height: 29px;
     font-size: 9px;
 }
+}
+
+
+
+
 
 @media only screen and (max-width: 1100px) {
 
@@ -50,6 +69,10 @@
         font-size:16px;   
     }
 }
+
+
+
+
 @media only screen and (max-width: 1080px) {
 
 .container-fluid.tareaCont {
@@ -59,6 +82,9 @@
     }
     
 }
+
+
+
 
 @media only screen and (max-width: 1055px) {
     .footer-section {
@@ -79,7 +105,7 @@
     padding-right: 0;
 
     }
-        .signUpRepair {
+.signUpRepair {
 
   height: auto;
   width: 100%;  
@@ -95,16 +121,7 @@
     margin-top: -6px;
     margin-bottom: 15px;
     }
-/*
-.panelSubmitApplication {
-    margin-top: 0px;
-    padding-top: 10px;
-    background-color: rgba(0,0,0,.35);
-    width: 40%;
-    margin-left: 55%;
-    top: -337px;
-}
-*/
+
     .signUpBut {
     margin: 0px auto 5px auto;
     width: 100%;
@@ -121,6 +138,13 @@
    width: 45%;
         padding: 5px;
 }
+}
+
+
+
+
+
+
 
 @media only screen and (max-width: 1000px) {
        .logoHeaderEt {
@@ -165,9 +189,12 @@
     padding-right: 14px;
     display: inline-block;
 }
-
-
 }
+
+
+
+
+
 @media only screen and (max-width: 991px) {   
     .titleSignUpSubmit {
     top: 20px;
@@ -191,7 +218,7 @@ box-shadow: 10px -4px 140px 28px rgba(0,0,0,0.53);
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
-    top: -89em;
+    top: -117em;
     margin-top: 56em;
     z-index: 1; 
     -webkit-box-shadow: -2px -23px 48px 75px rgba(153,144,153,0.64);
@@ -199,9 +226,14 @@ box-shadow: 10px -4px 140px 28px rgba(0,0,0,0.53);
 box-shadow: -2px -23px 48px 75px rgba(0,0,0,0.54);
 }
 }
+
+
+
+
+
     
 @media only screen and (max-width: 991px) {
-   
+    
     .taskRepeat {
     background: white;
       height:auto;
@@ -254,6 +286,11 @@ box-shadow: -2px -23px 48px 75px rgba(0,0,0,0.54);
     margin-left: 60%;
 }
 }
+
+
+
+
+
 @media only screen and (max-width: 950px) {    
     .progressSprite {
     z-index: -10;
@@ -261,6 +298,10 @@ box-shadow: -2px -23px 48px 75px rgba(0,0,0,0.54);
     margin-left: 22%;
     }
 }
+
+
+
+
 
 
 @media only screen and (max-width: 900px) {
@@ -298,6 +339,10 @@ box-shadow: -2px -23px 48px 75px rgba(0,0,0,0.54);
         margin-left: -40px;
 }
 }
+
+
+
+
 @media only screen and (max-width: 880px) {
     .socialSignButtonsRepairCont {
     margin-top: 1%;
@@ -312,6 +357,11 @@ box-shadow: -2px -23px 48px 75px rgba(0,0,0,0.54);
     text-align: center;
 }
  }
+
+
+
+
+
 
 @media only screen and (max-width: 850px) {
     .socialSignButtonsRepair {
@@ -366,6 +416,11 @@ box-shadow: -2px -23px 48px 75px rgba(0,0,0,0.54);
 }
  
 }
+
+
+
+
+
 @media only screen and (max-width: 810px) {    
 .postBtnLoginDash {
     margin-left: 2%;    
@@ -389,6 +444,11 @@ box-shadow: -2px -23px 48px 75px rgba(0,0,0,0.54);
     /* height: 350px; */
 }
     }
+
+
+
+
+
 @media only screen and (max-width: 800px) {
     .mainTitleHeaderTextH {
     font-size: 50px;
@@ -431,6 +491,12 @@ box-shadow: -2px -23px 48px 75px rgba(0,0,0,0.54);
     }
 
 }
+
+
+
+
+
+
  @media only screen and (max-width: 780px) { 
 
     pac-container {
@@ -448,6 +514,11 @@ box-shadow: -2px -23px 48px 75px rgba(0,0,0,0.54);
     top: 180px !important;
      }
     }
+
+
+
+
+
     
 @media only screen and (max-width: 767px) { 
   .progressSprite {
@@ -503,6 +574,10 @@ box-shadow: -2px -23px 48px 75px rgba(0,0,0,0.54);
     }
 }    
 
+
+
+
+
 @media only screen and (max-width: 700px) {
     .progressSprite {
     z-index: -10;
@@ -533,6 +608,11 @@ box-shadow: -2px -23px 48px 75px rgba(0,0,0,0.54);
     border-radius: 23.5em
 }
     }
+
+
+
+
+
  @media only screen and (max-width: 691px) {
 .socialSignButtonsRepairCont {
     margin-top: 1%;
@@ -540,7 +620,19 @@ box-shadow: -2px -23px 48px 75px rgba(0,0,0,0.54);
 }   
   }
     
+
+
+
+
+
 @media only screen and (max-width: 665px) {
+    .formRegHome {
+        margin-bottom: 8px;
+    }
+input.formRegInputHome {
+    height: 21px !important;
+    }
+    
 .titleSignUpSubmit {
     display: none;
 
@@ -586,6 +678,11 @@ box-shadow: -2px -23px 48px 75px rgba(0,0,0,0.54);
 }
 }
  
+
+
+
+
+
  @media only screen and (max-width: 625px) { 
      .panelSubmitAppl {
     position: absolute;
@@ -611,37 +708,26 @@ box-shadow: -2px -23px 48px 75px rgba(0,0,0,0.54);
     margin-left: 4%;
     display: inline-block;
 }
-/*
-.panelSubmitApplication {
-    margin-top: 246px;
-    padding-top: 0px;
-    background-color: rgba(0,0,0,.35);
-    width: 60%;
-    margin-left: 35%;
-    top: -231px;
-}
-*/
+
 .socialMediaSignUpTitle {
 display:none;
 }
     }
 
 
+
+
+
+
     
 @media only screen and (max-width: 615px) {
+    .hiddenHeader {
+        display: none;
+    }
     p.moreInfo {
         margin-top: 35px;
     }
-/*
-    .panelSubmitApplication {
-    margin-top: 250px;
-    padding-top: 0px;
-    background-color: rgba(0,0,0,.35);
-    width: 80%;
-    margin-left: 10%;
-    top:41px;
-        }
-*/
+
     .socialMediaSignUpTitle {
             margin-left: -50%;
     }
@@ -656,19 +742,12 @@ display:none;
     margin-top: 1%;
     margin-left: -13%;
 }
-
-/*
-.panelSubmitApplication {
-    margin-top: 246px;
-    padding-top: 0px;
-    background-color: rgba(0,0,0,.35);
-    width: 79%;
-    margin-left: 39%;
-    top: -231px;
-}
-*/
-
     }
+
+
+
+
+
 @media only screen and (max-width: 600px) {
         .progressSprite {
     z-index: -10;
@@ -769,7 +848,19 @@ box-shadow: 10px -4px 140px 28px rgba(0,0,0,0.53);
     }
 }
 
+
+
+
+
+
+
 @media only screen and (max-width: 550px) {
+    .panelSubmitAppl {
+    position: absolute;
+    width: 70%;
+    margin-left: 15%;
+     background-color: rgba(0,0,0,.43);
+     }
     .summary {
         display: none;
     }
@@ -802,6 +893,13 @@ box-shadow: 10px -4px 140px 28px rgba(0,0,0,0.53);
     margin-right: 10%;
 }
 }
+
+
+
+
+
+
+
 @media only screen and (max-width: 500px) {
 
     .progressSprite {
@@ -830,6 +928,11 @@ box-shadow: 10px -4px 140px 28px rgba(0,0,0,0.53);
 }
 
 
+
+
+
+
+
 @media only screen and (max-width: 487px) {
     
     .descriptionTaskModal {
@@ -849,9 +952,19 @@ box-shadow: 10px -4px 140px 28px rgba(0,0,0,0.53);
     margin-right: 10%;
 }
 }
-    
+ 
+
+
+
+
+
+
    
 @media only screen and (max-width: 480px) {
+    .hiddenHeader {
+        display: none;
+    }
+    
        .socialSingBut {
     width: 100px;
     font-size: 10px;
@@ -873,17 +986,49 @@ box-shadow: 10px -4px 140px 28px rgba(0,0,0,0.53);
     }   
 }
 
- @media only screen and (max-width: 440px) {   
+
+
+
+
+
+ @media only screen and (max-width: 440px) {  
+     button.submit-comment.myEteceReuseButton.hvr-underline-reveal.pull-right {
+         font-size: 12px;
+     }
+     .hiddenHeader {
+        display: none;
+    }
 .socialSingBut {
     width: 105px;
     margin-left: 6%;
+    min-height: 25px !important;
+    min-width: 88px !important;
+    line-height: 17px !important;
 }
-   
-    }
+}
      
-     
-@media only screen and (max-width: 420px) {
+  
 
+
+
+
+
+@media only screen and (max-width: 420px) {
+    .hiddenHeader {
+        display: none;
+    }
+    .formRegInputHome {
+    height: 17px !important;
+    }
+    label.formRegLabelHome {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 0px;
+    font-weight: 200;
+    font-size:12px;
+    color: white;
+    }
+    
     .socialSingBut {
     width: 105px;
     font-size: 10px;
@@ -933,6 +1078,11 @@ span.count {
     }
 
     }
+
+
+
+
+
 @media only screen and (max-width: 380px) {
     img.socialLogin {
     width: 69px;
@@ -967,16 +1117,7 @@ span.count {
     .comment{
         font-size:10px;
         }
-/*
-.panelSubmitApplication {
-    margin-top: 229px;
-    padding-top: 0px;
-    background-color: rgba(0,0,0,.35);
-    width: 90%;
-    margin-left: 5%;
-    top: 51px;
-    }
-*/
+    
     .titleSignUpSubmit {
     top: 20px;
     font-size: 16px;
@@ -1015,6 +1156,10 @@ span.count {
 
 
 
+
+
+
+
 @media only screen and (max-width: 340px) {
     .getStartedMainSectionButton {
         margin-top: -90px;
@@ -1033,11 +1178,6 @@ span.count {
     margin-left: 0%;
     margin-right: 0%;
     }
-/*
-    .panelSubmitApplication {
-    margin-top: 229px;
-    }
-*/
     .professionalSolution {
     position: absolute;
     top: 145px;
@@ -1047,12 +1187,10 @@ span.count {
 }
 
 
-/*
-@media only screen and (max-width: 800px) {
 
-    
-}
-*/
+
+
+
 
 @media only screen and (min-width:851px) and (max-width: 991px) {
     .profProgRes {
@@ -1075,6 +1213,12 @@ margin-top: -372px!important;
 }
 }
 
+
+
+
+
+
+
 @media only screen and (min-width:560px) and (max-width: 770px) {
     
     .iconWorks {
@@ -1082,6 +1226,11 @@ margin-top: -372px!important;
         width: 26%;
     }
 }
+
+
+
+
+
 @media only screen and (min-width:620px) and (max-width: 660px) {
 
 .socialSignButtonsRepairCont {
@@ -1101,6 +1250,11 @@ margin-top: -372px!important;
         padding-left: 60px;  
 }
 }
+
+
+
+
+
 @media only screen and (min-width:660px) and (max-width: 690px) {
 
 

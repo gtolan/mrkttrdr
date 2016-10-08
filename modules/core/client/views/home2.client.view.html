@@ -10,7 +10,6 @@
     <div class="row">
             <div class="row noPadding overlayVideo">
                 <video  autoplay="true"  autostart="" autobuffer="" preload="auto" loop="true" class="videoMainBG" muted="true">
-                <video id="my-video" class="video" muted loop>
   <source src="../modules/core/client/img/video/eteceBG.mp4">
   <source src="../modules/core/client/img/video/eteceBG.ogv" type="video/ogg">
   <source src="../modules/core/client/img/video/eteceBG.webm" type="video/webm">
@@ -260,7 +259,7 @@ end of dialog material- task
                         <div class="row browseTasks">
                         <div class=" col-xs-3 catwindow">
                                   <div class="frame"><!-- frame-->
-                                     <a class="categoryCenterText">
+                                     <a class="categoryCenterText" ui-sref="tasks.list({ myFilter : { cleaning: true } })">
                                         <span class="caption">
                                          <h3>Empleadas <br>del Hogar</h3>
                                            <p class="categoryCenterTextHidden">
@@ -269,7 +268,7 @@ end of dialog material- task
                                                <li class="categListSubs">Planchadora</li>
                                                <li class="categListSubs">Cocinera</li>
                                                <li class="categListSubs">Costurera</li>
-                                               <li class="categoryListButton">mas informacion</li>
+                                               <li class="categoryListButton" >mas informacion</li>
                                                </ul>
                                            </p>
                                          </span>
@@ -279,7 +278,7 @@ end of dialog material- task
                         </div>
                         <div class=" col-xs-3 catwindow">
                                   <div class="frame"><!-- frame-->
-                                     <a class="categoryCenterText">
+                                     <a class="categoryCenterText" ui-sref="tasks.list({ myFilter : { marketing: true } })">
                                         <span class="caption">
                                          <h3>Ikea <br>
                                     </h3>
@@ -289,7 +288,7 @@ end of dialog material- task
                                                <li class="categListSubs">Comprar de meubles</li>
                                                <li class="categListSubs">Fontenero</li>
                                                <li class="categListSubs">Electrista</li>
-                                               <li class="categoryListButton">mas informacion</li>
+                                               <li class="categoryListButton" >mas informacion</li>
                                                </ul>
                                            </p>
                                          </span>
@@ -299,25 +298,26 @@ end of dialog material- task
                         </div>
                         <div class=" col-xs-3 catwindow">
                                   <div class="frame"><!-- frame-->
-                                     <a class="categoryCenterText">
+                                     <a class="categoryCenterText" ui-sref="tasks.list({ myFilter : { office: true } })">
                                         <span class="caption">
-                                         <h3>Expertos</h3>
+                                         <h3 >Expertos</h3>
                                            <p class="categoryCenterTextHidden">
                                             <ul>
                                                <li class="categListSubs">Traductor</li>
                                                <li class="categListSubs">Certificado de energetico</li>
                                                 <li class="categListSubs">Informatico</li>
-                                               <li class="categoryListButton">mas informacion</li>
+                                               <li class="categoryListButton" >mas informacion</li>
                                                </ul>
                                            </p>
                                          </span>
+                                    
                                     <img class="catImg" src="../modules/core/client/img/category/profesEtece.png">
                                 </a>
                             </div>
                         </div>
                         <div class=" col-xs-3 catwindow">
                                   <div class="frame"><!-- frame-->
-                                     <a class="categoryCenterText">
+                                     <a class="categoryCenterText" ui-sref="tasks.list({ myFilter : { DIY: true } })">
                                         <span class="caption">
                                          <h3>Reparaciones<br>
                                     del Hogar</h3>
@@ -327,7 +327,7 @@ end of dialog material- task
                                                <li class="categListSubs">Manitas</li>
                                                <li class="categListSubs">Fontenero</li>
                                                <li class="categListSubs">Electrista</li>
-                                               <li class="categoryListButton">mas informacion</li>
+                                                <li class="categoryListButton">mas informacion</li>
                                                </ul>
                                            </p>
                                          </span>
@@ -342,7 +342,7 @@ end of dialog material- task
                     <div class="row browseTasks">
                         <div class="col-xs-3 catwindow">
                                   <div class="frame"><!-- frame-->
-                                     <a class="categoryCenterText">
+                                     <a class="categoryCenterText" ui-sref="tasks.list({ myFilter : { onlineIT: true } })">
                                         <span class="caption">
                                          <h3>Ayuda en <br>Oficina</h3>
                                            <p class="categoryCenterTextHidden">
@@ -351,7 +351,7 @@ end of dialog material- task
                                                <li class="categListSubs">Secretaria</li>
                                                <li class="categListSubs">Contable</li>
                                                <li class="categListSubs">Introducir datos</li>
-                                               <li class="categoryListButton">mas informacion</li>
+                                               <li class="categoryListButton" >mas informacion</li>
                                                </ul>
                                            </p>
                                          </span>
@@ -361,7 +361,7 @@ end of dialog material- task
                         </div>
                         <div class="col-xs-3 catwindow">
                                   <div class="frame"><!-- frame-->
-                                     <a class="categoryCenterText">
+                                     <a class="categoryCenterText" ui-sref="tasks.list({ myFilter : { photoEvents: true } })">
                                         <span class="caption">
                                          <h3>Eventos<br> </h3>
                                            <p class="categoryCenterTextHidden">
@@ -370,7 +370,7 @@ end of dialog material- task
                                                <li class="categListSubs">Azafatas</li>
                                                <li class="categListSubs">Catering</li>
                                                <li class="categListSubs">Organizador de viajes y fiestas</li>
-                                               <li class="categoryListButton">mas informacion</li>
+                                               <li class="categoryListButton" >mas informacion</li>
                                                </ul>
                                            </p>
                                          </span>
@@ -380,7 +380,7 @@ end of dialog material- task
                         </div>
                         <div class="col-xs-3 catwindow">
                                   <div class="frame"><!-- frame-->
-                                     <a class="categoryCenterText">
+                                     <a class="categoryCenterText"  ui-sref="tasks.list({ myFilter : { moving: true } })">
                                         <span class="caption">
                                          <h3>Mundanzas<br>&amp; Portes</h3>
                                            <p class="categoryCenterTextHidden">
@@ -398,7 +398,7 @@ end of dialog material- task
                         </div> 
                         <div class="col-xs-3 catwindow">
                                   <div class="frame"><!-- frame-->
-                                     <a class="categoryCenterText">
+                                     <a class="categoryCenterText" ui-sref="tasks.list({ myFilter : { misc: true } })">
                                         <span class="caption">
                                          <h3>Otros &amp;<br> favoritos</h3>
                                            <p class="categoryCenterTextHidden">
