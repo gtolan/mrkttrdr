@@ -1,6 +1,7 @@
 'use strict';
 var moment = require('moment-timezone');
-moment().tz("Europe/London").format();
+require('moment/locale/es');
+moment().tz("Europe/Madrid").locale('es').format();
 
 var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport(

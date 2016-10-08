@@ -2408,10 +2408,11 @@ angular.module('core').service('Socket', ['Authentication', '$state', '$timeout'
     'use strict';
     /*global escape: true */
     // Tasks controller
+    moment.locale('es');
+    console.log(moment.locale());
+
     angular.module('tasks').config(["$mdDateLocaleProvider", function($mdDateLocaleProvider) {
-        // $mdDateLocaleProvider.formatDate = function(date) {
-        //   return moment(date).format('YYYY-MM-DD');
-        // };
+
         $mdDateLocaleProvider.formatDate = function(date) {
             return moment(date).format('DD/MM/YYYY');
         };
