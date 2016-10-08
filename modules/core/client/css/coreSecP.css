@@ -2552,6 +2552,39 @@ box-shadow: 3px 3px 18px 8px rgba(0,0,0,0.33);
   text-transform: uppercase;
   color: white;
 }
+
+
+/* upload profile picture*/
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    background: #fff;
+    cursor: inherit;
+    display: block;
+}
+
+.attach-file {
+    border-radius: 50px;
+    padding: 11px 16px;
+    margin-top: .5em;
+    background: #fff;
+}
+
+/* upload profile picture*/
+
 /* tags css override */
 
 tags-input .tags {

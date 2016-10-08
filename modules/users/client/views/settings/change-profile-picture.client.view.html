@@ -1,4 +1,4 @@
-<section class="row Dash" ng-controller="ChangeProfilePictureController">
+<!-- <section class="row Dash" ng-controller="ChangeProfilePictureController">
 <div class="Dash">
     <h3 class="text-center EditPrfTitle">
 <i class="fa fa-picture-o" aria-hidden="true"></i> Cambiar foto de perfil</h3>
@@ -24,6 +24,45 @@
         <div ng-show="error" class="text-center text-danger">
           <strong ng-bind="error"></strong>
         </div>
+      </fieldset>
+    </form>
+  </div>
+</section>
+ -->
+
+
+<section class="row Dash" ng-controller="ChangeProfilePictureController">
+<div class="Dash">
+    <h3 class="text-center">
+<i class="fa fa-picture-o" aria-hidden="true"></i> Change your profile picture</h3>
+  </div>  
+  <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
+    <form class="form-horizontal">
+      <fieldset>
+        
+        <div class="form-group text-center">
+          <img ng-src="{{imageURL}}" alt="{{user.displayName}}" class="img-thumbnail user-profile-picture">
+        </div>
+        
+        <div class="text-center form-group" ng-hide="uploader.queue.length">
+          <span class="btn btn-default btn-file">
+              Select Image <input type="file" nv-file-select uploader="uploader">
+          </span>
+        </div>
+
+        <div class="text-center form-group" ng-show="uploader.queue.length">
+          <button class="attach-file" ng-click="uploadProfilePicture();">Upload</button>
+          <button class="btn btn-default" ng-click="cancelUpload();">Cancel</button>
+        </div>
+
+        <div ng-show="success" class="text-center text-success">
+          <strong>Profile Picture Changed Successfully</strong>
+        </div>
+        
+        <div ng-show="error" class="text-center text-danger">
+          <strong ng-bind="error"></strong>
+        </div>
+
       </fieldset>
     </form>
   </div>
