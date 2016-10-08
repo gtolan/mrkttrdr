@@ -18,7 +18,7 @@
       <md-content layout-margin="">
             <ul class="nav nav-pills nav-stacked">
         <li ui-sref-active="active">
-            <md-button class="md-raised md-primary lineHeight" ui-sref="settings.dashboard">Dashboard</md-button>
+            <md-button class="md-raised md-primary lineHeight" ui-sref="settings.dashboard">Tablero</md-button>
         </li>  
         <li >
             <md-button class="md-raised md-primary  lineHeight"  ui-sref="settings.tasks">Mis Tareas</md-button>
@@ -30,7 +30,7 @@
             <md-button class="md-raised md-primary lineHeight"  ui-sref="settings.notifications">notificaciones</md-button>
         </li>
         <li ui-sref-active="active">
-             <md-button class="md-raised md-primary lineHeight"  ui-sref="settings.reviews">Revisiones</md-button>
+             <md-button class="md-raised md-primary lineHeight"  ui-sref="settings.reviews">Reseñas</md-button>
         </li>  
         <li ui-sref-active="active">
         <md-button class="md-raised md-primary lineHeight" ui-sref="settings.profile" >Editar mi perfil</md-button>
@@ -39,17 +39,17 @@
              <md-button class="md-raised md-primary lineHeight" ui-sref="settings.payments">Editar mis pagos</md-button>
         </li>    
         <li ui-sref-active="active">
-            <md-button class="md-raised md-primary lineHeight" ui-sref="settings.picture">cambiar foto de perfil</md-button>
+            <md-button class="md-raised md-primary lineHeight" ui-sref="settings.picture">Cambiar foto de perfil</md-button>
         </li>
         <li  ng-show="user.provider === 'local'" ui-sref-active="active">
-             <md-button class="md-raised md-primary lineHeight" ui-sref="settings.password">cambiar contraseña</md-button>
+             <md-button class="md-raised md-primary lineHeight" ui-sref="settings.password">Cambiar contraseña</md-button>
         </li>
         <li ui-sref-active="active">
-            <md-button class="md-raised md-primary lineHeight" ui-sref="settings.accounts">verificar Social media</md-button>
+            <md-button class="md-raised md-primary lineHeight" ui-sref="settings.accounts">Verificar redes sociales</md-button>
         </li>
         <li ui-sref-active="active" ng-controller="AuthenticationController">
             <md-button class="md-raised md-primary lineHeight" data-ui-sref=
-              "profile({ userId : authentication.user._id })">Public Profile</md-button>
+              "profile({ userId : authentication.user._id })">Perfil público</md-button>
         </li>
       </ul>
           
@@ -83,7 +83,7 @@ Use of this source code is governed by an MIT-style license that can be foundin 
       <h4 class="ProfName"> <span ng-bind="user.displayName"></span> </h4>
       <ul class="nav nav-pills nav-stacked">
         <li ui-sref-active="active">
-            <md-button class="md-raised md-primary lineHeight" ui-sref="settings.dashboard">Dashboard</md-button>
+            <md-button class="md-raised md-primary lineHeight" ui-sref="settings.dashboard">Tablero</md-button>
         </li>  
         <li >
             <md-button class="md-raised md-primary  lineHeight"  ui-sref="settings.tasks">Mis Tareas</md-button>
@@ -92,29 +92,29 @@ Use of this source code is governed by an MIT-style license that can be foundin 
             <md-button class="md-raised md-primary lineHeight"  ui-sref="settings.messages">Mensajes</md-button>
         </li>
         <li ui-sref-active="active">
-            <md-button class="md-raised md-primary lineHeight"  ui-sref="settings.notifications">notificaciones</md-button>
+            <md-button class="md-raised md-primary lineHeight"  ui-sref="settings.notifications">Notificaciones</md-button>
         </li>
         <li ui-sref-active="active">
-             <md-button class="md-raised md-primary lineHeight"  ui-sref="settings.reviews">Revisiones</md-button>
+             <md-button class="md-raised md-primary lineHeight"  ui-sref="settings.reviews">Reseñas</md-button>
         </li>  
         <li ui-sref-active="active">
-        <md-button class="md-raised md-primary lineHeight" ui-sref="settings.profile" >Editar mi perfil</md-button>
+        <md-button class="md-raised md-primary lineHeight" ui-sref="settings.profile">Editar mi perfil</md-button>
         </li>
         <li ui-sref-active="active">
              <md-button class="md-raised md-primary lineHeight" ui-sref="settings.payments">Editar mis pagos</md-button>
         </li>    
         <li ui-sref-active="active">
-            <md-button class="md-raised md-primary lineHeight" ui-sref="settings.picture">cambiar foto de perfil</md-button>
+            <md-button class="md-raised md-primary lineHeight" ui-sref="settings.picture">Cambiar foto de perfil</md-button>
         </li>
         <li  ng-show="user.provider === 'local'" ui-sref-active="active">
-             <md-button class="md-raised md-primary lineHeight" ui-sref="settings.password">cambiar contraseña</md-button>
+             <md-button class="md-raised md-primary lineHeight" ui-sref="settings.password">Cambiar contraseña</md-button>
         </li>
         <li ui-sref-active="active">
-            <md-button class="md-raised md-primary lineHeight" ui-sref="settings.accounts">verificar Social media</md-button>
+            <md-button class="md-raised md-primary lineHeight" ui-sref="settings.accounts">Verificar redes sociales</md-button>
         </li>
           <li ui-sref-active="active" ng-controller="AuthenticationController">
             <md-button class="md-raised md-primary lineHeight" data-ui-sref=
-              "profile({ userId : authentication.user._id })">Public Profile</md-button>
+              "profile({ userId : authentication.user._id })">Perfil público</md-button>
         </li>
       </ul>
     </nav>

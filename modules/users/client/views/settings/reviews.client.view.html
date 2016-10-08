@@ -1,21 +1,21 @@
 <section class="row Dash">
 <div class="Dash">
-    <h3 class="text-center EditPrfTitle"><i class="fa fa-star-half" aria-hidden="true"></i> Revisiones</h3>
+    <h3 class="text-center EditPrfTitle"><i class="fa fa-star-half" aria-hidden="true"></i> Reseñas</h3>
   </div>
     <div class="col-md-12 text-center bottomNav noPadding" ng-show="results.length === 0">
         <div class="list-group-item">
-      <p>Once you have completed a task on TaskMatch, you will see a summary of your reviews here.</p>
+      <p>Una vez que hayas completado una tarea en Etece.es, verás un resumen de tus reseñas aquí.</p>
   </div> 
     </div>
     <div class="col-sm-12 bottomNav">
         <div class="col-sm-4 col-sm-offset-2">
-                <h4 class="profileText">Promedio revisiones</h4>
+                <h4 class="profileText">Reseña promedia</h4>
                     <li class="reviews-list" ng-show="user.reviews">
                         <rating readonly="isReadonly" ng-model="userAverage" max="5" state-on="'glyphicon-star'" state-off="'glyphicon-star-empty'"></rating>
 
-                        <p><b>{{ userAverage | number:2 }} from {{ numberOfReviews }} review(s)</b></p>
+                        <p><b>{{ userAverage | number:2 }} de {{ numberOfReviews }} reseña(s)</b></p>
                     </li>
-                    <li class="reviews-list" ng-hide="user.reviews">No average rating.</li>
+                    <li class="reviews-list" ng-hide="user.reviews">Ninguna calificación promedia</li>
                 </div>
     <div class="col-sm-4">
                 <h4 class="profileText">Sumario</h4>
@@ -36,7 +36,7 @@
                         </div>
                         <div class="col-xs-7">
                             <p data-ui-sref="tasks.view({ taskId: review.taskId })">{{review.taskName}}</p>
-                            <a data-ui-sref="profile({ userId: review.reviewBy })">{{ review.reviewByDisplayName }}</a> <small> said "{{ review.comment }}"</small><br>
+                            <a data-ui-sref="profile({ userId: review.reviewBy })">{{ review.reviewByDisplayName }}</a> <small> dijo "{{ review.comment }}"</small><br>
                             <small>{{ review.created | date:'fullDate' }}</small>
                         </div>
                         </div>

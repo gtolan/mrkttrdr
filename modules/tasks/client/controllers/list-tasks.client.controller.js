@@ -16,10 +16,22 @@
           return x === search.substring(0, search.indexOf(':'));
         });
         //attempt 2 
-        return Object.getOwnPropertyNames(element).find(function(x) {
-          return x === search.substring(0, 2);
-        });      
+        // return Object.getOwnPropertyNames(element).find(function(x) {
+        //   return x === search.substring(0, 2);
+        // });      
       });
+    };
+  }).filter('priceFilter', function() {
+    return function(items, search) {
+      if (!search) {
+        return items;
+      }
+      return items.filter(function(element) {
+        return Object.getOwnPropertyNames(element).find(function(x) {
+          return x === search.substring(0,1);
+        });
+
+        });
     };
   });
   TasksListController.$inject = ['TasksService', 'OffersService',
