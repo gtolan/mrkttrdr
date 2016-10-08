@@ -2,36 +2,36 @@
 <div class="Dash">
     <h3 class="text-center EditPrfTitle"><i class="fa fa-envelope-o" aria-hidden="true"></i> Mensajes</h3>
   </div>
-    <div class="col-md-12 text-center bottomNav" ng-show="results.length === 0">
+    <div class="col-md-12 text-center" ng-show="results.length === 0">
         <div class="list-group-item">
-      <p>Once you have assigned or been assigned a task on TaskMatch, you will see a summary of your messages here.</p>
+      <p>Una vez que tienes asignado o has asignado una tarea en Etece.es, verás un resumen de los mensajes privados aquí.</p>
   </div> 
     </div>
     <div class="col-sm-12">
-    	<input type="text" class="form-control" placeholder="Search for messages..." ng-model="search.$">
-    	<div class="panel panel-default" data-ng-repeat="offer in myOffers | filter:search">
-  			<div class="panel-body">
-  				<small><strong>Task title</strong></small>
-  				<h4>{{offer.taskName}}</h4>
-  				<small><strong>Offer title</strong></small>
-  				<h5>{{offer.offerDesc}}</h5>
-  				<small><strong>Messages</strong></small>
-  				<ul class="list-group" ng-repeat="comment in offer.comments">
-        			<li class="list-group-item offer">
-        				<img style="margin-left: 1em;margin-top: 1.25em;margin-right: 1em;" class="taskProfileImg pull-left" src="{{comment.profileImageURL}}"/>
-        					<blockquote style="margin-top:10px;margin-bottom:10px;">
-        						{{comment.comment}}
-        						<footer>{{comment.displayName}}<br>
-        						{{comment.created | date:'medium'}}
-        					</footer>
-        					</blockquote>
-        			</li>
-        		</ul>	
-  			</div>
-  			<div class="panel-footer">
-  				<button type="button" class="attach-file" ui-sref="offers.accepted({ offerId: offer._id })">Send a message</button>
-  			</div>
-		</div>
+      <input type="text" class="form-control" placeholder="Buscar mensajes..." ng-model="search.$">
+      <div class="panel panel-default" data-ng-repeat="offer in myOffers | filter:search | filter: x as results">
+        <div class="panel-body">
+          <small><strong>Task title</strong></small>
+          <h4>{{offer.taskName}}</h4>
+          <small><strong>Offer title</strong></small>
+          <h5>{{offer.offerDesc}}</h5>
+          <small><strong>Messages</strong></small>
+          <ul class="list-group" ng-repeat="comment in offer.comments">
+              <li class="list-group-item offer">
+                <img style="margin-left: 1em;margin-top: 1.25em;margin-right: 1em;" class="taskProfileImg pull-left" src="{{comment.profileImageURL}}"/>
+                  <blockquote style="margin-top:10px;margin-bottom:10px;">
+                    {{comment.comment}}
+                    <footer>{{comment.displayName}}<br>
+                    {{comment.created | date:'medium'}}
+                  </footer>
+                  </blockquote>
+              </li>
+            </ul> 
+        </div>
+        <div class="panel-footer">
+          <button type="button" class="attach-file" ui-sref="offers.accepted({ offerId: offer._id })">Enviar un mensaje</button>
+        </div>
+    </div>
     </div>
 
 </section>
