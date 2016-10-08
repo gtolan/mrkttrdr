@@ -2653,3 +2653,6 @@ tags-input .tags {
     margin-top: 50px;
     margin-bottom: 15px;
 }
+.mobileVideoBG {
+    display: none;
+}

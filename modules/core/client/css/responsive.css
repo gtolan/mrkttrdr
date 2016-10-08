@@ -835,6 +835,13 @@
 }
 
 @media only screen and (max-width: 550px) {
+    .mainMp4BG {
+        display: none;
+    }
+    .mobileVideoBG {
+    display: block;
+    width: 100%;
+}
     .panelSubmitAppl {
         position: absolute;
         width: 70%;
