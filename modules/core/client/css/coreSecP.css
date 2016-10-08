@@ -1549,7 +1549,7 @@ margin: 3px 8px !important;
     
 }
 .editProfileLabel {
-    color:dodgerblue !important;
+    color:#2f508b !important;
 }
 textarea {
     resize: none;
@@ -2530,3 +2530,36 @@ box-shadow: 3px 3px 18px 8px rgba(0,0,0,0.33);
     position: relative;
     z-index: 1000;
 }
+
+/* tags css override */
+
+tags-input .tags {
+  -webkit-appearance: textfield;
+  padding: 1px;
+  overflow: hidden;
+  word-wrap: break-word;
+  cursor: text;
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  box-shadow: 1px 1px 1px 0 #d3d3d3 inset;
+  height: 100%;
+
+  display: block;
+  width: 100%;
+  height: 34px;
+/*  padding: 6px 12px;*/
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+/* tags css override*/

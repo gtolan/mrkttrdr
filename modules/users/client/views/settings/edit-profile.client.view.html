@@ -26,7 +26,7 @@
         <input type="email" id="email" name="email" ng-model="user.email"  required  minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
             <div ng-messages="user.email.$error" role="alert">
               <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
-                Your email must be between 10 and 100 characters long and look like an e-mail address.
+                Tu correo electrónico debe tener entre 10 y 100 caracteres y ser formatado como un dirección de correo electrónico.
               </div>
             </div>
       </md-input-container>  
@@ -35,12 +35,12 @@
         <div class="col-sm-6" >
              <md-input-container class="md-block" flex-gt-sm>
           <label for="phoneNum" class="editProfileLabel"><span class="glyphicon glyphicon-phone" tooltip=
-          "Enter your phone number to verify your contact info" tooltip-placement="right"></span> Teléfono </label>
-          <input  name="phone"  ng-maxlength="12" ng-minlength="9" id="phoneNumber" name="phoneNumber"  ng-model="user.phoneNumber" placeholder="+34" tooltip="no olvide incluir el código de país" ng-pattern="/^[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}$/" />
+          "Introduzca su número de teléfono para verificar tu información de contacto" tooltip-placement="top"></span> Teléfono </label>
+          <input  name="phone"  ng-maxlength="12" ng-minlength="9" id="phoneNumber" name="phoneNumber"  ng-model="user.phoneNumber" placeholder="+34" tooltip="No olvides incluir el código de país" ng-pattern="/^[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}$/" />
 
               <div class="hint" ng-show="showHints">(+##) ###-####</div>
               <div ng-messages="user.phoneNumber.$error" ng-hide="showHints">
-                <div ng-message="pattern">(###) ###-#### - Please enter a valid phone number.</div>
+                <div ng-message="pattern">(###) ###-#### - Por favor, introducir un número de teléfono.</div>
               </div>
             </md-input-container>
      
@@ -50,12 +50,11 @@
         <div class="form-group" show-errors="">
     <label class="editProfileLabel" for="education">Educación <span class=
           "glyphicon glyphicon-question-sign" tooltip=
-          "Type in a skill and press enter to add another"
-          tooltip-placement="right"></span></label> 
+          "Escriba una habilidad y pulse enter para añadir otro"
+          tooltip-placement="top"></span></label> 
     <tags-input ng-model="user.education"></tags-input>
     <div ng-messages="userForm.education.$error" role="alert">
-      <p class="help-block error-text" ng-message="required">Education is
-      required.</p>
+      <p class="help-block error-text" ng-message="required">Educación es requerido.</p>
     </div>
   </div>
         </div>
@@ -64,29 +63,28 @@
             <div class="form-group" show-errors="">
     <label class="editProfileLabel" for="languages">Idiomas <span class=
           "glyphicon glyphicon-question-sign" tooltip=
-          "Type in a skill and press enter to add another"
-          tooltip-placement="right"></span></label> 
+          "Escriba una habilidad y pulse enter para añadir otro"
+          tooltip-placement="top"></span></label> 
     <tags-input ng-model="user.language"></tags-input>
     <div ng-messages="userForm.language.$error" role="alert">
-      <p class="help-block error-text" ng-message="required">Languages are
-      required.</p>
+      <p class="help-block error-text" ng-message="required">Idiomas son requeridos.</p>
     </div>
   </div>
         </div>
           
       <div class="col-sm-6">  
         <div class="form-group">
-        <label class="editProfileLabel">Transporte <span class=
+        <label class="editProfileLabel">Modos de transporte <span class=
           "glyphicon glyphicon-question-sign" tooltip=
-          "Select your available transport modes by clicking the relevant button"
-          tooltip-placement="right"></span></label><br>
+          "Selecciona tus disponibles modos de transporte haciendo clic en el botón correspondiente"
+          tooltip-placement="top"></span></label><br>
             <div class="btn-group">
                 <label class="btn btn-default btn-xs" ng-model="user.online" btn-checkbox>Online</label>
-                <label class="btn btn-default btn-xs" ng-model="user.walk" btn-checkbox>Walk</label>
-                <label class="btn btn-default btn-xs" ng-model="user.bicycle" btn-checkbox>Bicycle</label>
+                <label class="btn btn-default btn-xs" ng-model="user.walk" btn-checkbox>Caminar</label>
+                <label class="btn btn-default btn-xs" ng-model="user.bicycle" btn-checkbox>Bici</label>
                 <label class="btn btn-default btn-xs" ng-model="user.scooter" btn-checkbox>Scooter</label>
-                <label class="btn btn-default btn-xs" ng-model="user.car" btn-checkbox>Car</label>
-                <label class="btn btn-default btn-xs" ng-model="user.truck" btn-checkbox>Truck</label>
+                <label class="btn btn-default btn-xs" ng-model="user.car" btn-checkbox>Coche</label>
+                <label class="btn btn-default btn-xs" ng-model="user.truck" btn-checkbox>Furgoneta</label>
             </div>
             </div>
         </div>
@@ -96,46 +94,45 @@
       <div class="col-xs-12">
   <hr class="hrEditProfile">
   <div class="form-group" show-errors>
-    <label class="editProfileSpan" for="tagline">Un poco sobre mí</label> 
+    <label class="editProfileSpan" for="tagline">Una frase sobre mí</label> 
     <textarea class="form-control" id="tagline" name="about"
-    ng-model="user.tagline" placeholder="A mini bio"
-    required="" rows="1" tooltip="Give us a one liner about you"
-    tooltip-placement="right" tooltip-trigger="focus" type="text"></textarea>
+    ng-model="user.tagline" placeholder="Mini bio"
+    required="" rows="1" tooltip="Cuéntanos una frase acerca de ti"
+    tooltip-placement="top" tooltip-trigger="focus" type="text"></textarea>
     <div ng-messages="userForm.about.$error" role="alert">
-      <p class="help-block error-text" ng-message="required">Tagline is required.</p>
+      <p class="help-block error-text" ng-message="required">Una frase es requerido.</p>
     </div>
   </div>
   <div class="form-group" show-errors>
     <label class="editProfileSpan" for="tagline">Mi ubicación</label> 
     <textarea class="form-control" id="tagline" name="about"
-    ng-model="user.location" placeholder="Your city"
-    required="" rows="1" tooltip="Let users know your neighbourhood"
-    tooltip-placement="right" tooltip-trigger="focus" type="text"></textarea>
+    ng-model="user.location" placeholder="Tu ciudad"
+    required="" rows="1" tooltip="Permiten a los usuarios conocer a tu barrio"
+    tooltip-placement="top" tooltip-trigger="focus" type="text"></textarea>
     <div ng-messages="userForm.location.$error" role="alert">
-      <p class="help-block error-text" ng-message="required">Location is required.</p>
+      <p class="help-block error-text" ng-message="required">Ubicación es requerido.</p>
     </div>
   </div>          
   <div class="form-group" show-errors="">
     <label class="editProfileSpan" for="about">Sobre mí</label> 
     <textarea class="form-control" id="about" name="about"
-    ng-model="user.about" placeholder="Tell us a little about yourself"
-    required="" rows="5" tooltip="Tell us a little about yourself"
-    tooltip-placement="right" tooltip-trigger="focus" type="text"></textarea>
+    ng-model="user.about" placeholder="Cuéntanos un poquito acerca de ti"
+    required="" rows="5" tooltip="Cuéntanos un poquito acerca de ti"
+    tooltip-placement="top" tooltip-trigger="focus" type="text"></textarea>
     <div ng-messages="userForm.about.$error" role="alert">
-      <p class="help-block error-text" ng-message="required">About me
-      description is required.</p>
+      <p class="help-block error-text" ng-message="required">Sobre mí es requerido.</p>
     </div>
   </div>
   <div class="form-group" show-errors="">
     <label class="editProfileSpan" for="work">Experiencia de trabajo y habilidades<span class=
           "glyphicon glyphicon-question-sign" tooltip=
-          "Type in a skill and press enter to add another"
-          tooltip-placement="right"></span></label> 
+          "Escriba una habilidad y pulse enter para añadir otro"
+          tooltip-placement="top"></span></label> 
     <tags-input ng-model="user.work"></tags-input>
 <!--     <tags-input ng-model="user.alerts"></tags-input> -->
     <div ng-messages="userForm.work.$error" role="alert">
-      <p class="help-block error-text" ng-message="required">Work skills are
-      required.</p>
+      <p class="help-block error-text" ng-message="required">Habilidades son
+      requeridos.</p>
     </div>
   </div>
   <div class="text-center form-group">
