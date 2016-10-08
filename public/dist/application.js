@@ -2409,7 +2409,6 @@ angular.module('core').service('Socket', ['Authentication', '$state', '$timeout'
     /*global escape: true */
     // Tasks controller
     moment.locale('es');
-    console.log(moment.locale());
 
     angular.module('tasks').config(["$mdDateLocaleProvider", function($mdDateLocaleProvider) {
 

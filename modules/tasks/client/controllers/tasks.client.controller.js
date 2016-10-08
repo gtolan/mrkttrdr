@@ -3,7 +3,6 @@
     /*global escape: true */
     // Tasks controller
     moment.locale('es');
-    console.log(moment.locale());
 
     angular.module('tasks').config(function($mdDateLocaleProvider) {
 

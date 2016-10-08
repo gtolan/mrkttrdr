@@ -2531,6 +2531,27 @@ box-shadow: 3px 3px 18px 8px rgba(0,0,0,0.33);
     z-index: 1000;
 }
 
+
+.solucionador {
+  background-color: #ffdb00 !important;
+}
+
+.clienteTag {
+  padding: 10px 30px;
+  background-color: #fed600;
+  border-radius: 50px;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 1px 1px #d8d9d8;
+}
+
+.solucionadorTag {
+  padding: 10px 30px;
+  background-color: #2f508a;
+  border-radius: 50px;
+  text-transform: uppercase;
+  color: white;
+}
 /* tags css override */
 
 tags-input .tags {

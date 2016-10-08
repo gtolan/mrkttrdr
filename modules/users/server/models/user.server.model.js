@@ -132,11 +132,12 @@ var UserSchema = new Schema({
       'Please fill a valid email address'
     ]
   },
-  // phoneNumber: {
-  //   type: String,
-  //   unique: true,
-  //   trim: true
-  // },
+  eteceWorker: {
+    type: Boolean
+  },
+  eteceHirer: {
+    type: Boolean
+  },
   username: {
     type: String,
     unique: 'Username already exists',

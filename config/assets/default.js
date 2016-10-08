@@ -18,6 +18,7 @@ module.exports = {
       ],
       js: [
         'public/lib/angular/angular.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.4.6/angular-locale_es-es.js',
         'public/lib/angular-resource/angular-resource.js',
         'public/lib/angular-animate/angular-animate.js',
         'public/lib/angular-messages/angular-messages.js',

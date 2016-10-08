@@ -85,6 +85,8 @@
             </div>
             </div>
             <div class="col-md-4 profileText profileStats text-right" style="margin-left:-1em;">
+                <span class="clienteTag" ng-show="user.eteceHirer"><i class="fa fa-user" aria-hidden="true"></i> Cliente</span>
+                <span class="solucionadorTag" ng-show="user.eteceWorker"><i class="fa fa-wrench" aria-hidden="true"></i> Solucionador</span>
                 <h5 ng-hide="friendsofFriendsLength < 1" ng-cloak><img style="height:20px;width:20px;" src="modules/users/client/img/profile/1468796969_all_friends.png"/>Tú y {{ user.displayName }} tenéis {{ friendsofFriendsLength }} amigos en común</h5>
                 <p ng-repeat="name in profileMutualFriendsArray">{{name}}</p>
                      <h4><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <strong>{{ positiveRating || 0 | number:0 }}%</strong> calificación positiva</h4>
