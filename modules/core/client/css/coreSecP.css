@@ -2530,3 +2530,39 @@ box-shadow: 3px 3px 18px 8px rgba(0,0,0,0.33);
     position: relative;
     z-index: 1000;
 }
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: #586b90;
+}
+
+.resetPassInput {
+    height: 2.5em;
+    background-color: rgb(250, 255, 189) !important;
+    font-size: 25px !important;
+    line-height: 1.65em !important;
+}
+.resetPassPage {
+    background-color: #535e69;
+}
+.passResetSubmit {
+    font-weight: 600 !important;
+     height: 2.5em;
+    font-size: 25px !important;
+    line-height: 1.65em !important;
+    margin-bottom: 100px;
+}
+.resetPassHeader {
+    font-weight: 700px;
+    font-size: 32px;
+    color:white;
+}
+.resetPassPara {
+    font-weight: 700px;
+    font-size: 18px;
+    color:white;   
+}
+.logoResetPage {
+        margin-right: 8%;
+        width: 69%;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}

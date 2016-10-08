@@ -686,6 +686,16 @@ input.formRegInputHome {
 
 
  @media only screen and (max-width: 625px) { 
+     .resetPassHeader {
+    font-weight: 700px;
+    font-size: 26px;
+    color:white;
+}
+.resetPassPara {
+    font-weight: 700px;
+    font-size: 14px;
+    color:white;   
+}
      .panelSubmitAppl {
     position: absolute;
     width: 60%;
@@ -1006,6 +1016,11 @@ box-shadow: 10px -4px 140px 28px rgba(0,0,0,0.53);
     min-height: 25px !important;
     min-width: 88px !important;
     line-height: 17px !important;
+}
+          .resetPassHeader {
+    font-weight: 700px;
+    font-size: 20px;
+    color:white;
 }
 }
      
