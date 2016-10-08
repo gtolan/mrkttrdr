@@ -653,10 +653,12 @@ input.formRegInputHome {
     margin-left: 36%
     }
     .myEteceReuseButton.modalCreate{
-        width: 50%;
+    width: 45%;
+    margin-top: -46px;
     }
     a.myBackButton.modalCreate {
-    width: 50% !important;
+    margin-top: -28px;
+    width: 45% !important;
     display: inline-block;
     float: left;
     text-align: center;

@@ -999,7 +999,7 @@ myNextButton:focus {
     font-family: Arial;
     color: #8f8f8f;
     font-size: 15px;
-    padding: 4px 16px 8px 16px;
+    padding: 4px 16px 5px 16px;
     border: solid #0b8fe0 2px;
     text-decoration: none;
 }
