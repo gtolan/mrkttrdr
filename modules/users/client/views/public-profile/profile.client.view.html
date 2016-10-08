@@ -11,10 +11,6 @@
                         <button ng-if="authenticatedUser._id === user._id" class="change-cover-foto" ng-click="uploadCoverPhoto();">Cambiar la foto de portada</button>
                     </div>
                     <div class="col-sm-4">
-<!--
-                        <button ng-hide="authenticatedUser._id === user._id" ng-click="requestAQuote()" class="requestQuote pull-right myEteceReuseButton hvr-underline-reveal">Request a quote</button>
-                    <div ng-hide="authenticatedUser._id === user._id" class="btn-group pull-right" dropdown is-open="status.isopen">
--->
                         <button id="single-button" tooltip-placement="left" tooltip="Haga clic para ver más opciones relacionadas con este usuario." type="button" class="moreOptions pull-right myEteceReuseButton hvr-underline-reveal" dropdown-toggle ng-disabled="disabled">
                         Más opciones <i class="glyphicon glyphicon-chevron-down"></i></span>
                         </button>
@@ -38,9 +34,10 @@
             </div>
             <div class="col-md-4 profileText text-center noPadding">
                 <div class="col-sm-12 noPadding">
-                    <div class="col-xs-4 badgesProfileTop noPadding">
+
+                    <div class="col-sm-4 badgesProfileTop noPadding">
                         <div class="filter-badge">
-                            <span class="fa-stack fa-3x  ">
+                            <span class="fa-stack fa-3x">
                               <i class="fa fa-circle fa-stack-2x badgeCircle"></i>
                                 <i class="fa fa-thumb-tack fa-stack-1x fa-inverse animated badgeOneProfile" aria-hidden="true"></i>
                             </span>
@@ -52,8 +49,8 @@
                          </div>
                 
                
-                    <div class="col-xs-4 badgesProfileTop noPadding">
-                          <div class="col-xs-4 badgesProfileTop">
+                    <div class="col-sm-4 badgesProfileTop noPadding">
+                          <div class="col-sm-4 badgesProfileTop">
                         <div class="filter-badge">
                           <span class="fa-stack fa-3x  ">
                               <i class="fa fa-circle fa-stack-2x badgeCircle"></i>
@@ -68,8 +65,8 @@
                     </div>
                     
                   
-                    <div class="col-xs-4 badgesProfileTop noPadding">
-                          <div class="col-xs-4 badgesProfileTop">
+                    <div class="col-sm-4 badgesProfileTop noPadding">
+                          <div class="col-sm-4 badgesProfileTop">
                         <div class="filter-badge">
                           <span class="fa-stack fa-3x">
                               <i class="fa fa-circle fa-stack-2x badgeCircle"></i>
@@ -85,9 +82,10 @@
             </div>
             </div>
             <div class="col-md-4 profileText profileStats text-right" style="margin-left:-1em;">
-                <span class="clienteTag" ng-show="user.eteceHirer"><i class="fa fa-user" aria-hidden="true"></i> Cliente</span>
-                <span class="solucionadorTag" ng-show="user.eteceWorker"><i class="fa fa-wrench" aria-hidden="true"></i> Solucionador</span>
-                <h5 ng-hide="friendsofFriendsLength < 1" ng-cloak><img style="height:20px;width:20px;" src="modules/users/client/img/profile/1468796969_all_friends.png"/>Tú y {{ user.displayName }} tenéis {{ friendsofFriendsLength }} amigos en común</h5>
+                <div class="clienteTag" ng-show="user.eteceHirer"><i class="fa fa-user" aria-hidden="true"></i> Cliente</div>
+                <div class="solucionadorTag" ng-show="user.eteceWorker"><i class="fa fa-wrench" aria-hidden="true"></i> Solucionador</div>
+
+                <h5 ng-hide="friendsofFriendsLength === 0" ng-cloak><img style="height:20px;width:20px;" src="modules/users/client/img/profile/1468796969_all_friends.png"/>Tú y {{ user.displayName }} tenéis {{ friendsofFriendsLength }} amigos en común</h5>
                 <p ng-repeat="name in profileMutualFriendsArray">{{name}}</p>
                      <h4><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <strong>{{ positiveRating || 0 | number:0 }}%</strong> calificación positiva</h4>
                      <!-- <h4><i class="fa fa-ban" aria-hidden="true"></i> <strong>{{ cancellationRate || 0 }}%</strong> cancellation rate</h4>

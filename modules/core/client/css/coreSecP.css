@@ -2531,11 +2531,6 @@ box-shadow: 3px 3px 18px 8px rgba(0,0,0,0.33);
     z-index: 1000;
 }
 
-
-.solucionador {
-  background-color: #ffdb00 !important;
-}
-
 .clienteTag {
   padding: 10px 30px;
   background-color: #fed600;
@@ -2543,14 +2538,21 @@ box-shadow: 3px 3px 18px 8px rgba(0,0,0,0.33);
   text-transform: uppercase;
   color: white;
   text-shadow: 1px 1px #d8d9d8;
+  width: 14em;
+  text-align: center;
+  position: relative;
+  display: inline;
 }
 
 .solucionadorTag {
+  text-align: center;
+  width: 14em;
   padding: 10px 30px;
   background-color: #2f508a;
   border-radius: 50px;
   text-transform: uppercase;
   color: white;
+  display: inline;
 }
 
 
