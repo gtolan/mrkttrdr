@@ -1074,7 +1074,7 @@ md-input-container {
 
 hr.footer-hr {
     width: 50%;
-    margin-bottom: 43px;
+    margin-bottom: 12px;
     margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
@@ -2681,7 +2681,7 @@ tags-input .tags {
     display: none;
 }
 .socMedRow {
-    margin-top: -25px
+    margin-top:0px;
 }
 .progRegHomeP {
     margin-bottom: 10px !important;
