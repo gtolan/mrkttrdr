@@ -2693,3 +2693,33 @@ tags-input .tags {
     margin-bottom: 0px !important;
     padding-bottom: 15px !important;
 }
+.socialSignUpPage {
+    width: 200px;
+    margin-top: 50px;
+}
+.leftSignUp {
+    padding-left: 0px;
+}
+.passResetSubmit.signUp {
+    margin-top: 39px;
+    margin-bottom: 10px !important;
+}
+.socialLoginSignUpRow {
+    margin-top: 87px;
+}
+.socialLogin2 {
+    width: 25%;
+    height: 20%;
+}
+.blueHeader.register {
+    text-align: left;
+}
+.authPageSignUp {
+    margin-bottom: 70px;
+}
+.signUpLeftCol {
+    border-right: 1px solid lightgray;
+}
+.welcomeHeader {
+    padding-right: 15px;
+}

@@ -162,6 +162,15 @@
 }
 
 @media only screen and (max-width: 991px) {
+    .socialLoginSignUpRow {
+    margin-top: 37px;
+}
+    .signUpLeftCol {
+    border-right: none;
+}
+.blueHeader.register {
+        text-align: center;
+    }
     .titleSignUpSubmit {
         top: 20px;
         font-size: 20px;
@@ -1228,6 +1237,7 @@
 }
 
 @media only screen and (min-width:851px) and (max-width: 991px) {
+    
     .profProgRes {
         margin-left: 0;
     }
