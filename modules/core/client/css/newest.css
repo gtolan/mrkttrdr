@@ -2880,9 +2880,9 @@ h1.mainDivTitlesHowWorks {
 }
 
 .signin {
-  border: 1px solid #90a4ae;
+/*  border: 1px solid #90a4ae;*/
   box-sizing: border-box;
-  padding: 20px;
+/*  padding: 20px;*/
   margin-top: 20px;
   margin-bottom: 20px;
 }

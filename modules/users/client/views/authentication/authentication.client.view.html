@@ -1,11 +1,43 @@
- <section class="row" ng-controller="AuthenticationController">
-  <h3 class="col-md-12 text-center blueHeader">Iniciar sesión utilizando redes sociales</h3>
-  <div class="col-md-12 text-center">
+ <section class="row authPageSignUp" ng-controller="AuthenticationController">
+     
+     <div class="col-xs-offset-1 col-xs-10 col-md-offset-4 col-md-4 text-center">  
+  <h3 class="text-center welcomeHeader">Bienvenido a</h3>
+    <img src="../modules/core/client/img/eteceLogo3.png" class="logoResetPage">
+    </div>
+<div class="row">  
+<div class="col-md-6 text-center signUpLeftCol">
+  <h3 class="col-md-12 blueHeader">Iniciar sesión utilizando redes sociales</h3>
+ 
     <!--<img ng-click="vm.callOauthProvider('/api/auth/facebook')" ng-src="/modules/users/client/img/buttons/facebook.png">-->
-          <img class="socialLogin" ng-click="callOauthProvider('/api/auth/twitter')" ng-src="/modules/users/client/img/buttons/twitter.png">
-    <img class="socialLogin" ng-click="callOauthProvider('/api/auth/google')" ng-src="/modules/users/client/img/buttons/google.png">
-    <img class="socialLogin" ng-click="callOauthProvider('/api/auth/facebook')" ng-src="/modules/users/client/img/buttons/facebook.png">
-    <img class="socialLogin" ng-click="callOauthProvider('/api/auth/linkedin')" ng-src="/modules/users/client/img/buttons/linkedin.png">
+<!--
+      <div class="row">    
+    <button class="btn btn-primary passResetSubmit socialSignUpPage signUp">
+             <i class="fa fa-facebook "></i>
+        Facebook</button>
+    <button class="btn btn-danger passResetSubmit socialSignUpPage signUp">
+             <i class="fa fa-google "></i>
+        Google</button>    
+    </div>
+     <div class="row">    
+    <button class="btn btn-primary passResetSubmit socialSignUpPage signUp">
+             <i class="fa fa-linkedin "></i>
+        Linkedin</button>
+    <button class="btn btn-danger passResetSubmit socialSignUpPage signUp">
+             <i class="fa fa-instagram "></i>
+        Instagram</button>    
+    </div>
+-->
+    <div class="row socialLoginSignUpRow">
+    <img class="socialLogin2" ng-click="callOauthProvider('/api/auth/twitter')" ng-src="/modules/users/client/img/buttons/twitter.png">
+    <img class="socialLogin2" ng-click="callOauthProvider('/api/auth/google')" ng-src="/modules/users/client/img/buttons/google.png">
+    <img class="socialLogin2" ng-click="callOauthProvider('/api/auth/facebook')" ng-src="/modules/users/client/img/buttons/facebook.png">
+    <img class="socialLogin2" ng-click="callOauthProvider('/api/auth/linkedin')" ng-src="/modules/users/client/img/buttons/linkedin.png">
+    <img class="socialLogin2" ng-click="callOauthProvider('/api/auth/instagram')" ng-src="/modules/users/client/img/buttons/github.png">
+    <img class="socialLogin2" ng-click="callOauthProvider('/api/auth/paypal')" ng-src="/modules/users/client/img/buttons/paypal.png">
   </div>
+    </div>
+<div class="col-md-6 ">
   <div ui-view></div>
+    </div>
+</div>
 </section>
