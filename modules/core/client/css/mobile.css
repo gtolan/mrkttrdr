@@ -828,6 +828,9 @@
 }
 
 @media screen and (min-width: 100px) and (max-width: 575px) {
+  .offerInclude {
+    height: auto !important;
+  }
   .row.signup {
     display: none;
   }/*  .EarnInfoTitle {

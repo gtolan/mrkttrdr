@@ -125,13 +125,15 @@
                       <div ng-controller="ModalOfferCtrl">
                         <script id="myOfferModalContent.html" type="text/ng-template">
                           <div class="modal-header">
-                          <div class="row">  <h3 class="modal-title text-center" style="text-align:center;color:#265a88;display:inline-block;padding-left:35%;">Hacer una oferta </h3>
+                          <div class="row text-center">  
+                          <h3 class="modal-title hacerOferta text-center">Hacer una oferta</h3>
                          <button aria-hidden="true" class="close pull-right" ng-click="cancel()" type=
     "button" style="font-size:33px;">&times;</button> 
                               </div>
                               
                           </div>
-                          <div ng-include="'/modules/tasks/client/views/offer.client.view.html'" class="offerInclude"></div>
+                          <div ng-include="'/modules/tasks/client/views/offer.client.view.html'" class="offerInclude">
+                          </div>
                           <div class="modal-footer offerFooter">
                             <button class="btn btn-default btn-sm" ng-click="cancel()">Cerrar</button>
                           </div>

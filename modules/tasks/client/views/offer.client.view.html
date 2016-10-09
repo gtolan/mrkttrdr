@@ -11,7 +11,7 @@
   ng-submit="vm.newOffer(vm.form.offerForm.$valid)" novalidate="">
     <fieldset>
       <div class="row LocationCont noPadding">
-          <div class="col-xs-4 noPadding">
+          <div class="col-sm-4 noPadding">
             <div class="form-group" show-errors>
             <h3 class="taskDesc offerTaskHeader"><span class="glyphicon glyphicon-question-sign" tooltip-placement="top" tooltip="Introducir el presupuesto que ofrecerías para cumplir la tarea"></span> Presupuesto</h3>
             <div class="input-group">
@@ -20,12 +20,11 @@
             ng-model="vm.offer.offerPrice" placeholder="{{ vm.task.price }}" type="number" required>
           </div><!-- input group -->
             <div ng-messages="vm.form.offerForm.offerPrice.$error" role="alert">
-              <p class="help-block error-text" ng-message="required">Offer name
-              is required.</p>
+              <p class="help-block error-text" ng-message="required">Presupuesto es requerido.</p>
             </div>
           </div>
           </div>
-          <div class="col-xs-4 noPadding">
+          <div class="col-sm-4 noPadding">
             <div class="form-group">
             <h3 class="taskDesc offerTaskHeader">Recibirás</h3>
             <div class="input-group">
@@ -34,7 +33,7 @@
             </div>    
           </div>
           </div>
-          <div class="col-xs-4 noPadding">
+          <div class="col-sm-4 noPadding">
             <div class="form-group">
               <h3 class="taskDesc offerTaskHeader">Comisión</h3>
                 <div class="input-group">
@@ -50,8 +49,7 @@
         ng-model="vm.offer.offerDesc" placeholder="Explique por qué eres la persona adecuada para el trabajo" required
         rows="3"></textarea>
         <div ng-messages="vm.form.offerForm.description.$error" role="alert">
-          <p class="help-block error-text" ng-message="required">Offer description is
-          required.</p>
+          <p class="help-block error-text" ng-message="required">Detalles de la oferta son requeridos.</p>
         </div>
       </div>
       <div>

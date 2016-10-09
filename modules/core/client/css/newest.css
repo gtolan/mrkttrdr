@@ -2048,8 +2048,15 @@ h1.mainDivTitlesHowWorks {
 }
 
 .offerInclude {
-  height: auto;
+  height: 26em;
   padding: 25px 4px 25px 4px;
+}
+
+.hacerOferta {
+  text-align:center;
+  color:#265a88;
+  display:inline-block;
+/*  padding-left:35%;*/
 }
 
 .AddExpenses {
