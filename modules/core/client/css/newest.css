@@ -577,6 +577,7 @@ assigned:hover {
 }
 
 .SocialLinks {
+  font-size: 16px;
   color: #b0bfc3;
   cursor: pointer;
 
@@ -595,7 +596,7 @@ assigned:hover {
 .footEnd {
   background-color: #353737;
   height: 50px;
-  margin-top: 10px;
+  margin-top: 37px;
   color: #b0bfc3;
 }
 

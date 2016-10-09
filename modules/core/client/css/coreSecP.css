@@ -1020,7 +1020,7 @@ md-input-container {
 .footEnd {
   background-color: #353737;
   height: 50px;
-  margin-top: 10px;
+ margin-top: 37px;
 }
 
 .footerTitle {
@@ -1074,6 +1074,8 @@ md-input-container {
 
 hr.footer-hr {
     width: 50%;
+    margin-bottom: 43px;
+    margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
     border-color: rgba(255,255,255,0.2);
@@ -2677,4 +2679,10 @@ tags-input .tags {
 }
 .mobileVideoBG {
     display: none;
+}
+.socMedRow {
+    margin-top: -25px
+}
+.progRegHomeP {
+    margin-bottom: 10px !important;
 }

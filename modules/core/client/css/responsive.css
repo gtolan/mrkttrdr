@@ -944,6 +944,9 @@
 }
 
 @media only screen and (max-width: 480px) {
+    .orHowAbout {
+     display: none;   
+    }
     .hiddenHeader {
         display: none;
     }
@@ -982,7 +985,7 @@
         width: 92px;
         margin-left: 6%;
         min-height: 25px !important;
-        min-width: 88px !important;
+        min-width: 73px !important;
         line-height: 17px !important;
     }
 
@@ -1013,7 +1016,7 @@
 
     .socialSingBut {
         width: 92px;
-        font-size: 11px;
+        font-size: 8px;
     }
 
     .progressSprite {
@@ -1160,6 +1163,10 @@
         margin-top: 14px;
         margin-right: 5px;
     }
+    .socialSingBut {
+        width: 77px;
+        margin-left: 4%;
+    }
 
     .mainTitleHeaderTextH {
         text-align: left;
@@ -1203,7 +1210,7 @@
     }
 
     .socialSingBut {
-        width: 90px;
+        width: 77px;
         margin-left: 4%;
     }
 

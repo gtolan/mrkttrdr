@@ -755,13 +755,13 @@ end of dialog material- task
         </div>
         <div class="form-group formRegHome" ng-show="!userForm.password.$error.required">
           <label class="formRegLabelHome">Requisitos de contraseña</label>
-          <progressbar value="requirementsProgress" type="{{requirementsColor}}"><span style="color:white; white-space:nowrap;">{{requirementsProgress}}%</span></progressbar>
+          <progressbar class="progRegHomeP" value="requirementsProgress" type="{{requirementsColor}}"><span style="color:white; white-space:nowrap;">{{requirementsProgress}}%</span></progressbar>
         </div>
         <div class="text-center form-group formRegHome">
-          <md-button type="submit" class="md-raised md-primary">Registrarse</md-button>
-          &nbsp; o&nbsp;
+          <md-button type="submit" class="socialSingBut md-raised md-primary">Registrarse</md-button>
+            <p class="orHowAbout"> &nbsp; o&nbsp;</p>
           <a ui-sref="authentication.signin" class="show-signup">
-            <md-button class="md-raised">Iniciar sesión</md-button>
+            <md-button class="socialSingBut md-raised">Iniciar sesión</md-button>
           </a>
         </div>
         <div ng-show="error" class="text-center text-danger">
