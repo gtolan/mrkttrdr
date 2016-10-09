@@ -9,7 +9,7 @@
               <md-content class="md-padding">
                 <div class="col-md-12 text-center bottomNav noPadding" ng-show="results.length === 0">
                   <div class="list-group-item">
-                <p>Once you have assigned or been assigned a task on TaskMatch, you will see a summary of your notifications here.</p>
+                <p>Una vez que tienes asignado o has asignado una tarea en Etece.es, verás un resumen de tus notificaciones aquí.</p>
                   </div> 
               </div>
                 <md-content>
@@ -19,7 +19,7 @@
                     <img ng-src="{{comment.profileImageURL}}" class="md-avatar" alt="">
                     <div class="md-list-item-text" layout="column">
                       <h3>{{ task.title }}</h3>
-                      <h4>{{ comment.displayName }} commented on {{ task.title }}</h4>
+                      <h4>{{ comment.displayName }} comentó en {{ task.title }}</h4>
                       <p>{{ item.notes }}</p>
                     </div>
                   </md-list-item>
@@ -29,7 +29,7 @@
                     <img ng-src="{{ offer.profileImageURL }}" class="md-avatar" alt="">
                     <div class="md-list-item-text" layout="column">
                       <h3><strong>{{ offer.offerDesc }}</strong></h3>
-                      <h4><a data-ui-sref="profile({ userId : offer.user._id })">{{ offer.displayName }}</a> made an offer on your task <a data-ui-sref="tasks.view({ taskId: offer.taskId })">{{ offer.taskName }}</a></h4>
+                      <h4><a data-ui-sref="profile({ userId : offer.user._id })">{{ offer.displayName }}</a> hizó una oferta en tu tarea <a data-ui-sref="tasks.view({ taskId: offer.taskId })">{{ offer.taskName }}</a></h4>
                       <p>{{ item.notes }}</p>
                     </div>
                   </md-list-item>

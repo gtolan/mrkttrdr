@@ -1,22 +1,22 @@
 <section class="row Dash" ng-controller="EditPaymentDetailsController">
 <div class="Dash">
-    <h3 class="text-center EditPrfTitle"><i class="fa fa-credit-card" aria-hidden="true"></i> Gestionar sus pagos.</h3>
+    <h3 class="text-center EditPrfTitle"><i class="fa fa-credit-card" aria-hidden="true"></i> Gestionar tus pagos</h3>
   </div>      
     <tabset>
-        <tab heading="Make payments">
+        <tab heading="Realizar pagos">
             <br>
             <div class="list-group-item">
-                <p>When you are ready to accept a TaskRunner's offer, you will be required to pay the funds required for the task. The fee will be held securely until the task has been completed and the Task Poster releases the funds to the TaskRunner.</p>
+                <p>Cuando estés listo para aceptar una oferta, serás obligado a pagar los fondos necesarios para la tarea. La tasa se llevará a cabo firmemente hasta que la tarea se ha completado y liberar los fondos para la solucioner.</p>
             </div>
             <hr>
             <div class="well" style="background:white !important;">
-            <h3 ng-show="user.stripeCustomerId">Update your payment details</h3>
-            <h3 ng-show="!user.stripeCustomerId">Añadir su información de pago</h3>
+            <h3 ng-show="user.stripeCustomerId">Actualizar tus datos de pago</h3>
+            <h3 ng-show="!user.stripeCustomerId">Añadir tus datos de pago</h3>
                 
       <form name="checkoutForm" stripe-form="stripeCallback" ng-submit="onSubmit()" data-abide>
         <md-input-container>
           <label class="hosted-field--label" for="card-number"><span class="icon">
-         <span class="glyphicon glyphicon-credit-card"></span></span> Card Number 
+         <span class="glyphicon glyphicon-credit-card"></span></span> Número de tarjeta 
         </label>
           <input ng-model="number" name="number" payments-format="card" payments-validate="card" type="text"/>     
         </md-input-container>
@@ -25,7 +25,7 @@
            <span class="icon">
           <span class="glyphicon glyphicon-user"></span>
          </span> 
-          Cardholder Name</label>
+          Titular de la tarjeta</label>
           <input ng-model="name" type="text">  
             </md-input-container>
         <md-input-container>
@@ -33,7 +33,7 @@
            <span class="icon">
           <span class="glyphicon glyphicon-calendar"></span>
          </span> 
-          Expiration Date
+          Fecha de vencimiento
           </label>
           <input ng-model="expiry" name="expiry" payments-format="expiry" payments-validate="expiry" type="text"/>
         </md-input-container>
@@ -51,7 +51,7 @@
            <span class="icon">
           <span class="glyphicon glyphicon-map-marker"></span>
          </span> 
-          Billing Address
+          Dirección de facturación
           </label>
           <input ng-model="address" type="text">
         </md-input-container>        
@@ -60,92 +60,92 @@
            <span class="icon">
           <span class="glyphicon glyphicon-map-marker"></span>
          </span> 
-          Postal Code
+          Código postal
           </label>
           <input type="number" ng-model="postalCode"/>
         </md-input-container>
 
   <div class="clearfix">
     <div class="right">
-            <md-button type="submit" class="md-raised md-primary" ng-disabled="checkoutForm.$invalid">Save payment details</md-button>
+            <md-button type="submit" class="md-raised md-primary" ng-disabled="checkoutForm.$invalid">Guardar datos de pago</md-button>
     </div>
   </div>
       </form>
         </div>
         </tab>
-        <tab heading="Stored cards">
+        <tab heading="Tarjetas guardadas">
         <br>
             <div class="list-group-item" ng-show="!results.length">
-                <p>Once you have completed a task on TaskMatch, you will see a list of your completed payments here.</p>
+                <p>Una vez que hayas guardado los datos de una tarjeta en Etece.es, verás una lista de ellas aquí.</p>
             </div>
             <hr>
             <div ng-show="results.length > 0"><h4 class="text-center"><strong>Stored payment cards</strong></h4>
             </div>
             <div class="panel panel-default" ng-repeat="card in customerDetails.sources.data | filter:x as results">
-              <div class="panel-heading"><h5 class="blueHeader">Card number:   <strong>**** **** **** {{card.last4}}</strong></h5></div>
+              <div class="panel-heading"><h5 class="blueHeader">Número de tarjeta:   <strong>**** **** **** {{card.last4}}</strong></h5></div>
               <div class="panel-body">
-                <small><strong>Expiry date:</strong></small>
+                <small><strong>Fecha de vencimiento:</strong></small>
                 <p>{{ card.exp_month }}/{{ card.exp_year }}</p>
-                <small><strong>Brand:</strong></small>
+                <small><strong>Marca:</strong></small>
                 <p>{{ card.brand }}</p>
-                <small><strong>Funding:</strong></small>
+                <small><strong>Fuente:</strong></small>
                 <p>{{ card.funding }}</p>
               </div>
             </div>
         </tab>
-        <tab heading="Receive payments">
+        <tab heading="Recibir pagos">
             <br>
             <div class="list-group-item">
-                <p>When you are ready to accept a TaskRunner's offer, you will be required to pay the funds required for the task. The fee will be held securely until the task has been completed and the Task Poster releases the funds to the TaskRunner.</p>
+                <p>Una vez completada una tarea, tu podriás solicitar al cliente la liberación del pago, que luego liberará los fondos a tu cuenta de PayPal o cuenta bancaria nominada.</p>
             </div>
             <hr>
             <div class="well" style="background:white !important;">
-                <h3>PayPal Details</h3>
+                <h3>Datos de PayPal</h3>
                 <form ng-submit="updateReceivePayment()" novalidate autocomplete="off">
                     <div class="form-group">
-                            <label class="control-label" for="paypalEmailAddress">PayPal email address</label>
+                            <label class="control-label" for="paypalEmailAddress">PayPal correo electrónico</label>
                             <input class="form-control" ng-model="user.payPalEmail" id="paypalEmailAddress" type="text">
                     </div>
                     <div class="form-group">
-                <button class="submit-comment btn-block" type="submit">Add PayPal email</button>
-                         <small>PayPay will charge additional transaction fees upon receipt of funds as standard</small>
+                <button class="submit-comment btn-block" type="submit">Guardar PayPal</button>
+                         <small>PayPay cobrará cargos adicionales por transacción tras la recepción de fondos como estandár.</small>
               </div>
                 </form>
               </div>
         </tab>
-        <tab heading="Payments history">
+        <tab heading="Historia de pagos">
         <br>
             <div class="list-group-item" ng-show="!results.length">
-                <p>Once you have completed a task on TaskMatch, you will see a list of your completed payments here.</p>
+                <p>Una vez que hayas completado una tarea en Etece.es, verás una lista de tus pagos completadas aquí.</p>
             </div>
             <hr>
             <div ng-show="results.length > 0"><h4 class="text-center"><strong>Previous payments</strong></h4>
             </div>
             <div class="panel panel-default" ng-repeat="charge in customerCharges.data | filter:x as results">
               <div class="panel-heading">
-                  <h5 class="blueHeader">Transaction no: <strong>{{ charge.id }}</strong></h5>
+                  <h5 class="blueHeader">No. de transacción: <strong>{{ charge.id }}</strong></h5>
               </div>
               <div class="panel-body">
                   <div class="col-xs-6">
-                      <h4><strong>Payment details</strong></h4>
-                      <small><strong>Amount:</strong></small>
+                      <h4><strong>Datos de pago</strong></h4>
+                      <small><strong>Total:</strong></small>
                       <p>&euro;{{charge.amount / 100 | number:2}}</p>
-                      <small><strong>Created:</strong></small>
+                      <small><strong>Fecha:</strong></small>
                       <p>{{ charge.created }}</p>
-                      <small><strong>Status:</strong></small>
+                      <small><strong>Estado:</strong></small>
                       <p>{{ charge.status }}</p>
-                      <small><strong>Country:</strong></small>
+                      <small><strong>País:</strong></small>
                       <p>{{ charge.source.country }}</p>
                   </div>
                   <div class="col-xs-6">
                     <h4><strong>Card</strong></h4>
-                    <small><strong>Cardholder name:</strong></small>  
+                    <small><strong>Titular de tarjeta:</strong></small>  
                     <p>{{ charge.source.name}}</p>
-                    <small><strong>Card provider:</strong></small>  
+                    <small><strong>Proveedor de tarjeta:</strong></small>  
                     <p>{{ charge.source.brand }}</p>
-                    <small><strong>Last 4 digits:</strong></small>  
+                    <small><strong>Últimos 4 digitos:</strong></small>  
                     <p>{{ charge.source.last4 }}</p>
-                    <small><strong>Expiry date:</strong></small>  
+                    <small><strong>Fecha de vencimiento:</strong></small>  
                     <p>{{ charge.source.exp_month }}/{{ charge.source.exp_year }}</p>
                   </div>
               </div>
