@@ -2415,7 +2415,7 @@ angular.module('core').service('Socket', ['Authentication', '$state', '$timeout'
                             });
                         });
                     } else {
-                        swal("Cancelled", "Your task is safe",
+                        swal("Anulado", "La tarea está sana y salva",
                             "error");
                     }
                 });
@@ -2492,8 +2492,8 @@ angular.module('core').service('Socket', ['Authentication', '$state', '$timeout'
                     function(data, status, headers, config) {
                         // alert('comment alert email has been sent');
                         $mdToast.show($mdToast.simple().content(
-                                'Thanks, ' + data.contactName +
-                                '! You successfully posted a comment'
+                                '¡Gracias, ' + data.contactName +
+                                '! Has publicado un comentario con éxito'
                             ).position($scope.getToastPosition())
                             .hideDelay(5000));
                     });
@@ -2546,7 +2546,7 @@ angular.module('core').service('Socket', ['Authentication', '$state', '$timeout'
                     data, status, headers, config) {
                     // console.log('sent');
                     $mdToast.show($mdToast.simple().content(
-                        'Thanks for your offer ' +
+                        'Gracias por tu oferta ' +
                         data.contactName).position(
                         $scope.getToastPosition()
                     ).hideDelay(5000));
@@ -2587,8 +2587,8 @@ angular.module('core').service('Socket', ['Authentication', '$state', '$timeout'
             }).then(successCallback, errorCallback);
 
             function successCallback(res) {
-                swal("Success!",
-                    "You successfully posted an offer!",
+                swal("¡Enhorabuena!",
+                    "¡Has enviado una oferta con éxito!",
                     "success");
                 vm.offerAlert();
                 $scope.$dismiss();
@@ -2699,13 +2699,13 @@ angular.module('core').service('Socket', ['Authentication', '$state', '$timeout'
             //         vm.error = res.data.message;
             //     }
             swal({
-                title: "Are you sure?",
-                text: "You will not be able to recover this comment!",
+                title: "¿Estás seguro?",
+                text: "¡No podrías recuperar el comentario una vez borrado!",
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Yes, delete it!",
-                cancelButtonText: "No, cancel please!",
+                confirmButtonText: "¡Sí, borrarlo!",
+                cancelButtonText: "No, ¡anularlo por favor!",
                 closeOnConfirm: false,
                 closeOnCancel: false
             }, function(isConfirm) {
@@ -2729,11 +2729,11 @@ angular.module('core').service('Socket', ['Authentication', '$state', '$timeout'
                     function errorCallback(res) {
                         vm.error = res.data.message;
                     }
-                    swal("Deleted!",
-                        "The comment has been been deleted.",
+                    swal("¡Borrado!",
+                        "El comentario ha sido borrado",
                         "success");
                 } else {
-                    swal("Cancelled", "The comment is safe",
+                    swal("Anulado", "El comentario está sano y salvo",
                         "error");
                 }
             });
