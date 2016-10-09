@@ -143,25 +143,25 @@ angular.module('users').controller('DashboardController', ['$scope', 'Authentica
     $scope.noWrapSlides = false;
     var slides = $scope.slides = [{
       url1: 'tasks.list({ myFilter : { cleaning: true } })',
-      image: '../modules/core/client/img/category/Cleaning.png',
-      url2: 'tasks.list({ myFilter : { moving: true } })',
-      image2: '../modules/core/client/img/category/MovingDelivery.png',
-      url3: 'tasks.list({ myFilter : { DIY: true } })',
-      image3: '../modules/core/client/img/category/handyman.png'
+      image: '../modules/core/client/img/category/HogarEtece.png',
+      url2: 'tasks.list({ myFilter : { marketing: true } })',
+      image2: '../modules/core/client/img/category/ikeaEtece2.png',
+      url3: 'tasks.list({ myFilter : { office: true } })',
+      image3: '../modules/core/client/img/category/profesEtece.png'
     }, {
-      url1: 'tasks.list({ myFilter : { marketing: true } })',
-      image: '../modules/core/client/img/category/Marketing.png',
-      url2: 'tasks.list({ myFilter : { funQuirky: true } })',
-      image2: '../modules/core/client/img/category/FunQuirky.png',
+      url1: 'tasks.list({ myFilter : { DIY: true } })',
+      image: '../modules/core/client/img/category/diyEtece.png',
+      url2: 'tasks.list({ myFilter : { onlineIT: true } })',
+      image2: '../modules/core/client/img/category/officeEtece3.png',
       url3: 'tasks.list({ myFilter : { photoEvents: true } })',
-      image3: '../modules/core/client/img/category/EventsPhotography.png'
+      image3: '../modules/core/client/img/category/Events2Etece.png'
     }, {
-      url1: 'tasks.list({ myFilter : { onlineIT: true } })',
-      image: '../modules/core/client/img/category/computerIT.png',
-      url2: 'tasks.list({ myFilter : { office: true } })',
-      image2: '../modules/core/client/img/category/Office.png',
-      url3: 'tasks.list({ myFilter : { misc: true } })',
-      image3: '../modules/core/client/img/category/Others.png'
+      url1: 'tasks.list({ myFilter : { moving: true } })',
+      image: '../modules/core/client/img/category/Office.jpg',
+      url2: 'tasks.list({ myFilter : { misc: true } })',
+      image2: '../modules/core/client/img/lego.png',
+      url3: 'tasks.list({ myFilter : { marketing: true } })',
+      image3: '../modules/core/client/img/category/ikeaEtece2.png'
     }];
     // var slidesUiSref = $scope.slidesUiSref = [
     //   {  }

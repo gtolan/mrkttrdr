@@ -1569,8 +1569,11 @@ margin: 3px 8px !important;
 
 
 .editProfileSection {
-    margin-top: 4em;
+    margin-top: 1em;
     
+}
+.tipoSection {
+    margin-bottom: 3em;
 }
 .editProfileLabel {
     color:#2f508b !important;
@@ -2685,4 +2688,8 @@ tags-input .tags {
 }
 .progRegHomeP {
     margin-bottom: 10px !important;
+}
+.EditPrfTitle {
+    margin-bottom: 0px !important;
+    padding-bottom: 15px !important;
 }

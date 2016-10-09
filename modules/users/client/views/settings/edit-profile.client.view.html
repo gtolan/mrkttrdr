@@ -1,12 +1,24 @@
  
 <section class="row Dash" ng-controller="EditProfileController">
-  <div class="Dash">
+  <div class="DashEditProf">
     <h3 class="text-center EditPrfTitle">
       <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar mi perfil
     </h3>
   </div>
   <form name="userForm" ng-submit="updateUserProfile(userForm.$valid)" novalidate autocomplete="off" class="editProfileSection">
     <fieldset>
+        <div class="col-sm-12 tipoSection text-center">
+        <div class="form-group">
+                <label class="editProfileSpan">Tipo de usuario</label><br>
+                <label class="btn skills-repeat-white" ng-model="user.eteceWorker" btn-checkbox>
+                        <i class="fa fa-wrench" aria-hidden="true"></i> Solucionador
+                      </label>
+                      <label class="btn skills-repeat-white" ng-model="user.eteceHirer" btn-checkbox>
+                        <i class="fa fa-user" aria-hidden="true"></i> Cliente
+                      </label>
+              </div>
+        </div>
+        
       <div class="col-sm-6">
         <md-input-container class="md-block">
           <label for="firstName" class="editProfileLabel">Nombre</label>
@@ -98,15 +110,7 @@
         <hr class="hrEditProfile">
           <div class="col-xs-12">
             <hr class="hrEditProfile">
-            <div class="form-group">
-                <label class="editProfileSpan">Tipo de usuario</label><br>
-                <label class="btn skills-repeat-white" ng-model="user.eteceWorker" btn-checkbox>
-                        <i class="fa fa-wrench" aria-hidden="true"></i> Solucionador
-                      </label>
-                      <label class="btn skills-repeat-white" ng-model="user.eteceHirer" btn-checkbox>
-                        <i class="fa fa-user" aria-hidden="true"></i> Cliente
-                      </label>
-              </div>
+            
               <div class="form-group" show-errors>
                 <label class="editProfileSpan" for="tagline">Una frase sobre mí</label>
                 <textarea class="form-control" id="tagline" name="tagline"
