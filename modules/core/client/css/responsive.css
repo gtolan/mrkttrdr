@@ -476,6 +476,9 @@
 }
 
 @media only screen and (max-width: 767px) {
+    .titleCheckRed, .titleCheck {
+        margin-left: 0.25em;
+    }
     .progressSprite {
         z-index: -10;
         margin-top: 3%;
@@ -706,6 +709,9 @@
 }
 
 @media only screen and (max-width: 580px) {
+    .uupsAlert {
+        width: 100%;
+    }
     .socialSignButtonsRepairCont {
         margin-top: 1%;
         margin-left: -13%;

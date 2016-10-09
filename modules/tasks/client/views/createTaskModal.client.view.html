@@ -28,8 +28,8 @@ Presupuesto</button>
         </div>
         <div class="slide-frame" ng-switch="vm.getCurrentStep()">
           <div class="wave" ng-switch-when="one">
-            <div class="alert alert-info" ng-show="!authentication.user" style="margin-bottom:-14px;margin-top:5px;padding: 10px;width:80%;">
-              <strong><i class="fa fa-exclamation-circle" aria-hidden="true"></i>¡Uups!</strong> Debes iniciar una sesión para crear una tarea. <strong>Entrar aquí.</strong>
+            <div class="alert alert-info uupsAlert" ng-show="!authentication.user">
+              <strong><i class="fa fa-exclamation-circle" aria-hidden="true"></i> ¡Uups!</strong> Debes iniciar una sesión para crear una tarea. <strong>Entrar aquí.</strong>
             </div>
             <div class="form-group divTaskModalTitle">
               <label class="control-label ModalTitleTask" for="taskTitle">Título 
@@ -41,13 +41,13 @@ Presupuesto</button>
               <input name="taskTitle" id="taskTitle" ng-disabled="!authentication.user" class=
               "form-control TaskTitleInput" id="TaskTitle" ng-model=
               "vm.task.title" placeholder="Por ejemplo: Recoger y montar muebles de Ikea" type="text" ng-minlength="10" ng-maxlength="50" required autofocus>
-                <div ng-hide="vm.form.taskForm.taskTitle.$valid || !authentication.user " class="titleCheck" style="color:lightgray;font-size:20px;display:inline;">
+                <div ng-hide="vm.form.taskForm.taskTitle.$valid || !authentication.user " class="titleCheck">
                     <i class="fa fa-check-circle" aria-hidden="true"></i>
                   </div>
-                  <div ng-show="!authentication.user" class="titleCheck" style="color:lightgray;font-size:20px;display:inline;">
+                  <div ng-show="!authentication.user" class="titleCheck">
                     <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                   </div>
-                <div ng-show="vm.form.taskForm.taskTitle.$valid" class="titleCheck" style="color:#16B550;font-size:20px;display:inline;">
+                <div ng-show="vm.form.taskForm.taskTitle.$valid" class="titleCheckRed">
                     <i class="fa fa-check-circle" aria-hidden="true"></i>
                   </div>
                 <span ng-show="vm.form.taskForm.taskTitle.$touched && vm.form.taskForm.taskTitle.$invalid">
@@ -78,10 +78,10 @@ Presupuesto</button>
                 <div ng-hide="vm.form.taskForm.taskDescription.$valid || !authentication.user" style="color:lightgray;font-size:20px;display:inline;" class="descCheck">
                     <i class="fa fa-check-circle" aria-hidden="true"></i>
                   </div>
-                <div ng-show="!authentication.user" class="titleCheck" style="color:lightgray;font-size:20px;display:inline;">
+                <div ng-show="!authentication.user" class="titleCheck">
                     <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                   </div>  
-                  <div ng-show="vm.form.taskForm.taskDescription.$valid" style="color:#16B550;font-size:20px;display:inline;" class="descCheck">
+                  <div ng-show="vm.form.taskForm.taskDescription.$valid" class="titleCheckRed">
                     <i class="fa fa-check-circle" aria-hidden="true"></i>
                   </div>
                 <div ng-messages="vm.form.taskForm.taskDescription.$error" role=

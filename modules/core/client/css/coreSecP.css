@@ -1270,9 +1270,27 @@ md-tab-content{
 .TaskTitleInput {
     display: inline-block;  
 }
+.uupsAlert {
+  margin-bottom: -14px;
+  margin-top: 5px;
+  padding: 7px;
+  width: 80%;
+  background-image: none;
+  background: transparent;
+}
 .titleCheck {
     margin-left: 1em;
     margin-right: 30%;
+    color:lightgray;
+    font-size:20px;
+    display:inline;
+}
+.titleCheckRed {
+    margin-left: 1em;
+    margin-right: 30%;
+    color:#16B550;
+    font-size:20px;
+    display:inline;
 }
 .descCheck {
     position: absolute; 
