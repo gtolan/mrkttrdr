@@ -18,9 +18,6 @@
     vm.remove = remove;
     vm.save = save;
     $scope.totalAmount = vm.offer.offerPrice;
-    // console.log($scope.totalAmount);
-    // $scope.taskName = vm.offer.taskName;
-    // $scope.taskRunner = vm.offer.displayName;
 
     $scope.isReadonly = true;
     $scope.hoveringOver = function(value) {
@@ -39,7 +36,6 @@
     var five = 0;
 
     var offerUserAverage = vm.offer.offerUserAverage;
-    // console.log(offerUserAverage);
 
     for (var i = 0; i < offerUserAverage.length; i++) {
       if (offerUserAverage[i].rating === 1) {
@@ -87,7 +83,7 @@
 
     // Remove existing Offer
     function remove() {
-      if (confirm('Are you sure you want to delete?')) {
+      if (confirm('¿Estás seguro que quieres borrar la oferta?')) {
         vm.offer.$remove($state.go('offers.list'));
       }
     }
@@ -143,10 +139,10 @@
           $http.post('/api/offers/' + offer._id + '/comment-alert',
             dataTaskOwner).success(function(data, status, headers,
             config) {
-            console.log('comment alert email has been sent');
-            $mdToast.show($mdToast.simple().content('Thanks, ' +
+            // console.log('comment alert email has been sent');
+            $mdToast.show($mdToast.simple().content('¡Gracias, ' +
               data.contactName +
-              '! You successfully posted a comment').position(
+              '! Has publicado un comentario con éxito').position(
               $scope.getToastPosition()).hideDelay(5000));
           });
           //if logged in user is the offer owner, set data vars as follows:      
@@ -167,10 +163,10 @@
           $http.post('/api/offers/' + offer._id + '/comment-alert',
             dataOfferOwner).success(function(data, status, headers,
             config) {
-            console.log('comment alert email has been sent');
-            $mdToast.show($mdToast.simple().content('Thanks, ' +
+            // console.log('comment alert email has been sent');
+            $mdToast.show($mdToast.simple().content('¡Gracias, ' +
               data.contactName +
-              '! You successfully posted a comment').position(
+              '! Has publicado un comentario con éxito').position(
               $scope.getToastPosition()).hideDelay(5000));
           });
         } //end elseif
@@ -203,7 +199,7 @@
         $http.put('/api/tasks/' + offer.taskId + '/status', {
           statusAssigned: true
         }).then(successCallback, errorCallback);
-        swal('Success!', 'You successfully accepted this offer!', 'success');
+        swal('¡Enhorabuena!', '¡Has aceptado la oferta con éxito', 'success');
 
         function successCallback(res) {}
 
@@ -241,7 +237,7 @@
       $http.post('/api/offers/' + offer._id, {
         offerAccepted: true
       }).then(successCallback, errorCallback);
-      console.log('You successfully accepted this offer!');
+      // console.log('You successfully accepted this offer!');
 
       function successCallback(res) {
         vm.offerAccepted();
@@ -270,7 +266,7 @@
         });
         $http.post('/api/offers/' + offer._id + '/leave-a-new-review-alert', data).success(
           function(data, status, headers, config) {
-            console.log('sent');
+            // console.log('sent');
           });
 
         function errorCallback(res) {
@@ -281,7 +277,7 @@
       $http.post('/api/tasks/' + offer.taskId + '/status', {
         statusClosed: true
       }).then(successCallback, errorCallback);
-      swal('Success!', 'You successfully completed this task!', 'success');
+      swal('¡Enhorabuena!', '¡Has cumplido la tarea con éxito!', 'success');
 
       function successCallback(res) {
         vm.leaveAReviewAlert();
@@ -315,7 +311,7 @@
           function(data, status, headers, config) {
             console.log('sent');
             $mdToast.show($mdToast.simple().content(
-              'Thanks for your review ' + data.contactName).position(
+              'Gracias por tu reseña ' + data.contactName).position(
               $scope.getToastPosition()).hideDelay(5000));
           });
 
@@ -344,7 +340,7 @@
 
       function successCallback(res) {
         vm.reviewAlert();
-        swal('Success!', 'You successfully left a review!', 'success');
+        swal('¡Enhorabuena!', 'Has dejado una reseña con éxito', 'success');
         $state.go('profile', {
           userId: vm.offer.user._id
         });
@@ -352,7 +348,7 @@
 
       function errorCallback(res) {
         vm.error = res.data.message;
-        alert('your request did not work!' + res.data.message);
+        alert('No ha funcionado' + res.data.message);
       }
     }; //end of the review from the task owner user to the offer owner user
 
@@ -366,7 +362,7 @@
         }).then(successCallback, errorCallback);
 
       function successCallback(res) {
-        console.log('You successfully completed the review for this offer!');
+        // console.log('You successfully completed the review for this offer!');
       }
 
       function errorCallback(res) {
@@ -391,7 +387,7 @@
           function(data, status, headers, config) {
             console.log('sent');
             $mdToast.show($mdToast.simple().content(
-              'Thanks for your review ' + data.contactName).position(
+              'Gracias por tu reseña ' + data.contactName).position(
               $scope.getToastPosition()).hideDelay(5000));
           });
 
@@ -421,7 +417,7 @@
       function successCallback(res) {
         vm.taskOwnerReviewAlert();
         vm.markTaskOwnerReviewCompleted();
-        swal('Success!', 'You successfully left a review!', 'success');
+        swal('¡Enhorabuena!', 'Has dejado una reseña con éxito', 'success');
         $state.go('profile', {
           userId: vm.offer.taskOwnerUser
         });
@@ -429,7 +425,7 @@
 
       function errorCallback(res) {
         vm.error = res.data.message;
-        alert('your request did not work!' + res.data.message);
+        alert('No ha funcionado' + res.data.message);
       }
     }; //new review from the offer owner to the task owner
   }
