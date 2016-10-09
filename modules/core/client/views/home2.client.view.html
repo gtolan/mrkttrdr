@@ -66,11 +66,11 @@
               "form-control TaskTitleInput" id="TaskTitle" ng-model=
               "vm.task.title" placeholder="ex. Hang a Flat Screen TV" type="text" ng-minlength="10" ng-maxlength="50" required>
                 <span ng-show="vm.form.taskForm.taskTitle.$touched && vm.form.taskForm.taskTitle.$invalid">
-                  <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Task title is required.
+                  <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Task title es requerido.
                 </span>
                 <div ng-messages="vm.form.taskForm.taskTitle.$error || vm.form.taskForm.taskTitle.$touched" role="alert">
                   <p class="help-block error-text" ng-message="required"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Task
-                title is required.</p>
+                title es requerido.</p>
                   <div ng-message="minlength">
                     <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Your task title too short
                   </div>
@@ -100,10 +100,10 @@
                 <div ng-messages="vm.form.taskForm.taskDescription.$error" role=
                 "alert">
                   <span ng-show="vm.form.taskForm.taskDescription.$touched && vm.form.taskForm.taskTitle.$invalid">
-                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Task description is required.
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Task description es requerido.
                   </span>
                   <p class="help-block error-text" ng-message="required">Task
-                  description is required.</p>
+                  description es requerido.</p>
                   <div ng-message="minlength">
                     <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Your task description is too short
                   </div>
@@ -711,56 +711,58 @@ end of dialog material- task
         
         
     <div class="col-md-9 panelSubmitAppl">
-        <h4 class="text-center registerTitle">Registrar con Email</h4>
+        <h4 class="text-center registerTitle">Registrarse con Email</h4>
         <form name="userForm" ng-submit="signup(userForm.$valid)" class="" novalidate autocomplete="off">
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="formRegLabelHome" for="firstName formRegHome">First Name</label>
-          <input type="text" id="firstName" name="firstName" class="form-control formRegInputHome" ng-model="credentials.firstName" placeholder="First Name" required>
+          <label class="formRegLabelHome" for="firstName formRegHome">Nombre</label>
+          <input type="text" id="firstName" name="firstName" class="form-control formRegInputHome" ng-model="credentials.firstName" placeholder="Nombre" required>
           <div ng-messages="userForm.firstName.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">First name is required.</p>
+            <p class="help-block error-text" ng-message="required">Nombre es requerido.</p>
           </div>
         </div>
         <div class="form-group formRegHome" show-errors>
-          <label class="formRegLabelHome" for="lastName">Last Name</label>
-          <input type="text" id="lastName" name="lastName" class="form-control formRegInputHome" ng-model="credentials.lastName" placeholder="Last Name" required>
+          <label class="formRegLabelHome" for="lastName">Apellido</label>
+          <input type="text" id="lastName" name="lastName" class="form-control formRegInputHome" ng-model="credentials.lastName" placeholder="Apellido" required>
           <div ng-messages="userForm.lastName.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Last name is required.</p>
+            <p class="help-block error-text" ng-message="required">Apellido es requerido.</p>
           </div>
         </div>
         <div class="form-group formRegHome" show-errors>
-          <label class="formRegLabelHome" for="email">Email</label>
-          <input type="email" id="email" name="email" class="form-control formRegInputHome" ng-model="credentials.email" placeholder="Email" lowercase required>
+          <label class="formRegLabelHome" for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" class="form-control formRegInputHome" ng-model="credentials.email" placeholder="Correo electrónico" lowercase required>
           <div ng-messages="userForm.email.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Email address is required.</p>
-            <p class="help-block error-text" ng-message="email">Email address is invalid.</p>
+            <p class="help-block error-text" ng-message="required">Correo electrónico es requerido.</p>
+            <p class="help-block error-text" ng-message="email">Correo electrónico no es válido.</p>
           </div>
         </div>
         <div class="form-group formRegHome" show-errors>
-          <label class="formRegLabelHome" for="username">Username</label>
-          <input type="text" id="username" name="username" class="form-control formRegInputHome" ng-model="credentials.username" placeholder="Username" lowercase required>
+          <label class="formRegLabelHome" for="username">Usuario</label>
+          <input type="text" id="username" name="username" class="form-control formRegInputHome" ng-model="credentials.username" placeholder="Usuario" lowercase required>
           <div ng-messages="userForm.username.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Username is required.</p>
+            <p class="help-block error-text" ng-message="required">Usuario es requerido.</p>
           </div>
         </div>
         <div class="form-group formRegHome" show-errors>
-          <label class="formRegLabelHome" for="password">Password</label>
-            <input type="password" id="password" name="password" class="form-control formRegInputHome" ng-model="credentials.password" placeholder="Password" popover="{{popoverMsg}}" popover-trigger="focus" password-validator required>
+          <label class="formRegLabelHome" for="password">Contraseña</label>
+            <input type="password" id="password" name="password" class="form-control formRegInputHome" ng-model="credentials.password" placeholder="Contraseña" popover="{{popoverMsg}}" popover-trigger="focus" password-validator required>
           <div ng-messages="userForm.password.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Password is required.</p>
+            <p class="help-block error-text" ng-message="required">Contraseña es requerido.</p>
             <div ng-repeat="passwordError in passwordErrors">
               <p class="help-block error-text" ng-show="userForm.password.$error.requirements">{{passwordError}}</p>
             </div>
           </div>
         </div>
         <div class="form-group formRegHome" ng-show="!userForm.password.$error.required">
-          <label class="formRegLabelHome">Password Requirements</label>
+          <label class="formRegLabelHome">Requisitos de contraseña</label>
           <progressbar value="requirementsProgress" type="{{requirementsColor}}"><span style="color:white; white-space:nowrap;">{{requirementsProgress}}%</span></progressbar>
         </div>
         <div class="text-center form-group formRegHome">
-          <button type="submit" class="btn btn-primary">Sign up</button>
-          &nbsp; or&nbsp;
-          <a ui-sref="authentication.signin" class="show-signup">Sign in</a>
+          <md-button type="submit" class="md-raised md-primary">Registrarse</md-button>
+          &nbsp; o&nbsp;
+          <a ui-sref="authentication.signin" class="show-signup">
+            <md-button class="md-raised">Iniciar sesión</md-button>
+          </a>
         </div>
         <div ng-show="error" class="text-center text-danger">
           <strong ng-bind="error"></strong>
