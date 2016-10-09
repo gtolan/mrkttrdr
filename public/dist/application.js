@@ -2262,6 +2262,7 @@ angular.module('core').service('Socket', ['Authentication', '$state', '$timeout'
                 return new TasksService();
             }
             /* controller for drop button */
+        $scope.authentication = Authentication;
         $scope.status = {
             isopen: false
         };
@@ -3588,6 +3589,8 @@ angular.module('users').controller('publicProfileSettings', ['$scope', '$http',
       }
 
       var authenticatedUser = Authentication.user;
+      console.log(authenticatedUser);
+      console.log(user);
       $scope.authenticatedUser = authenticatedUser;
       $scope.taskTitles = taskTitles;
 

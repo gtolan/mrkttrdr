@@ -26,6 +26,7 @@
                 return new TasksService();
             }
             /* controller for drop button */
+        $scope.authentication = Authentication;
         $scope.status = {
             isopen: false
         };

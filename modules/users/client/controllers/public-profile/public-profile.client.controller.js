@@ -180,6 +180,8 @@ angular.module('users').controller('publicProfileSettings', ['$scope', '$http',
       }
 
       var authenticatedUser = Authentication.user;
+      console.log(authenticatedUser);
+      console.log(user);
       $scope.authenticatedUser = authenticatedUser;
       $scope.taskTitles = taskTitles;
 
