@@ -949,8 +949,8 @@
     }
 
     .socialSingBut {
-        width: 100px;
-        font-size: 10px;
+        width: 92px;
+        font-size: 11px;
     }
 
     .progressSprite {
@@ -979,7 +979,7 @@
     }
 
     .socialSingBut {
-        width: 105px;
+        width: 92px;
         margin-left: 6%;
         min-height: 25px !important;
         min-width: 88px !important;
@@ -1012,8 +1012,8 @@
     }
 
     .socialSingBut {
-        width: 105px;
-        font-size: 10px;
+        width: 92px;
+        font-size: 11px;
     }
 
     .progressSprite {
@@ -1062,6 +1062,45 @@
 }
 
 @media only screen and (max-width: 380px) {
+    .uupsAlert {
+    font-size: 12px;
+    margin-bottom: -14px;
+    margin-top: 5px;
+    padding: 3px;
+    width: 80%;
+    background-image: none;
+    background: transparent;
+}
+      .socialSignButtonsRepair {
+    position: absolute;
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-top: 400px;
+    display: inline;
+    width: 88%;
+    text-align: center;
+    }
+    
+.logoSpinner {
+    position: absolute;
+    left: -13%;
+    top: 5px;
+    width: 59px;
+    height: 42px;
+    margin-right: 0px;
+    cursor: pointer;
+    z-index: 1042;
+}
+.logoEtLoginDash {
+    position: absolute;
+    left: 7%;
+    top: 9px;
+    width: 119px;
+}
+.postBtnLoginDash {
+    margin-left: -3%;
+}
+
     img.socialLogin {
         width: 69px;
     }
@@ -1142,6 +1181,15 @@
 }
 
 @media only screen and (max-width: 340px) {
+    .socialSignButtonsRepair {
+    position: absolute;
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-top: 400px;
+    display: inline;
+    width: 88%;
+    text-align: center;
+    }
     .getStartedMainSectionButton {
         margin-top: -90px;
     }
@@ -1155,7 +1203,7 @@
     }
 
     .socialSingBut {
-        width: 120px;
+        width: 90px;
         margin-left: 4%;
     }
 

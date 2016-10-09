@@ -1194,7 +1194,7 @@ md-tab {
 }
 .viewTaskDescH {
     font-size: 15px;
-    line-height: 19px;
+    line-height: 19px
     font-weight: 500;
     color: dimgray;
     text-transform: uppercase;
@@ -1277,6 +1277,10 @@ md-tab-content{
   width: 80%;
   background-image: none;
   background: transparent;
+}
+.uupsAlert a:hover, uupsAlert a:focus  {
+    text-decoration: none;
+    color:#29487d;
 }
 .titleCheck {
     margin-left: 1em;
